@@ -325,3 +325,6 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - LAYER0
+combos:
+- p: [15, 17, 15, 16, 17, 15, 16, 17]
+  k: Sft+$$mdi:apple-keyboard-option$$
