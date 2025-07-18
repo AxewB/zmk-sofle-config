@@ -326,5 +326,5 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: LAYER0, h: toggle}
 combos:
-- p: [15, 17, 15, 16, 17, 15, 16, 17]
+- p: [17, 16, 17, 16, 17, 15]
   k: '&lang_switch'
