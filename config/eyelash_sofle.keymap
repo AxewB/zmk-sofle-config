@@ -54,8 +54,22 @@
         compatible = "zmk,combos";
 
         alt-shift-lang-switch {
-            bindings = <&kp LS(LEFT_ALT)>;
+            bindings = <&lang_switch>;
             key-positions = <15 17 15 16 17 15 16 17>;
+        };
+    };
+
+    macros {
+        lang_switch: lang_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHIFT &kp LEFT_ALT>,
+                <&macro_release>,
+                <&kp LSHIFT &kp LEFT_ALT>;
+
+            label = "LANG_SWITCH";
         };
     };
 
