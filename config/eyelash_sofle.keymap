@@ -48,6 +48,15 @@
     behaviors {
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        alt-shift-lang-switch {
+            bindings = <&kp LS(LEFT_ALT)>;
+            key-positions = <15 17 15 16 17 15 16 17>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
