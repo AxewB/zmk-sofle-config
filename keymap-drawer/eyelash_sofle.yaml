@@ -327,4 +327,4 @@ layers:
   - {t: LAYER0, h: toggle}
 combos:
 - p: [15, 17, 15, 16, 17, 15, 16, 17]
-  k: Sft+$$mdi:apple-keyboard-option$$
+  k: '&lang_switch'
