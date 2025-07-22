@@ -65,9 +65,35 @@
     combos {
         compatible = "zmk,combos";
 
-        test_combo {
-            bindings = <&kp LS(D)>;
+        lang_switch {
+            bindings = <&lang_switch>;
             key-positions = <15 16 17>;
+        };
+
+        test_combo {
+            bindings = <&test_macro>;
+            key-positions = <2 3 4>;
+        };
+    };
+
+    macros {
+        lang_switch: lang_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp SPACE>,
+                <&macro_release>,
+                <&kp LGUI &kp SPACE>;
+
+            label = "LANG_SWITCH";
+        };
+
+        test_macro: test_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp S &kp D>;
+            label = "TEST_MACRO";
         };
     };
 
