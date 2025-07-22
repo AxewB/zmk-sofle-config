@@ -69,11 +69,6 @@
             bindings = <&lang_switch>;
             key-positions = <15 16 17>;
         };
-
-        test_combo {
-            bindings = <&test_macro>;
-            key-positions = <2 3 4>;
-        };
     };
 
     macros {
@@ -87,13 +82,6 @@
                 <&kp LGUI &kp SPACE>;
 
             label = "LANG_SWITCH";
-        };
-
-        test_macro: test_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp A &kp S &kp D>;
-            label = "TEST_MACRO";
         };
     };
 
