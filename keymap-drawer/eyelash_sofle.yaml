@@ -328,5 +328,3 @@ layers:
 combos:
 - p: [15, 16, 17]
   k: '&lang_switch'
-- p: [2, 3, 4]
-  k: '&test_macro'
