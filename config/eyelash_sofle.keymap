@@ -55,6 +55,11 @@
             bindings = <&lang_switch>;
             key-positions = <17 16 17 16 17 15>;
         };
+
+        test_combo {
+            bindings = <&kp LS(E)>;
+            key-positions = <0 1>;
+        };
     };
 
     macros {
