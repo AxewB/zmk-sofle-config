@@ -290,8 +290,8 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - A
   - S
-  - F
   - D
+  - F
   - G
   - {t: '$$mdi:transfer$$', type: trans}
   - H
