@@ -617,6 +617,10 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="201" y="76" width="28" height="26" class="combo"/>
 <text x="215" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="42" y="43" width="28" height="26" class="combo"/>
+<text x="56" y="56" class="combo tap">Sft+E</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 388)" class="layer-NAV">
@@ -954,6 +958,10 @@ rect.held, rect.combo.held {
 <path d="M215,89 l-56,2" class="combo"/>
 <rect rx="6" ry="6" x="201" y="76" width="28" height="26" class="combo"/>
 <text x="215" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="42" y="43" width="28" height="26" class="combo"/>
+<text x="56" y="56" class="combo tap">Sft+E</text>
 </g>
 </g>
 </g>
@@ -1301,6 +1309,10 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="201" y="76" width="28" height="26" class="combo"/>
 <text x="215" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="42" y="43" width="28" height="26" class="combo"/>
+<text x="56" y="56" class="combo tap">Sft+E</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 1165)" class="layer-EXTRA">
@@ -1635,6 +1647,10 @@ rect.held, rect.combo.held {
 <path d="M215,89 l-56,2" class="combo"/>
 <rect rx="6" ry="6" x="201" y="76" width="28" height="26" class="combo"/>
 <text x="215" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="42" y="43" width="28" height="26" class="combo"/>
+<text x="56" y="56" class="combo tap">Sft+E</text>
 </g>
 </g>
 </g>
@@ -1983,6 +1999,10 @@ rect.held, rect.combo.held {
 <path d="M215,89 l-56,2" class="combo"/>
 <rect rx="6" ry="6" x="201" y="76" width="28" height="26" class="combo"/>
 <text x="215" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="42" y="43" width="28" height="26" class="combo"/>
+<text x="56" y="56" class="combo tap">Sft+E</text>
 </g>
 </g>
 </g>
