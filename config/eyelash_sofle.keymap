@@ -65,14 +65,19 @@
     combos {
         compatible = "zmk,combos";
 
-        lang_switch {
-            bindings = <&lang_switch>;
-            key-positions = <15 16 17>;
+        lang_switch_lgui_space {
+            bindings = <&lang_switch_lgui_space>;
+            key-positions = <2 3 4>;
+        };
+
+        lang_switch_shfit_alt {
+            bindings = <&lang_switch_shift_alt>;
+            key-positions = <17 16 15>;
         };
     };
 
     macros {
-        lang_switch: lang_switch {
+        lang_switch_lgui_space: lang_switch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -82,6 +87,18 @@
                 <&kp LGUI &kp SPACE>;
 
             label = "LANG_SWITCH";
+        };
+
+        lang_switch_shift_alt: lang_switch_shift_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHIFT &kp LEFT_ALT>,
+                <&macro_release>,
+                <&kp LSHIFT &kp LEFT_ALT>;
+
+            label = "LANG_SWITCH_SHIFT_ALT";
         };
     };
 
