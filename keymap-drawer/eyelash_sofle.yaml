@@ -326,5 +326,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: BASE, h: toggle}
 combos:
-- p: [15, 16, 17]
-  k: '&lang_switch'
+- p: [2, 3, 4]
+  k: '&lang_switch_lgui_space'
+- p: [17, 16, 15]
+  k: '&lang_switch_shift_alt'
