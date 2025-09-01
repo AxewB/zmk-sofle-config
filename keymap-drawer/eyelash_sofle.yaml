@@ -1,5 +1,70 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
+  '5':
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - $$mdi:arrow-up-bold$$
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ']', s: '}'}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - $$mdi:arrow-down-bold$$
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: '[', s: '{'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - A
+  - S
+  - D
+  - F
+  - G
+  - $$mdi:arrow-left-bold$$
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, s: ':'}
+  - {t: '''', s: '"'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - $$mdi:arrow-right-bold$$
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   BASE:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -328,3 +393,35 @@ layers:
 combos:
 - p: [15, 16, 17]
   k: Sft+D
+- p: [14, 15]
+  k: {t: '[', s: '{'}
+- p: [23, 24]
+  k: {t: ']', s: '}'}
+- p: [15, 16]
+  k: '{'
+- p: [23, 22]
+  k: '}'
+- p: [29, 28]
+  k: (
+- p: [35, 36]
+  k: )
+- p: [27, 28]
+  k: $$mdi:apple-keyboard-shift$$
+- p: [37, 36]
+  k: $$mdi:apple-keyboard-shift$$
+- p: [34, 35]
+  k: $$mdi:apple-keyboard-command$$
+- p: [30, 29]
+  k: $$mdi:apple-keyboard-command$$
+- p: [40, 41]
+  k: Ctl+Z
+- p: [40, 41, 42]
+  k: Ctl+Y
+- p: [41, 42]
+  k: Ctl+C
+- p: [42, 43]
+  k: Ctl+V
+- p: [40, 43]
+  k: Ctl+A
+- p: [50, 49]
+  k: $$mdi:apple-keyboard-option$$
