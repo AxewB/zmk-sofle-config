@@ -52,7 +52,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -338,3 +338,5 @@ combos:
   k: Ctl+V
 - p: [40, 43]
   k: Ctl+A
+- p: [21, 22]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
