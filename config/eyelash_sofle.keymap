@@ -78,7 +78,7 @@
         compatible = "zmk,combos";
 
         test_combo {
-            bindings = <&kp LS(D)>;
+            bindings = <&lang_switch_shift_alt>;
             key-positions = <15 16 17>;
         };
 
@@ -160,6 +160,20 @@
         right_alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <50 49>;
+        };
+    };
+
+    macros {
+        lang_switch_shift_alt: lang_switch_shift_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT &kp LEFT_ALT>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT &kp LALT>;
+
+            label = "LANG_SWITCH_SHIFT_ALT";
         };
     };
 
