@@ -107,6 +107,11 @@
             bindings = <&kp LC(A)>;
             key-positions = <40 43>;
         };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <21 22>;
+        };
     };
 
     macros {
@@ -131,7 +136,7 @@
 &trans             &kp N1  &kp N2               &kp N3           &kp N4       &kp N5        &mmv MOVE_UP     &kp N6      &kp N7       &kp N8            &kp N9                &kp N0    &trans
 &kp RIGHT_BRACKET  &kp Q   &HML LEFT_CONTROL W  &kp E            &kp R        &kp T         &mmv MOVE_DOWN   &kp Y       &kp U        &kp I             &HMR RIGHT_CONTROL O  &kp P     &kp LEFT_BRACKET
 &kp ESCAPE         &kp A   &kp S                &HML LEFT_ALT D  &HML LGUI F  &kp G         &mmv MOVE_LEFT   &kp H       &HMR RGUI J  &HMR RIGHT_ALT K  &kp L                 &kp SEMI  &kp APOS
-&trans             &kp Z   &kp X                &kp C            &kp V        &kp B         &mmv MOVE_RIGHT  &kp N       &kp M        &kp COMMA         &kp DOT               &kp FSLH  &kp ENTER
+&trans             &kp Z   &kp X                &kp C            &kp V        &kp B         &mmv MOVE_RIGHT  &kp N       &kp M        &kp COMMA         &kp DOT               &kp FSLH  &trans
 &kp C_MUTE         &trans  &trans               &mo 2            &kp SPACE    &kp LSHIFT    &mkp MB1         &kp RSHIFT  &kp BSPC     &mo 1             &trans                &trans
             >;
 
