@@ -327,7 +327,7 @@ layers:
   - {t: BASE, h: toggle}
 combos:
 - p: [15, 16, 17]
-  k: Sft+D
+  k: '&lang_switch_shift_alt'
 - p: [14, 15]
   k: {t: '[', s: '{'}
 - p: [23, 24]

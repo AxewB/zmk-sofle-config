@@ -613,7 +613,7 @@ rect.held, rect.combo.held {
 <path d="M196,89 l-37,2" class="combo"/>
 <path d="M196,89 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">Sft+D</text>
+<text x="196" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="98" y="89" width="28" height="26" class="combo"/>
@@ -1022,7 +1022,7 @@ rect.held, rect.combo.held {
 <path d="M196,89 l-37,2" class="combo"/>
 <path d="M196,89 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">Sft+D</text>
+<text x="196" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="98" y="89" width="28" height="26" class="combo"/>
@@ -1439,7 +1439,7 @@ rect.held, rect.combo.held {
 <path d="M196,89 l-37,2" class="combo"/>
 <path d="M196,89 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">Sft+D</text>
+<text x="196" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="98" y="89" width="28" height="26" class="combo"/>
@@ -1845,7 +1845,7 @@ rect.held, rect.combo.held {
 <path d="M196,89 l-37,2" class="combo"/>
 <path d="M196,89 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">Sft+D</text>
+<text x="196" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="98" y="89" width="28" height="26" class="combo"/>
@@ -2264,7 +2264,7 @@ rect.held, rect.combo.held {
 <path d="M196,89 l-37,2" class="combo"/>
 <path d="M196,89 l37,2" class="combo"/>
 <rect rx="6" ry="6" x="182" y="76" width="28" height="26" class="combo"/>
-<text x="196" y="89" class="combo tap">Sft+D</text>
+<text x="196" y="89" class="combo tap"><tspan style="font-size: 60%">&amp;lang_swi…</tspan></text>
 </g>
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="98" y="89" width="28" height="26" class="combo"/>
