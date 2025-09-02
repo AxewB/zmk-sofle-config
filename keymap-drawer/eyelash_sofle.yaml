@@ -27,7 +27,7 @@ layers:
   - {t: O, h: '$$mdi:apple-keyboard-control$$'}
   - P
   - {t: '[', s: '{'}
-  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - A
   - S
   - {t: D, h: '$$mdi:apple-keyboard-option$$'}
@@ -57,11 +57,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - NAV
-  - $$mdi:keyboard-space$$
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:keyboard-esc$$
   - '&mkp MB1'
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-shift$$'}
   - SYMBOLS
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -338,5 +338,3 @@ combos:
   k: Ctl+V
 - p: [40, 43]
   k: Ctl+A
-- p: [21, 22]
-  k: {t: '$$mdi:keyboard-return$$', type: enter}
