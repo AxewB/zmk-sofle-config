@@ -157,7 +157,7 @@ layers:
   - {t: '9', s: (}
   - {t: '0', s: )}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '~'
   - '!'
   - '@'
   - '#'
@@ -169,7 +169,7 @@ layers:
   - '*'
   - {t: '-', s: _}
   - {t: '=', s: +}
-  - {t: '8', s: '*'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - _
   - '{'
