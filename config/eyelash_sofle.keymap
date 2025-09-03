@@ -70,31 +70,6 @@
     combos {
         compatible = "zmk,combos";
 
-        undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <40 41>;
-        };
-
-        redo {
-            bindings = <&kp LC(Y)>;
-            key-positions = <40 41 42>;
-        };
-
-        copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <41 42>;
-        };
-
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <42 43>;
-        };
-
-        select_all {
-            bindings = <&kp LC(A)>;
-            key-positions = <40 43>;
-        };
-
         lang_switch {
             bindings = <&macro_lang_swicth>;
             key-positions = <15 17 16>;
