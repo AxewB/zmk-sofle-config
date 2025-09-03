@@ -87,12 +87,12 @@
 
         copy {
             bindings = <&kp LC(C)>;
-            key-positions = <40 42>;
+            key-positions = <42 41>;
         };
 
         paste {
             bindings = <&kp LC(V)>;
-            key-positions = <40 43>;
+            key-positions = <43 42>;
         };
     };
 
