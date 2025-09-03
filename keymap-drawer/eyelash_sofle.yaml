@@ -263,3 +263,7 @@ layers:
 combos:
 - p: [15, 17, 16]
   k: '&macro_lang_swicth'
+- p: [40, 41]
+  k: Ctl+Z
+- p: [41, 42, 40]
+  k: Ctl+Y
