@@ -74,6 +74,16 @@
             bindings = <&macro_lang_swicth>;
             key-positions = <15 17 16>;
         };
+
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <40 41>;
+        };
+
+        redo {
+            bindings = <&kp LC(Y)>;
+            key-positions = <41 42 40>;
+        };
     };
 
     macros {
