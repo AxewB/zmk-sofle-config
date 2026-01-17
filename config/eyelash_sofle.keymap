@@ -64,6 +64,34 @@
         hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63>;
     };
 
+    hmr2: hmr2 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HMR2";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        flavor = "balanced";
+        require-prior-idle-ms = <90>;
+        quick-tap-ms = <135>;
+        tapping-term-ms = <280>;
+        hold-trigger-on-release;
+        hold-trigger-key-positions = <53 54 55 56 57 59 60 61 62 63 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63>;
+    };
+
+    hml2: hml2 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HML2";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        flavor = "balanced";
+        require-prior-idle-ms = <90>;
+        quick-tap-ms = <135>;
+        tapping-term-ms = <280>;
+        hold-trigger-on-release;
+        hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63 0 1 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 2 3 4 5 6 7 8 9 10 15 16 17 18 19 20 21 22 23 28 29 30 31 32 33 34 35 36 41 42 43 44 45 46 47 48 49 52 58>;
+    };
+
     behaviors {
     };
 
@@ -115,11 +143,11 @@
 
         Base {
             bindings = <
-&trans            &kp N1  &kp N2  &kp N3  &kp N4            &kp N5           &mmv MOVE_UP     &kp N6         &kp N7            &kp N8     &kp N9   &kp N0         &trans
-&kp RBKT          &kp Q   &kp W   &kp E   &kp R             &kp T            &mmv MOVE_DOWN   &kp Y          &kp U             &kp I      &kp O    &kp P          &kp LBKT
-&kp LEFT_CONTROL  &kp A   &kp S   &kp D   &kp F             &kp G            &mmv MOVE_LEFT   &kp H          &kp J             &kp K      &kp L    &kp SEMICOLON  &kp RIGHT_CONTROL
-&kp LEFT_ALT      &kp Z   &kp X   &kp C   &kp V             &kp B            &mmv MOVE_RIGHT  &kp N          &kp M             &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_ALT
-&kp C_MUTE        &trans  &trans  &mo 1   &hml LSHFT SPACE  &hml LGUI ESC    &mkp MB1         &hmr RGUI RET  &hmr RSHIFT BSPC  &mo 2      &trans   &trans
+&trans            &kp N1  &kp N2  &kp N3  &kp N4             &kp N5            &mmv MOVE_UP     &kp N6          &kp N7             &kp N8     &kp N9   &kp N0         &trans
+&kp RBKT          &kp Q   &kp W   &kp E   &kp R              &kp T             &mmv MOVE_DOWN   &kp Y           &kp U              &kp I      &kp O    &kp P          &kp LBKT
+&kp LEFT_CONTROL  &kp A   &kp S   &kp D   &kp F              &kp G             &mmv MOVE_LEFT   &kp H           &kp J              &kp K      &kp L    &kp SEMICOLON  &kp RIGHT_CONTROL
+&kp LEFT_ALT      &kp Z   &kp X   &kp C   &kp V              &kp B             &mmv MOVE_RIGHT  &kp N           &kp M              &kp COMMA  &kp DOT  &kp FSLH       &kp RIGHT_ALT
+&kp C_MUTE        &trans  &trans  &mo 1   &hml2 LSHFT SPACE  &hml2 LGUI ESC    &mkp MB1         &hmr2 RGUI RET  &hmr2 RSHIFT BSPC  &mo 2      &trans   &trans
             >;
 
             label = "Base";
