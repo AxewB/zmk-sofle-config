@@ -246,30 +246,45 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
+        def_layer {
             bindings = <
 &none              &none  &none  &none  &none      &none         &kp UP_ARROW     &none      &none      &none      &none    &none     &none
 &kp RIGHT_BRACKET  &kp Q  &kp W  &kp E  &kp R      &kp T         &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O    &kp P     &kp BSLH
 &none              &kp A  &kp S  &kp D  &kp F      &kp G         &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
 &none              &kp Z  &kp X  &kp C  &kp V      &kp B         &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
-&kp C_MUTE         &none  &none  &mo 1  &kp SPACE  &kp ESCAPE    &kp ENTER        &kp ENTER  &kp LSHFT  &mo 2      &none    &none
+&kp C_MUTE         &none  &none  &la NAV  &kp SPACE  &kp ESCAPE    &kp ENTER        &kp ENTER  &kp LSHFT  &la SYM      &none    &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "LAYER0";
+            display-name = "BASE";
             label = "BASE";
         };
 
-        nav_layer {
+        gam_layer {
             bindings = <
-&trans   &trans     &trans     &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans  &trans
-&trans   &trans     &trans     &trans    &trans    &trans    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-&kp TAB  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans   &mkp MB4   &mkp MB5   &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans  &trans
-&trans   &trans     &trans     &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans
+&none              &none  &none  &none  &none      &none         &kp UP_ARROW     &none      &none      &none      &none    &none     &none
+&kp RIGHT_BRACKET  &kp Q  &kp W  &kp E  &kp R      &kp T         &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O    &kp P     &kp BSLH
+&none              &kp A  &kp S  &kp D  &kp F      &kp G         &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&none              &kp Z  &kp X  &kp C  &kp V      &kp B         &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
+&kp C_MUTE         &none  &none  &la NAV  &kp SPACE  &kp ESCAPE    &kp ENTER        &kp ENTER  &kp LSHFT  &la SYM      &none    &none
             >;
 
-            label = "NAV";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "GAME";
+            label = "GAME";
+        };
+
+        gfn_layer {
+            bindings = <
+&none              &none  &none  &none  &none      &none         &kp UP_ARROW     &none      &none      &none      &none    &none     &none
+&kp RIGHT_BRACKET  &kp Q  &kp W  &kp E  &kp R      &kp T         &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O    &kp P     &kp BSLH
+&none              &kp A  &kp S  &kp D  &kp F      &kp G         &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&none              &kp Z  &kp X  &kp C  &kp V      &kp B         &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
+&kp C_MUTE         &none  &none  &la NAV  &kp SPACE  &kp ESCAPE    &kp ENTER        &kp ENTER  &kp LSHFT  &la SYM      &none    &none
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "GAME";
+            label = "GAME";
         };
 
         sym_layer {
@@ -280,8 +295,35 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
-
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "SYM";
             label = "SYM";
+        };
+
+        nav_layer {
+            bindings = <
+&trans   &trans     &trans     &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans   &trans     &trans     &trans    &trans    &trans    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+&kp TAB  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans   &mkp MB4   &mkp MB5   &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans   &trans     &trans     &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "NAV";
+            label = "NAV";
+        };
+
+        num_layer {
+            bindings = <
+&trans   &trans     &trans     &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans   &trans     &trans     &trans    &trans    &trans    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+&kp TAB  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans   &mkp MB4   &mkp MB5   &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans  &trans
+&trans   &trans     &trans     &trans    &trans    &trans    &trans  &trans    &trans     &trans     &trans     &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "NUM";
+            label = "NUM";
         };
 
         temp1 {
