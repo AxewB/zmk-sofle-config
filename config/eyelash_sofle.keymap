@@ -82,6 +82,7 @@
             compatible = "zmk,behavior-macro";
             label = "Release Key Twice";
 
+            #binding-cells = <2>;
             #optional-macros = <&macro_release>;
             macro-params = <PARAM_1 PARAM_1>;
         };
@@ -90,6 +91,7 @@
             compatible = "zmk,behavior-macro";
             label = "Press Key Twice";
 
+            #binding-cells = <3>;
             #optional-macros = <&macro_press &macro_pause_for_release &macro_tap &m_release_key_twice>;
             macro-params = <PARAM_1 PARAM_1 PARAM_1>;
         };
@@ -98,6 +100,7 @@
             compatible = "zmk,behavior-sticky-forever";
             label = "Sticky Forever";
 
+            #binding-cells = <1>;
             #optional-macros = <&m_press_key_twice>;
         };
 
@@ -105,6 +108,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "CM GUI";
 
+            #binding-cells = <2>;
             hold = <&sticky_forever LGUI>;
             tap = <&m_release_key_twice LGUI>;
             from-mods = <MOD_LGUI>;
@@ -115,6 +119,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "CM ALT";
 
+            #binding-cells = <2>;
             hold = <&sticky_forever LALT>;
             tap = <&m_release_key_twice LALT>;
             from-mods = <MOD_LALT>;
@@ -125,6 +130,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "CM CTRL";
 
+            #binding-cells = <2>;
             hold = <&sticky_forever LCTRL>;
             tap = <&m_release_key_twice LCTRL>;
             from-mods = <MOD_LCTL>;
@@ -135,6 +141,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "CM SHIFT";
 
+            #binding-cells = <2>;
             hold = <&sticky_forever LSHIFT>;
             tap = <&m_release_key_twice LSHIFT>;
             from-mods = <MOD_LSFT>;
@@ -145,6 +152,7 @@
             compatible = "zmk,behavior-macro";
             label = "Hold Mod Press Key";
 
+            #binding-cells = <2>;
             #optional-macros = <&macro_press &macro_tap>;
             macro-params = <PARAM_1 PARAM_2>;
         };
@@ -153,6 +161,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "Tabber";
 
+            #binding-cells = <2>;
             hold = <&m_hold_mod_press_key LCTRL TAB>;
             tap = <&kp TAB>;
             from-mods = <MOD_LCTL>;
@@ -163,6 +172,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "Swapper Win";
 
+            #binding-cells = <2>;
             hold = <&m_hold_mod_press_key LALT TAB>;
             tap = <&kp TAB>;
             from-mods = <MOD_LALT>;
@@ -173,6 +183,7 @@
             compatible = "zmk,behavior-modmorph";
             label = "Swapper Mac";
 
+            #binding-cells = <2>;
             hold = <&m_hold_mod_press_key LGUI TAB>;
             tap = <&kp TAB>;
             from-mods = <MOD_LGUI>;
@@ -183,8 +194,9 @@
             compatible = "zmk,behavior-macro";
             label = "LA";
 
+            #binding-cells = <4>;
             #optional-macros = <&macro_tap &macro_press &macro_pause_for_release &macro_release>;
-            macro-params = <0 PARAM_1 PARAM_1>; // первый 0 для do-nothing tap, затем mo PARAM_1, PARAM_1 для release
+            macro-params = <0 PARAM_1 PARAM_1 PARAM_1>; // первый 0 для do-nothing tap, затем mo PARAM_1, PARAM_1 для release
         };
     };
 
