@@ -325,7 +325,7 @@
 &kp TAB           &kp  Q   &kp  W   &kp E       &kp R    &kp  T       &trans   &trans   &trans   &trans   &trans   &trans   &trans 
 &kp LSHIFT        &kp  A   &kp  S   &kp D       &kp F    &kp  G       &trans   &trans   &trans   &trans   &trans   &trans   &trans 
 &kp LEFT_CONTROL  &kp  Z   &kp  X   &kp C       &kp V    &kp  B       &trans   &trans   &trans   &trans   &trans   &trans   &trans  
-&encod            &trans   &trans   &kp SPACE   &mo GFN  &kp ESCAPE            &trans   &trans   &trans   &trans   &trans   &trans   
+&trans            &trans   &trans   &kp SPACE   &mo GFN  &kp ESCAPE            &trans   &trans   &trans   &trans   &trans   &trans   
             >; 
 
             label = "GAM"; 
@@ -340,7 +340,7 @@
 &kp TAB           &kp  Q   &kp  W   &kp  E      &kp  R   &kp  T       &pad   &trans   &trans   &trans   &trans   &trans   &trans 
 &kp LSHIFT        &kp  A   &kp  S   &kp  D      &kp  F   &kp  G       &pad   &trans   &trans   &trans   &trans   &trans   &trans 
 &kp LEFT_CONTROL  &kp  Z   &kp  X   &kp  C      &kp  V   &kp  B       &pad   &trans   &trans   &trans   &trans   &trans   &trans  
-&encod            &trans   &trans   &kp SPACE   &mo    &kp ESCAPE          &trans   &trans   &trans   &trans   &trans   &trans   
+&trans            &trans   &trans   &kp SPACE   &mo    &kp ESCAPE          &trans   &trans   &trans   &trans   &trans   &trans   
             >; 
 
             label = "GFN"; 
