@@ -73,29 +73,32 @@
     };
 
     behaviors {
-        MACRO_TWO_PARAM(
-            m_hold_mod_press_key,
-            &macro_press
-                &macro_param_1to1 &kp PARAM_1
-            &macro_tap
-                &macro_param_2to1 &kp PARAM_2
-        )
+        m_hold_mod_press_key: m_hold_mod_press_key {
+            compatible = "zmk,behavior-macro";
+            label = "Hold Mod Press Key";
 
-        MODMORPH(
-            tabber,
-            &m_hold_mod_press_key LCTRL TAB,
-            &kp TAB,
-            MOD_LCTL,
-            MOD_LCTL
-        )
+            #optional-macros = <&macro_press &macro_tap>;
+            macro-params = <&macro_param_1to1 &kp PARAM_1
+                            &macro_param_2to1 &kp PARAM_2>;
+        };
 
-        MODMORPH(
-            swapper_win,
-            &m_hold_mod_press_key LALT TAB,
-            &kp TAB,
-            MOD_LALT,
-            MOD_LALT
-        )
+        tabber: MODMORPH {
+            compatible = "zmk,behavior-modmorph";
+            label = "Tabber";
+            hold = <&m_hold_mod_press_key LCTRL TAB>;
+            tap = <&kp TAB>;
+            from-mods = <MOD_LCTL>;
+            to-mods = <MOD_LCTL>;
+        };
+
+        swapper_win: MODMORPH {
+            compatible = "zmk,behavior-modmorph";
+            label = "Swapper Win";
+            hold = <&m_hold_mod_press_key LALT TAB>;
+            tap = <&kp TAB>;
+            from-mods = <MOD_LALT>;
+            to-mods = <MOD_LALT>;
+        };
     };
 
     combos {
