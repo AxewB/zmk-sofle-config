@@ -73,6 +73,14 @@
     };
 
     behaviors {
+        MACRO_TWO_PARAM(
+            m_hold_mod_press_key,
+            &macro_press
+                &macro_param_1to1 &kp PARAM_1
+            &macro_tap
+                &macro_param_2to1 &kp PARAM_2
+        )
+
         MODMORPH(
             tabber,
             &m_hold_mod_press_key LCTRL TAB,
