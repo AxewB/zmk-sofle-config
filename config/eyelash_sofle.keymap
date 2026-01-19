@@ -336,10 +336,10 @@
         gfu_layer { 
             bindings = < 
 
-&trans            &kp N1   &kp N2   &kp N3      &kp N4   &kp N5       &pad   &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &trans 
-&kp TAB           &kp  Q   &kp  W   &kp  E      &kp  R   &kp  T       &pad   &trans   &trans   &trans   &trans   &trans   &trans 
-&kp LSHIFT        &kp  A   &kp  S   &kp  D      &kp  F   &kp  G       &pad   &trans   &trans   &trans   &trans   &trans   &trans 
-&kp LEFT_CONTROL  &kp  Z   &kp  X   &kp  C      &kp  V   &kp  B       &pad   &trans   &trans   &trans   &trans   &trans   &trans  
+&trans            &kp N1   &kp N2   &kp N3      &kp N4   &kp N5       &trans   &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &trans 
+&kp TAB           &kp  Q   &kp  W   &kp  E      &kp  R   &kp  T       &trans   &trans   &trans   &trans   &trans   &trans   &trans 
+&kp LSHIFT        &kp  A   &kp  S   &kp  D      &kp  F   &kp  G       &trans   &trans   &trans   &trans   &trans   &trans   &trans 
+&kp LEFT_CONTROL  &kp  Z   &kp  X   &kp  C      &kp  V   &kp  B       &trans   &trans   &trans   &trans   &trans   &trans   &trans  
 &trans            &trans   &trans   &kp SPACE   &mo    &kp ESCAPE          &trans   &trans   &trans   &trans   &trans   &trans   
             >; 
 
