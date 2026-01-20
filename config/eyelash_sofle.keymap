@@ -6,62 +6,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-
-// keyboard keycodes
-// +--------------------full--ver---------------------+
-// | 1  2  3  4  5  6  ** | 7  | ** 8  9  10 11 12 13 |
-// | 14 15 16 17 18 19 ** | 20 | ** 21 22 23 24 25 26 |
-// | 27 28 29 30 31 32 ** | 33 | ** 34 35 36 37 38 39 |
-// | 40 41 42 43 44 45 ** | 46 | ** 47 48 49 50 51 52 |
-// | 53 ** 54 55 56 57 58 | 59 | 60 61 62 63 64 ** ** |
-// +--------------------------------------------------+
-//
-// 7, 20, 33, 46, 59 - dpad/stick
-// 53 - encoder
-
-// +------------------full--template------------------+
-// | __ __ __ __ __ __ ** | __ | ** __ __ __ __ __ __ |
-// | __ __ __ __ __ __ ** | __ | ** __ __ __ __ __ __ |
-// | __ __ __ __ __ __ ** | __ | ** __ __ __ __ __ __ |
-// | __ __ __ __ __ __ ** | __ | ** __ __ __ __ __ __ |
-// | __ ** __ __ __ __ __ | __ | __ __ __ __ __ ** ** |
-// +--------------------------------------------------+
-
-// +----------------short---template-------------+
-// | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-// | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-// | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-// | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-// | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-// +---------------------------------------------+
-
-// keycodes groups
-#define KC_LEFT_HAND    1  2  3  4  5  6  14 15 16 17 18 19 27 28 29 30 31 32 40 41 42 43 44 45
-#define KC_RIGHT_HAND   8  9  10 11 12 13 21 22 23 24 25 26 34 35 36 37 38 39 47 48 49 50 51 52
-#define KC_LEFT_THUMBS  54 55 56 57 58
-#define KC_RIGHT_THUMBS 60 61 62 63 64
-#define KC_STICK        7  20 33 46 59
-#define KC_ENCODER      53
-
-// mod combinations
-#define HYPER(key) LS(LC(LA(LG(key))))
-#define MEH(key) LS(LC(LA(key)))
-
-// layers
-#define DEF 0 // default layer
-#define GAM 1 // game layer
-#define GFN 2 // game function layer
-#define EDT 3 // editing (Krita, video editors)
-#define SYM 4 // symbols layer
-#define NAV 5 // navigation layer 
-#define NUM 6 // numbers layer 
-#define CMD 7 // MEH combinations
-#define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
-
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
@@ -76,375 +26,113 @@
     trigger-period-ms = <16>;
 };
 
+&soft_off { hold-time-ms = <2000>; };
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
         tap-ms = <100>;
     };
 
-
     behaviors {
-
-      hrm_r: home_row_mod_right {
-          compatible = "zmk,behavior-hold-tap";
-          bindings = <&kp &kp>;
-
-          #binding-cells = <2>;
-          flavor = "balanced";
-          require-prior-idle-ms = <90>;
-          quick-tap-ms = <135>;
-          tapping-term-ms = <220>;
-          hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 26 27 28 29 30 31 41 42 43 44 39 40 53 54 55 56 57 59 60 61 62 63 42 54>;
-          /* hold-trigger-key-positions = <KC_LEFT_HAND KC_LEFT_THUMBS KC_RIGHT_THUMBS KC_STICK KC_ENCODER>;  */
-          hold-trigger-on-release;
-      };
-
-      hrm_l: home_row_mod_left {
-          compatible = "zmk,behavior-hold-tap";
-          bindings = <&kp &kp>;
-
-          #binding-cells = <2>;
-          flavor = "balanced";
-          require-prior-idle-ms = <90>;
-          quick-tap-ms = <135>;
-          tapping-term-ms = <220>;
-          hold-trigger-on-release;
-          /* hold-trigger-key-positions = <KC_RIGHT_HAND KC_LEFT_THUMBS KC_RIGHT_THUMBS KC_STICK KC_ENCODER>;  */
-          hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63>;
-      };
-
-      /* swapper: swapper { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <0>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <200>; */
-      /*     quick-tap-ms = <0>; */
-      /*     bindings = <&kp TAB &kp LALT>; */
-      /*     display-name = "Alt-Tab Swapper"; */
-      /* }; */
-
-
-      /* tabber: tabber { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <0>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <180>; */
-      /*     bindings = <&kp TAB &mo NAV>; */
-      /*     display-name = "Tabber"; */
-      /* }; */
-
-
-      /* hold_bootloader: hold_bootloader { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <2>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&bootloader>; */
-      /*     display-name = "Delayed bootloader"; */
-      /* }; */
-      /**/
-      /* hold_sys_reset: hold_sys_reset { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <2>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&sys_reset>; */
-      /*     display-name = "Delayed sys reset"; */
-      /* }; */
-      /**/
-      /* hold_bt_clear_all: hold_bt_clear_all { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <2>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&bt BT_CLR_ALL>; */
-      /*     display-name = "CLR BT ALL"; */
-      /* }; */
-      /**/
-      /* hold_bt_clear: hold_bt_clear { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <2>;       // один параметр: номер профиля */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&bt BT_CLR>;  // &bt BT_CLR будет использовать аргумент */
-      /*     display-name = "CLR BT PROFILE"; */
-      /* }; */
     };
 
     combos {
         compatible = "zmk,combos";
 
-        lang_switch {
-            bindings = <&macro_lang_switch>;
-            key-positions = <15 16 17>;
-        };
-
-        undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <40 41>;
-        };
-
-        redo {
-            bindings = <&kp LC(Y)>;
-            key-positions = <41 42 40>;
-        };
-
-        copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <42 41>;
-        };
-
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <43 42>;
+        softoff {
+            bindings = <&soft_off>;
+            key-positions = <14 28 40>;
         };
     };
 
     macros {
-        // ALT + SHIFT lang switch
-        macro_lang_switch: macro_lang_switch {
+        SHIFT_MCLK: SHIFT_MCLK {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press
-                  &kp LSHIFT
-                  &kp LALT
-                  &macro_release
-                  &kp LSHIFT
-                  &kp LALT>;
-        };
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_press>,
+                <&mkp MB3>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT &mkp MB3>;
 
-        // Insert =>
-        /* sym_double_arrow: sym_double_arrow { */
-        /*     compatible = "zmk,behavior-macro"; */
-        /*     #binding-cells = <0>; */
-        /*     bindings = */
-        /*         <&macro_press */
-        /*           &kp EQUAL */
-        /*           &kp GT */
-        /*           &macro_release */
-        /*           &kp EQUAL */
-        /*           &kp GT>; */
-        /* }; */
-
-        // Insert ->
-        /* sym_single_arrow: sym_single_arrow { */
-        /*     compatible = "zmk,behavior-macro"; */
-        /*     #binding-cells = <0>; */
-        /*     bindings = */
-        /*         <&macro_press */
-        /*         &kp MINUS */
-        /*         &kp GT */
-        /*         &macro_release */
-        /*         &kp MINUS */
-        /*         &kp GT>; */
-        /* }; */
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers  = <NAV SYM>;
-            then-layer = <NUM>;
+            label = "SHIFT_MCLK";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        // id: 0
-        def_layer {
-            display-name = "DEF";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        layer0 {
             bindings = <
-            /*&1          &2               &3                     &4                 &5             &6         &STICK                   &7       &8                  &9                  &10                     &11                           &12*/
-              &trans      &kp N1           &kp N2                 &kp N3             &kp N4         &kp N5     &kp                      &kp N6   &kp N7              &kp N8              &kp N9                  &kp N0                        &kp BACKSPACE
-              &trans      &kp Q            &kp W                  &kp E              &kp R          &kp T      &kp DOWN                 &kp Y    &kp U               &kp I               &kp O                   &kp P                         &kp LBKT
-              &caps_word  &hrm_l LSHIFT A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_ALT D  &hrm_l LGUI F  &kp G      &kp C_PREV               &kp H    &hrm_r RIGHT_GUI J  &hrm_r RIGHT_ALT K  &hrm_r RIGHT_CONTROL L  &hrm_r RIGHT_SHIFT SEMICOLON  &kp SQT
-              &trans      &kp Z            &kp X                  &kp C              &kp V          &kp B      &kp C_NEXT               &kp N    &kp M               &kp COMMA           &kp DOT                 &kp FSLH                      &trans
-            /*&-----      &-----           &-----                 &-----             &-----         &-----     &-----                   &-----   &-----              &-----              &-----                  &-----                        &-----*/
-              &kp C_MUTE  &trans           &trans                 &mo NAV            &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE         &kp RET  &kp BSPC            &mo SYM             &trans                  &trans
+&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
+&kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            display-name = "LAYER0";
         };
 
-        // id: 1
-        // +----------------short---template-------------+
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-        // +---------------------------------------------+
-        gam_layer { 
-            display-name = "GAM"; 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
-            bindings = < 
-            /*&1                &2       &3       &4          &5       &6         &STICK   &7       &8         &9          &10      &11      &12*/
-              &trans            &kp N1   &kp N2   &kp N3      &kp N4   &kp N5     &trans   &trans   &trans     &trans      &trans   &trans   &trans
-              &kp TAB           &kp  Q   &kp  W   &kp E       &kp R    &kp  T     &trans   &trans   &trans     &trans      &trans   &trans   &trans
-              &kp LSHIFT        &kp  A   &kp  S   &kp D       &kp F    &kp  G     &trans   &trans   &trans     &trans      &trans   &trans   &trans
-              &kp LEFT_CONTROL  &kp  Z   &kp  X   &kp C       &kp V    &kp  B     &trans   &trans   &trans     &trans      &trans   &trans   &trans
-            /*&-----            &-----   &-----   &-----      &-----   &-----     &-----   &-----   &-----     &-----      &-----   &-----   &-----*/
-              &trans            &trans   &trans   &kp SPACE   &mo GFN  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &tog DEF
-            >; 
-        }; 
+        layer_1 {
+            bindings = <
+&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
+&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
+&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
+&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+            >;
 
-        // id: 2
-        // +----------------short---template-------------+
-        // | __ 6 7 8 9 0 ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-        // +---------------------------------------------+
-        gfn_layer { 
-            display-name = "GFN"; 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
-            bindings = < 
-            /*&1     &2     &3     &4        &5      &6       &STICK   &7       &8       &9       &10      &11      &12*/
-              &trans &kp N6 &kp N7 &kp N8    &kp N9  &kp N0   &trans   &trans   &trans   &trans   &trans   &trans   &trans
-              &trans &kp Y  &kp U  &kp I     &kp O   &kp P    &trans   &trans   &trans   &trans   &trans   &trans   &trans
-              &trans &kp H  &kp J  &kp K     &kp L   &kp SEMI &trans   &trans   &trans   &trans   &trans   &trans   &trans
-              &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &trans   &trans   &trans   &trans   &trans   &trans   &trans
-            /*&----- &----- &----- &-----    &-----  &-----   &-----   &-----   &-----   &-----   &-----   &-----   &-----*/
-              &trans &trans &trans &trans    &trans  &trans   &trans   &trans   &trans   &trans   &trans   &trans
-            >; 
-        }; 
-
-        // id: 3
-        // +----------------short---template-------------+
-        // | __  1  2  3  4  5   **  | **  __  __  __ __ __ __ |
-        // | TAB Q  W  E  R  T   **  | **  __  __  __ __ __ __ |
-        // | LS  A  S  D  F  G   **  | **  __  __  __ __ __ __ |
-        // | __  Z  X  C  V  B   **  | **  __  __  __ __ __ __ |
-        // | **  ** __ __ LC SPC ESC | RET BSP PSC __ __ ** ** |
-        // +---------------------------------------------+
-        edt_layer { 
-            display-name = "EDT"; 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
-            bindings = < 
-            /*&1         &2       &3       &4          &5         &6         &STICK   &7       &8         &9          &10      &11      &12*/
-              &trans     &kp N1   &kp N2   &kp N3      &kp N4     &kp N5     &trans   &trans   &trans     &trans      &trans   &trans   &trans
-              &kp TAB    &kp  Q   &kp  W   &kp E       &kp R      &kp T      &trans   &trans   &trans     &trans      &trans   &trans   &trans
-              &kp LSHIFT &kp  A   &kp  S   &kp D       &kp F      &kp G      &trans   &trans   &trans     &trans      &trans   &trans   &trans
-              &trans     &kp  Z   &kp  X   &kp C       &kp V      &kp B      &trans   &trans   &trans     &trans      &trans   &trans   &trans
-            /*&-----     &-----   &-----   &-----      &-----     &-----     &-----   &-----   &-----     &-----      &-----   &-----   &-----*/
-              &trans     &trans   &trans   &kp LCTRL   &kp SPACE  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &tog DEF
-            >; 
-        }; 
-
-        // id: 4
-        // +-------------------short---template-----------------+
-        // | __   __  __  __  __  __ ** | ** __  __  __  __  __ __ |
-        // | CAPS SW  TB  __  __  __ ** | ** HOM PGD PGU END __ __ |
-        // | __   TAB M2  M3  M1  __ ** | ** <-  \/  /\  ->  __ __ |
-        // | __   __  EDT GAM SCR __ ** | ** M4  __  __  M5  __ __ |
-        // | **   **  __  __  __  __ __ | __ DEL __  __  __  ** ** |
-        // +----------------------------------------------------+
-        nav_layer {
-            display-name = "NAV";
+            display-name = "layer1";
             sensor-bindings = <&scroll_encoder>;
-            bindings = <
-            /*&1            &2            &3            &4           &5           &6     &STICK           &7        &8         &9        &10       &11          &12*/
-              &trans        &trans        &trans        &trans       &trans       &trans &mmv MOVE_UP     &trans    &trans     &trans    &trans    &trans       &trans
-              &kp CAPSLOCK  &trans      &trans       &trans       &trans       &trans &mmv MOVE_DOWN   &kp HOME  &kp PG_DN  &kp PG_UP &kp END   &trans       &trans
-              &trans        &kp TAB       &mkp RCLK     &mkp MCLK    &mkp LCLK    &trans &mmv MOVE_LEFT   &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT &kp C_MENU   &trans
-              &trans        &tog EDT      &tog GAM      &kp PSCRN    &trans       &trans &mmv MOVE_RIGHT  &mkp MB4  &trans     &trans    &mkp MB5  &trans       &trans
-            /*&-----        &-----        &-----        &-----       &-----       &----- &-----           &-----    &-----     &-----    &-----    &-----       &-----*/
-              &trans        &mo SFT        &trans        &trans       &trans       &trans &mkp MB1         &trans    &kp DEL    &mo 3     &trans    &trans
-            >;
         };
 
-        // id: 5
-        // +---------------------------------------------+
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ =  {  [  (  _  ** | ** -  )  ]  }  +  ?  |
-        // | -> !  @  #  $  %  ** | ** ^  &  *  ~  `  => |
-        // | |  \  <  ;  ,  '  ** | ** "  .  :  >  /  __ |
-        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-        // +---------------------------------------------+
-        /* sym_layer { */
-        /*     display-name = "SYM"; */
-        /*     sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; */
-        /*     bindings = < */
-             /*&1                &2            &3         &4           &5            &6           &STICK   &7          &8          &9            &10       &11       &12*/ 
-        /*       &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans    &trans */
-        /*       &trans            &kp EQUAL     &kp LBRC   &kp LBKT     &kp LPAR      &kp UNDER    &trans   &kp MINUS   &kp RBRC    &kp RBKT      &kp RPAR  &kp PLUS  &kp QMARK */
-        /*       &trans &kp EXCL      &kp AT     &kp HASH     &kp DLLR      &kp PRCNT    &trans   &kp CARET   &kp AMPS    &kp STAR      &kp TILDE &kp GRAVE &trans */
-        /*       &kp PIPE          &kp BACKSLASH &kp LT     &kp SEMI     &kp COMMA     &kp SQT      &trans   &kp DQT     &kp DOT     &kp COLON     &kp GT    &kp SLASH &trans */
-             /*&-----            &-----        &-----     &-----       &-----        &-----       &-----   &-----      &-----      &-----        &-----    &-----    &-----*/ 
-        /*       &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans */
-        /*     >; */
-        /* }; */
-
-        // id: 6
-        // +---------------------short---template--------------------+
-        // | F13 F14 F15 F16 F17 F18 ** | ** F19 F20 F21 F22 F23 F24 |
-        // | F1  F2  F3  F4  F5  F6  ** | ** F7  F8  F9  F10 F11 F12 |
-        // | SPC 1   2   3   4   5   ** | ** 6   7   8   9   0   SPC |
-        // | __  ,   .   -   +   =   ** | ** =   +   -   .   ,   __  |
-        // | **  **  __  __  __  __  __ | __ __  __  __  __  **  **  |
-        // +---------------------------------------------------------+
-        num_layer {
-            display-name = "NUM";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        layer_2 {
             bindings = <
-            /*&1           &2          &3        &4          &5         &6          &STICK   &7          &8        &9         &10      &11        &12*/
-              &kp F13      &kp F14     &kp F15   &kp F16     &kp F17    &kp F18     &trans   &kp F19     &kp F20   &kp F21    &kp F22  &kp F23    &kp F24
-              &kp F1       &kp F2      &kp F3    &kp F4      &kp F5     &kp F6      &trans   &kp F7      &kp F8    &kp F9     &kp F10  &kp F11    &kp F12
-              &kp SPACE    &kp N1      &kp N2    &kp N3      &kp N4     &kp N5      &trans   &kp N6      &kp N7    &kp N8     &kp N9   &kp N0     &kp SPACE
-              &trans       &kp COMMA   &kp DOT   &kp MINUS   &kp PLUS   &kp EQUAL   &trans   &kp EQUAL   &kp PLUS  &kp MINUS  &kp DOT  &kp COMMA  &trans
-            /*&-----       &-----      &-----    &-----      &-----     &-----      &-----   &-----      &-----    &-----     &-----   &-----     &-----*/
-              &trans       &trans      &trans    &trans      &trans     &trans      &trans   &trans      &trans    &trans     &trans   &trans
+&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
+&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
+&trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
+&trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
+&trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
             >;
+
+            display-name = "layer2";
+            sensor-bindings = <&scroll_encoder>;
         };
 
-
-        // id: 7
-        /* cmd_layer {  */
-        /*     display-name = "CMD";  */
-        /*     sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;  */
-        /*     bindings = <  */
-               /*&1      &2     &3     &4     &5     &6     &STICK &7     &8     &9         &10      &11        &12*/ 
-        /*       MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS) */
-        /*       MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT) */
-        /*       &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT) */
-        /*       &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans */
-               /*&-----  &----- &----- &----- &----- &----- &----- &----- &----- &-----     &-----   &-----     &-----*/ 
-        /*       &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans */
-        /*     >;  */
-        /* };  */
-
-        // id: 8
-        soft_layer {
-            display-name = "SFT";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        layer_3 {
             bindings = <
-            /*&1                &2              &3              &4              &5              &6              &STICK   &7               &8               &9               &10               &11              &12*/
-              &bootloader  &sys_reset &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &sys_reset  &bootloader
-              &trans            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans   &bt BT_CLR 0 &bt BT_CLR 1 &bt BT_CLR 2 &bt BT_CLR 3  &bt BT_CLR 4 &bt BT_CLR_ALL
-              &trans            &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans   &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD   &rgb_ug RGB_OFF  &trans
-              &trans            &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &rgb_ug RGB_EFR  &trans
-            /*&-----            &-----          &-----          &-----          &-----          &-----          &-----   &-----           &-----           &-----           &-----            &-----           &-----*/
-              &trans            &trans          &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
+
+            display-name = "layer3";
+            sensor-bindings = <&scroll_encoder>;
         };
 
-//        template_layer { 
-//            display-name = "TMP"; 
-//            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
-//            bindings = < 
-//            /*&1     &2      &3     &4     &5     &6     &STICK &7     &8     &9     &10    &11    &12*/
-//              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-//              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-//              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-//              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-//            /*&----- &-----  &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &-----*/
-//              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-//            >; 
-//        }; 
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            display-name = "layer4";
+            sensor-bindings = <&scroll_encoder>;
+        };
     };
 };
+
