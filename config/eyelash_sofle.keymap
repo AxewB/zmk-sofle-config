@@ -218,30 +218,30 @@
         };
 
         // Insert =>
-        sym_double_arrow: sym_double_arrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press
-                  &kp EQUAL
-                  &kp GT
-                  &macro_release
-                  &kp EQUAL
-                  &kp GT>;
-        };
+        /* sym_double_arrow: sym_double_arrow { */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     bindings = */
+        /*         <&macro_press */
+        /*           &kp EQUAL */
+        /*           &kp GT */
+        /*           &macro_release */
+        /*           &kp EQUAL */
+        /*           &kp GT>; */
+        /* }; */
 
         // Insert ->
-        sym_single_arrow: sym_single_arrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press
-                &kp MINUS
-                &kp GT
-                &macro_release
-                &kp MINUS
-                &kp GT>;
-        };
+        /* sym_single_arrow: sym_single_arrow { */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     bindings = */
+        /*         <&macro_press */
+        /*         &kp MINUS */
+        /*         &kp GT */
+        /*         &macro_release */
+        /*         &kp MINUS */
+        /*         &kp GT>; */
+        /* }; */
     };
 
     conditional_layers {
@@ -354,7 +354,7 @@
               &trans        &kp TAB       &mkp RCLK     &mkp MCLK    &mkp LCLK    &trans &mmv MOVE_LEFT   &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT &kp C_MENU   &trans
               &trans        &tog EDT      &tog GAM      &kp PSCRN    &trans       &trans &mmv MOVE_RIGHT  &mkp MB4  &trans     &trans    &mkp MB5  &trans       &trans
             /*&-----        &-----        &-----        &-----       &-----       &----- &-----           &-----    &-----     &-----    &-----    &-----       &-----*/
-              &trans        &trans        &trans        &trans       &trans       &trans &mkp MB1         &trans    &kp DEL    &mo 3     &trans    &trans
+              &trans        &mo SFT        &trans        &trans       &trans       &trans &mkp MB1         &trans    &kp DEL    &mo 3     &trans    &trans
             >;
         };
 
@@ -366,19 +366,19 @@
         // | |  \  <  ;  ,  '  ** | ** "  .  :  >  /  __ |
         // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
         // +---------------------------------------------+
-        sym_layer {
-            display-name = "SYM";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            bindings = <
-            /*&1                &2            &3         &4           &5            &6           &STICK   &7          &8          &9            &10       &11       &12*/
-              &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans    &trans
-              &trans            &kp EQUAL     &kp LBRC   &kp LBKT     &kp LPAR      &kp UNDER    &trans   &kp MINUS   &kp RBRC    &kp RBKT      &kp RPAR  &kp PLUS  &kp QMARK
-              &sym_single_arrow &kp EXCL      &kp AT     &kp HASH     &kp DLLR      &kp PRCNT    &trans   &kp CARET   &kp AMPS    &kp STAR      &kp TILDE &kp GRAVE &sym_double_arrow
-              &kp PIPE          &kp BACKSLASH &kp LT     &kp SEMI     &kp COMMA     &kp SQT      &trans   &kp DQT     &kp DOT     &kp COLON     &kp GT    &kp SLASH &trans
-            /*&-----            &-----        &-----     &-----       &-----        &-----       &-----   &-----      &-----      &-----        &-----    &-----    &-----*/
-              &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans
-            >;
-        };
+        /* sym_layer { */
+        /*     display-name = "SYM"; */
+        /*     sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; */
+        /*     bindings = < */
+        /*     /*&1                &2            &3         &4           &5            &6           &STICK   &7          &8          &9            &10       &11       &12*/ */
+        /*       &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans    &trans */
+        /*       &trans            &kp EQUAL     &kp LBRC   &kp LBKT     &kp LPAR      &kp UNDER    &trans   &kp MINUS   &kp RBRC    &kp RBKT      &kp RPAR  &kp PLUS  &kp QMARK */
+        /*       &trans &kp EXCL      &kp AT     &kp HASH     &kp DLLR      &kp PRCNT    &trans   &kp CARET   &kp AMPS    &kp STAR      &kp TILDE &kp GRAVE &trans */
+        /*       &kp PIPE          &kp BACKSLASH &kp LT     &kp SEMI     &kp COMMA     &kp SQT      &trans   &kp DQT     &kp DOT     &kp COLON     &kp GT    &kp SLASH &trans */
+        /*     /*&-----            &-----        &-----     &-----       &-----        &-----       &-----   &-----      &-----      &-----        &-----    &-----    &-----*/ */
+        /*       &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans */
+        /*     >; */
+        /* }; */
 
         // id: 6
         // +---------------------short---template--------------------+
@@ -404,19 +404,19 @@
 
 
         // id: 7
-        cmd_layer { 
-            display-name = "CMD"; 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
-            bindings = < 
-              /*&1      &2     &3     &4     &5     &6     &STICK &7     &8     &9         &10      &11        &12*/
-              MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS)
-              MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT)
-              &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT)
-              &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans
-              /*&-----  &----- &----- &----- &----- &----- &----- &----- &----- &-----     &-----   &-----     &-----*/
-              &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans
-            >; 
-        }; 
+        /* cmd_layer {  */
+        /*     display-name = "CMD";  */
+        /*     sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;  */
+        /*     bindings = <  */
+        /*       /*&1      &2     &3     &4     &5     &6     &STICK &7     &8     &9         &10      &11        &12*/ */
+        /*       MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS) */
+        /*       MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT) */
+        /*       &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT) */
+        /*       &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans */
+        /*       /*&-----  &----- &----- &----- &----- &----- &----- &----- &----- &-----     &-----   &-----     &-----*/ */
+        /*       &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans */
+        /*     >;  */
+        /* };  */
 
         // id: 8
         soft_layer {
