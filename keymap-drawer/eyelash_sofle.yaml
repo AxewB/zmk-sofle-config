@@ -326,5 +326,15 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
+- p: [15, 16, 17]
+  k: '&macro_lang_switch'
+- p: [40, 41]
+  k: Ctl+Z
+- p: [41, 42, 40]
+  k: Ctl+Y
+- p: [42, 41]
+  k: Ctl+C
+- p: [43, 42]
+  k: Ctl+V
 - p: [14, 28, 40]
   k: '&soft_off'
