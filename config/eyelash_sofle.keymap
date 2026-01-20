@@ -140,39 +140,75 @@
 
       hold_bootloader: hold_bootloader {
           compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <0>;
+          #binding-cells = <2>;
           flavor = "hold-preferred";
           tapping-term-ms = <3000>;
-          bindings = <&trans>, <&bootloader>;
+          bindings = <&trans &bootloader>;
           display-name = "Delayed bootloader";
       };
 
       hold_sys_reset: hold_sys_reset {
           compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <0>;
+          #binding-cells = <2>;
           flavor = "hold-preferred";
           tapping-term-ms = <3000>;
-          bindings = <&trans>, <&sys_reset>;
+          bindings = <&trans &sys_reset>;
           display-name = "Delayed sys reset";
       };
 
       hold_bt_clear_all: hold_bt_clear_all {
           compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <0>;
+          #binding-cells = <2>;
           flavor = "hold-preferred";
           tapping-term-ms = <3000>;
-          bindings = <&trans>, <&bt BT_CLR_ALL>;
+          bindings = <&trans &bt BT_CLR_ALL>;
           display-name = "CLR BT ALL";
       };
 
       hold_bt_clear: hold_bt_clear {
           compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <1>;       // один параметр: номер профиля
+          #binding-cells = <2>;       // ZMK ожидает 2 аргумента
           flavor = "hold-preferred";
           tapping-term-ms = <3000>;
-          bindings = <&trans>, <&bt BT_CLR>;  // &bt BT_CLR будет использовать аргумент
+          bindings = <&trans &bt BT_CLR>;  // первый — tap, второй — hold
           display-name = "CLR BT PROFILE";
       };
+
+      /* hold_bootloader: hold_bootloader { */
+      /*     compatible = "zmk,behavior-hold-tap"; */
+      /*     #binding-cells = <2>; */
+      /*     flavor = "hold-preferred"; */
+      /*     tapping-term-ms = <3000>; */
+      /*     bindings = <&trans>, <&bootloader>; */
+      /*     display-name = "Delayed bootloader"; */
+      /* }; */
+      /**/
+      /* hold_sys_reset: hold_sys_reset { */
+      /*     compatible = "zmk,behavior-hold-tap"; */
+      /*     #binding-cells = <2>; */
+      /*     flavor = "hold-preferred"; */
+      /*     tapping-term-ms = <3000>; */
+      /*     bindings = <&trans>, <&sys_reset>; */
+      /*     display-name = "Delayed sys reset"; */
+      /* }; */
+      /**/
+      /* hold_bt_clear_all: hold_bt_clear_all { */
+      /*     compatible = "zmk,behavior-hold-tap"; */
+      /*     #binding-cells = <2>; */
+      /*     flavor = "hold-preferred"; */
+      /*     tapping-term-ms = <3000>; */
+      /*     bindings = <&trans>, <&bt BT_CLR_ALL>; */
+      /*     display-name = "CLR BT ALL"; */
+      /* }; */
+      /**/
+      /* hold_bt_clear: hold_bt_clear { */
+      /*     compatible = "zmk,behavior-hold-tap"; */
+      /*     #binding-cells = <2>;       // один параметр: номер профиля */
+      /*     flavor = "hold-preferred"; */
+      /*     tapping-term-ms = <3000>; */
+      /*     bindings = <&trans>, <&bt BT_CLR>;  // &bt BT_CLR будет использовать аргумент */
+      /*     display-name = "CLR BT PROFILE"; */
+      /* }; */
     };
 
     combos {
