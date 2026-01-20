@@ -197,69 +197,101 @@
             >;
         };
 
-        layer0 {
-            bindings = <
-&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-&kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
-            >;
+        gam_layer { 
+            display-name = "GAM"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+              &trans            &kp N1   &kp N2   &kp N3      &kp N4   &kp N5     &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &kp TAB           &kp  Q   &kp  W   &kp E       &kp R    &kp  T     &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &kp LSHIFT        &kp  A   &kp  S   &kp D       &kp F    &kp  G     &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &kp LEFT_CONTROL  &kp  Z   &kp  X   &kp C       &kp V    &kp  B     &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &trans            &trans   &trans   &kp SPACE   &mo GFN  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &tog DEF
+            >; 
+        }; 
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "LAYER0";
+        gfn_layer { 
+            display-name = "GFN"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+              &trans &kp N6 &kp N7 &kp N8    &kp N9  &kp N0   &trans   &trans   &trans   &trans   &trans   &trans   &trans
+              &trans &kp Y  &kp U  &kp I     &kp O   &kp P    &trans   &trans   &trans   &trans   &trans   &trans   &trans
+              &trans &kp H  &kp J  &kp K     &kp L   &kp SEMI &trans   &trans   &trans   &trans   &trans   &trans   &trans
+              &trans &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &trans   &trans   &trans   &trans   &trans   &trans   &trans
+              &trans &trans &trans &trans    &trans  &trans   &trans   &trans   &trans   &trans   &trans   &trans
+            >; 
+        }; 
+
+        edt_layer { 
+            display-name = "EDT"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+              &trans     &kp N1   &kp N2   &kp N3      &kp N4     &kp N5     &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &kp TAB    &kp  Q   &kp  W   &kp E       &kp R      &kp T      &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &kp LSHIFT &kp  A   &kp  S   &kp D       &kp F      &kp G      &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &trans     &kp  Z   &kp  X   &kp C       &kp V      &kp B      &trans   &trans   &trans     &trans      &trans   &trans   &trans
+              &trans     &trans   &trans   &kp LCTRL   &kp SPACE  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &tog DEF
+            >; 
+        }; 
+
+        nav_layer {
+            display-name = "NAV";
+            sensor-bindings = <&scroll_encoder>;
+            bindings = <
+              &trans        &trans        &trans        &trans       &trans       &trans &mmv MOVE_UP     &trans    &trans     &trans    &trans    &trans       &trans
+              &kp CAPSLOCK  &trans      &trans       &trans       &trans       &trans &mmv MOVE_DOWN   &kp HOME  &kp PG_DN  &kp PG_UP &kp END   &trans       &trans
+              &trans        &kp TAB       &mkp RCLK     &mkp MCLK    &mkp LCLK    &trans &mmv MOVE_LEFT   &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT &kp C_MENU   &trans
+              &trans        &tog EDT      &tog GAM      &kp PSCRN    &trans       &trans &mmv MOVE_RIGHT  &mkp MB4  &trans     &trans    &mkp MB5  &trans       &trans
+              &trans        &mo SFT        &trans        &trans       &trans       &trans &mkp MB1         &trans    &kp DEL    &mo 3     &trans    &trans
+            >;
         };
 
-        layer_1 {
+        sym_layer {
+            display-name = "SYM";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+              &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans    &trans
+              &trans            &kp EQUAL     &kp LBRC   &kp LBKT     &kp LPAR      &kp UNDER    &trans   &kp MINUS   &kp RBRC    &kp RBKT      &kp RPAR  &kp PLUS  &kp QMARK
+              &trans &kp EXCL      &kp AT     &kp HASH     &kp DLLR      &kp PRCNT    &trans   &kp CARET   &kp AMPS    &kp STAR      &kp TILDE &kp GRAVE &trans
+              &kp PIPE          &kp BACKSLASH &kp LT     &kp SEMI     &kp COMMA     &kp SQT      &trans   &kp DQT     &kp DOT     &kp COLON     &kp GT    &kp SLASH &trans
+              &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans
             >;
-
-            display-name = "layer1";
-            sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_2 {
+        num_layer {
+            display-name = "NUM";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
-&trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
+              &kp F13      &kp F14     &kp F15   &kp F16     &kp F17    &kp F18     &trans   &kp F19     &kp F20   &kp F21    &kp F22  &kp F23    &kp F24
+              &kp F1       &kp F2      &kp F3    &kp F4      &kp F5     &kp F6      &trans   &kp F7      &kp F8    &kp F9     &kp F10  &kp F11    &kp F12
+              &kp SPACE    &kp N1      &kp N2    &kp N3      &kp N4     &kp N5      &trans   &kp N6      &kp N7    &kp N8     &kp N9   &kp N0     &kp SPACE
+              &trans       &kp COMMA   &kp DOT   &kp MINUS   &kp PLUS   &kp EQUAL   &trans   &kp EQUAL   &kp PLUS  &kp MINUS  &kp DOT  &kp COMMA  &trans
+              &trans       &trans      &trans    &trans      &trans     &trans      &trans   &trans      &trans    &trans     &trans   &trans
             >;
-
-            display-name = "layer2";
-            sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_3 {
+
+        cmd_layer { 
+            display-name = "CMD"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+              MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS)
+              MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT)
+              &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT)
+              &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans
+              &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans
+            >; 
+        }; 
+
+        soft_layer {
+            display-name = "SFT";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+              &bootloader  &sys_reset &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &sys_reset  &bootloader
+              &trans            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans   &bt BT_CLR 0 &bt BT_CLR 1 &bt BT_CLR 2 &bt BT_CLR 3  &bt BT_CLR 4 &bt BT_CLR_ALL
+              &trans            &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans   &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD   &rgb_ug RGB_OFF  &trans
+              &trans            &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &rgb_ug RGB_EFR  &trans
+              &trans            &trans          &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &trans
             >;
-
-            display-name = "layer3";
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-
-            display-name = "layer4";
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
