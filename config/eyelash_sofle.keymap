@@ -58,11 +58,12 @@
 #define GAM 1 // game layer
 #define GFN 2 // game function layer
 #define EDT 3 // editing (Krita, video editors)
-#define SYM 4 // symbols layer
-#define NAV 5 // navigation layer 
-#define NUM 6 // numbers layer 
-#define CMD 7 // MEH combinations
-#define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
+#define NAV 4 // navigation layer 
+#define SYM 5 // symbols layer
+#define ALT 6 // navigation layer 
+#define NUM 7 // numbers layer 
+#define CMD 8 // MEH combinations
+#define SFT 9 // soft functions layer (underglow, bluetooth, etc.)
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -187,17 +188,18 @@
         compatible = "zmk,keymap";
 
 
+        // id: 0
         def_layer {
             display-name = "DEF";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1          &2               &3                     &4                 &5             &6         &STICK                           &7       &8                  &9                  &10                     &11                           &12*/
-              &trans      &kp N1           &kp N2                 &kp N3             &kp N4         &kp N5     &kp LA(UP)                       &kp N6   &kp N7              &kp N8              &kp N9                  &kp N0                        &kp BACKSPACE
-              &trans      &kp Q            &kp W                  &kp E              &kp R          &kp T      &kp LA(DOWN)                     &kp Y    &kp U               &kp I               &kp O                   &kp P                         &kp LBKT
-              &caps_word  &hrm_l LSHIFT A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_ALT D  &hrm_l LGUI F  &kp G      &kp C_PREV                       &kp H    &hrm_r RIGHT_GUI J  &hrm_r RIGHT_ALT K  &hrm_r RIGHT_CONTROL L  &hrm_r RIGHT_SHIFT SEMICOLON  &kp SQT
-              &trans      &kp Z            &kp X                  &kp C              &kp V          &kp B      &kp C_NEXT                       &kp N    &kp M               &kp COMMA           &kp DOT                 &kp FSLH                      &trans
-            /*&-----      &-----           &-----                 &-----             &-----         &-----     &-----                           &-----   &-----              &-----              &-----                  &-----                        &-----*/
-              &kp C_MUTE  &trans           &trans                 &trans             &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE                 &kp RET  &kp BSPC            &trans              &trans                  &trans
+            /*&1          &2               &3                     &4                 &5             &6         &STICK            &7       &8                  &9                  &10                     &11                           &12*/
+              &trans      &kp N1           &kp N2                 &kp N3             &kp N4         &kp N5     &kp LA(UP)        &kp N6   &kp N7              &kp N8              &kp N9                  &kp N0                        &kp BACKSPACE
+              &trans      &kp Q            &kp W                  &kp E              &kp R          &kp T      &kp LA(DOWN)      &kp Y    &kp U               &kp I               &kp O                   &kp P                         &kp LBKT
+              &caps_word  &hrm_l LSHIFT A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_ALT D  &hrm_l LGUI F  &kp G      &kp C_PREV        &kp H    &hrm_r RIGHT_GUI J  &hrm_r RIGHT_ALT K  &hrm_r RIGHT_CONTROL L  &hrm_r RIGHT_SHIFT SEMICOLON  &kp SQT
+              &trans      &kp Z            &kp X                  &kp C              &kp V          &kp B      &kp C_NEXT        &kp N    &kp M               &kp COMMA           &kp DOT                 &kp FSLH                      &trans
+            /*&-----      &-----           &-----                 &-----             &-----         &-----     &-----            &-----   &-----              &-----              &-----                  &-----                        &-----*/
+              &kp C_MUTE  &mo SFT          &to CMD                &to NAV            &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE  &kp RET  &kp BSPC            &to SYM             &to ALT                 &mo SFT
             >;
         };
 
@@ -279,13 +281,13 @@
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
-            /*&1           &2       &3        &4        &5        &6     &STICK          &7        &8        &9        &10       &11        &12*/
-              &trans       &trans   &trans    &trans    &trans    &trans &mmv MOVE_UP    &trans    &trans    &trans    &trans    &trans     &trans
-              &kp CAPSLOCK &trans   &trans    &trans    &trans    &trans &mmv MOVE_DOWN  &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans     &trans
-              &trans       &kp TAB  &mkp RCLK &mkp MCLK &mkp LCLK &trans &mmv MOVE_LEFT  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp C_MENU &trans
-              &tog SFT     &tog EDT &tog GAM  &kp PSCRN &trans    &trans &mmv MOVE_RIGHT &mkp MB4  &trans    &trans    &mkp MB5  &trans     &trans
-            /*&-----       &-----   &-----    &-----    &-----    &----- &-----          &-----    &-----    &-----    &-----    &-----     &-----*/
-              &trans       &trans   &trans    &trans    &trans    &trans &mkp MB1        &trans    &kp DEL   &trans    &trans    &trans
+            /*&1           &2           &3        &4        &5            &6     &STICK          &7        &8        &9        &10       &11        &12*/
+              &trans       &trans       &trans    &trans    &trans        &trans &mmv MOVE_UP    &trans    &trans    &trans    &trans    &trans     &trans
+              &kp CAPSLOCK &trans       &trans    &trans    &trans        &trans &mmv MOVE_DOWN  &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans     &trans
+              &trans       &kp TAB      &mkp RCLK &mkp MCLK &mkp LCLK     &trans &mmv MOVE_LEFT  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp C_MENU &trans
+              &trans       &tog SFT     &tog EDT  &tog GAM  &kp PSCRN     &trans &mmv MOVE_RIGHT &mkp MB4  &trans    &trans    &mkp MB5  &trans     &trans
+            /*&-----       &-----       &-----    &-----    &-----        &----- &-----          &-----    &-----    &-----    &-----    &-----     &-----*/
+              &trans       &trans       &trans    &trans    &trans        &trans &mkp MB1        &trans    &kp DEL   &trans    &trans    &trans
             >;
         };
 
@@ -312,6 +314,28 @@
         };
 
         // id: 6
+        // +----------------short---template-------------+
+        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
+        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
+        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
+        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
+        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
+        // +---------------------------------------------+
+        alt_layer { 
+            display-name = "ALT"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+            /*&1     &2      &3     &4     &5     &6     &STICK &7     &8     &9     &10    &11    &12*/
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            /*&----- &-----  &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &-----*/
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >; 
+        }; 
+
+        // id: 7
         // +---------------------short---template--------------------+
         // | F13 F14 F15 F16 F17 F18 ** | ** F19 F20 F21 F22 F23 F24 |
         // | F1  F2  F3  F4  F5  F6  ** | ** F7  F8  F9  F10 F11 F12 |
@@ -328,6 +352,32 @@
               &kp SPACE &kp N1    &kp N2  &kp N3    &kp N4   &kp N5    &trans &kp N6    &kp N7   &kp N8    &kp N9  &kp N0    &kp SPACE
               &trans    &kp COMMA &kp DOT &kp MINUS &kp PLUS &kp EQUAL &trans &kp EQUAL &kp PLUS &kp MINUS &kp DOT &kp COMMA &trans
               &trans    &trans    &trans  &trans    &trans   &trans    &trans &trans    &trans   &trans    &trans  &trans
+            >;
+        };
+
+        // id: 8
+        cmd_layer { 
+            display-name = "CMD"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+              MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS)
+              MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT)
+              &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT)
+              &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans
+              &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans
+            >; 
+        }; 
+
+        // id: 9
+        soft_layer {
+            display-name = "SFT";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            bindings = <
+              &bootloader  &sys_reset &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &sys_reset  &bootloader
+              &trans            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans   &bt BT_CLR 0 &bt BT_CLR 1 &bt BT_CLR 2 &bt BT_CLR 3  &bt BT_CLR 4 &bt BT_CLR_ALL
+              &trans            &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans   &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD   &rgb_ug RGB_OFF  &trans
+              &trans            &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &rgb_ug RGB_EFR  &trans
+              &trans            &trans          &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &trans
             >;
         };
     };
