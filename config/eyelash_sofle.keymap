@@ -211,11 +211,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&kp LEFT_ALT>,
+                <&kp LSHIFT>,
+                <&kp LALT>,
                 <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&kp LEFT_ALT>,
+                <&kp LSHIFT>,
+                <&kp LALT>
         };
 
         // Insert =>
@@ -228,7 +228,7 @@
                 <&kp GT>,
                 <&macro_release>,
                 <&kp EQUAL>,
-                <&kp GT>,
+                <&kp GT>
         };
 
         // Insert ->
@@ -237,11 +237,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp MINUS >, 
-                <&kp GT >, 
+                <&kp MINUS>, 
+                <&kp GT>, 
                 <&macro_release>,
-                <&kp MINUS >, 
-                <&kp GT >, 
+                <&kp MINUS>, 
+                <&kp GT>
         };
     };
 
