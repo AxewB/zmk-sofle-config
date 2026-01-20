@@ -39,12 +39,12 @@
 // +---------------------------------------------+
 
 // keycodes groups
-#define KC_LEFT_HAND 1 2 3 4 5 6 14 15 16 17 18 19 27 28 29 30 31 32 40 41 42 43 44 45
-#define KC_RIGHT_HAND 8 9 10 11 12 13 21 22 23 24 25 26 34 35 36 37 38 39 47 48 49 50 51 52
-#define KC_LEFT_THUMBS 54 55 56 57 58
+#define KC_LEFT_HAND    1  2  3  4  5  6  14 15 16 17 18 19 27 28 29 30 31 32 40 41 42 43 44 45
+#define KC_RIGHT_HAND   8  9  10 11 12 13 21 22 23 24 25 26 34 35 36 37 38 39 47 48 49 50 51 52
+#define KC_LEFT_THUMBS  54 55 56 57 58
 #define KC_RIGHT_THUMBS 60 61 62 63 64
-#define KC_STICK 7 20 33 46 59
-#define KC_ENCODER 53
+#define KC_STICK        7  20 33 46 59
+#define KC_ENCODER      53
 
 // mod combinations
 #define HYPER(key) LS(LC(LA(LG(key))))
@@ -60,27 +60,6 @@
 #define NUM 6 // numbers layer 
 #define CMD 7 // MEH combinations
 #define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
-
-// behavior macros
-#define DELAY_HOLD(name, term, tap, hold, display) \
-    name: name { \
-        compatible = "zmk,behavior-hold-tap"; \
-        #binding-cells = <0>; \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <term>; \
-        bindings = <&tap>, <&hold>; \
-        display-name = display; \
-    };
-
-#define DELAY_HOLD_PARAM(name, term, tap, hold, display) \
-    name: name { \
-        compatible = "zmk,behavior-hold-tap"; \
-        #binding-cells = <1>; \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <term>; \
-        bindings = <&tap>, <&hold>; \
-        display-name = display; \
-    };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -108,6 +87,7 @@
 
 
     behaviors {
+
       hrm_r: home_row_mod_right {
           compatible = "zmk,behavior-hold-tap";
           label = "HMR";
@@ -138,46 +118,61 @@
           hold-trigger-key-positions = <KC_RIGHT_HAND KC_LEFT_THUMBS KC_RIGHT_THUMBS KC_STICK KC_ENCODER>; 
       };
 
-      DELAY_HOLD(hold_bootloader, 3000, trans, bootloader, "Delayed bootloader")
-      DELAY_HOLD(hold_sys_reset, 3000, trans, sys_reset, "Delayed sys reset")
-      DELAY_HOLD(hold_bt_clear_all, 3000, trans, bt BT_CLR_ALL, "CLR BT ALL")
-      DELAY_HOLD_PARAM(hold_bt_clear, 3000, trans, bt BT_CLR, "CLR BT PROFILE")
+      swapper: swapper {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <0>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <200>;
+          quick-tap-ms = <0>;
+          bindings = <&kp TAB &kp LALT>;
+          display-name = "Alt-Tab Swapper";
+      };
 
-      /* hold_bootloader: hold_bootloader { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <0>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&bootloader>; */
-      /*     display-name = "Delayed bootloader"; */
-      /* }; */
-      /**/
-      /* hold_sys_reset: hold_sys_reset { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <0>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&sys_reset>; */
-      /*     display-name = "Delayed sys reset"; */
-      /* }; */
-      /**/
-      /* hold_bt_clear_all: hold_bt_clear_all { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <0>; */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&bt BT_CLR_ALL>; */
-      /*     display-name = "CLR BT ALL"; */
-      /* }; */
-      /**/
-      /* hold_bt_clear: hold_bt_clear { */
-      /*     compatible = "zmk,behavior-hold-tap"; */
-      /*     #binding-cells = <1>;       // один параметр: номер профиля */
-      /*     flavor = "hold-preferred"; */
-      /*     tapping-term-ms = <3000>; */
-      /*     bindings = <&trans>, <&bt BT_CLR>;  // &bt BT_CLR будет использовать аргумент */
-      /*     display-name = "CLR BT PROFILE"; */
-      /* }; */
+
+      tabber: tabber {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <0>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <180>;
+          bindings = <&kp TAB &mo NAV>;
+          display-name = "Tabber";
+      };
+
+      hold_bootloader: hold_bootloader {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <0>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <3000>;
+          bindings = <&trans>, <&bootloader>;
+          display-name = "Delayed bootloader";
+      };
+
+      hold_sys_reset: hold_sys_reset {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <0>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <3000>;
+          bindings = <&trans>, <&sys_reset>;
+          display-name = "Delayed sys reset";
+      };
+
+      hold_bt_clear_all: hold_bt_clear_all {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <0>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <3000>;
+          bindings = <&trans>, <&bt BT_CLR_ALL>;
+          display-name = "CLR BT ALL";
+      };
+
+      hold_bt_clear: hold_bt_clear {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <1>;       // один параметр: номер профиля
+          flavor = "hold-preferred";
+          tapping-term-ms = <3000>;
+          bindings = <&trans>, <&bt BT_CLR>;  // &bt BT_CLR будет использовать аргумент
+          display-name = "CLR BT PROFILE";
+      };
     };
 
     combos {
@@ -210,16 +205,17 @@
     };
 
     macros {
+        // ALT + SHIFT lang switch
         macro_lang_switch: macro_lang_switch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_SHIFT &kp LEFT_ALT>,
+                <&kp LEFT_SHIFT>
+                <&kp LEFT_ALT>,
                 <&macro_release>,
-                <&kp LC &kp LEFT_ALT>;
-
-            label = "MACRO_LANG_SWICTH";
+                <&kp LEFT_SHIFT>
+                <&kp LEFT_ALT>,
         };
 
         // Insert =>
@@ -228,12 +224,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp EQUAL >, // = 
-                <&kp LS(DOT) >, // >
+                <&kp EQUAL>,
+                <&kp GT>,
                 <&macro_release>,
-                <&kp EQUAL >, // = 
-                <&kp LS(DOT) >, // >
-
+                <&kp EQUAL>,
+                <&kp GT>,
         };
 
         // Insert ->
@@ -242,11 +237,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp MINUS >, // - 
-                <&kp LSHIFT &kp DOT >, // >
+                <&kp MINUS >, 
+                <&kp GT >, 
                 <&macro_release>,
-                <&kp MINUS >, // - 
-                <&kp LSHIFT &kp DOT >, // >
+                <&kp MINUS >, 
+                <&kp GT >, 
         };
     };
 
@@ -257,7 +252,6 @@
             then-layer = <NUM>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -295,7 +289,7 @@
               &kp LSHIFT        &kp  A   &kp  S   &kp D       &kp F    &kp  G     &trans   &trans   &trans     &trans      &trans   &trans   &trans
               &kp LEFT_CONTROL  &kp  Z   &kp  X   &kp C       &kp V    &kp  B     &trans   &trans   &trans     &trans      &trans   &trans   &trans
             /*&-----            &-----   &-----   &-----      &-----   &-----     &-----   &-----   &-----     &-----      &-----   &-----   &-----*/
-              &trans            &trans   &trans   &kp SPACE   &mo GFN  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &trans
+              &trans            &trans   &trans   &kp SPACE   &mo GFN  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &tog DEF
             >; 
         }; 
 
@@ -329,7 +323,7 @@
         // | __  Z  X  C  V  B   **  | **  __  __  __ __ __ __ |
         // | **  ** __ __ LC SPC ESC | RET BSP PSC __ __ ** ** |
         // +---------------------------------------------+
-        edit_layer { 
+        edt_layer { 
             display-name = "EDT"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
             bindings = < 
@@ -339,22 +333,29 @@
               &kp LSHIFT &kp  A   &kp  S   &kp D       &kp F      &kp G      &trans   &trans   &trans     &trans      &trans   &trans   &trans
               &trans     &kp  Z   &kp  X   &kp C       &kp V      &kp B      &trans   &trans   &trans     &trans      &trans   &trans   &trans
             /*&-----     &-----   &-----   &-----      &-----     &-----     &-----   &-----   &-----     &-----      &-----   &-----   &-----*/
-              &trans     &trans   &trans   &kp LCTRL   &mo SPACE  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &trans
+              &trans     &trans   &trans   &kp LCTRL   &kp SPACE  &kp ESC    &trans   &kp RET  &kp BSPC   &kp PSCRN   &trans   &tog DEF
             >; 
         }; 
 
         // id: 4
+        // +-------------------short---template-----------------+
+        // | __   __  __  __  __  __ ** | ** __  __  __  __  __ __ |
+        // | CAPS SW  TB  __  __  __ ** | ** HOM PGD PGU END __ __ |
+        // | __   TAB M2  M3  M1  __ ** | ** <-  \/  /\  ->  __ __ |
+        // | __   __  EDT GAM SCR __ ** | ** M4  __  __  M5  __ __ |
+        // | **   **  __  __  __  __ __ | __ DEL __  __  __  ** ** |
+        // +----------------------------------------------------+
         nav_layer {
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
-            /*&1            &2       &3              &4                &5          &6        &STICK                  &7        &8         &9         &10        &11      &12*/
-              &trans        &trans   &trans          &trans            &trans      &trans    &mmv MOVE_UP            &trans    &trans     &trans     &trans     &trans   &trans
-              &trans        &kp DEL  &mkp LCLK       &mkp MCLK         &mkp RCLK   &trans    &mmv MOVE_DOWN          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans   &trans
-              &kp CAPSLOCK  &kp TAB  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans    &mmv MOVE_LEFT          &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans   &trans
-              &trans        &trans   &trans          &kp C_MENU        &trans      &trans    &mmv MOVE_RIGHT         &mkp MB4  &trans     &trans     &mkp MB5   &trans   &trans
-            /*&-----        &-----   &-----          &-----            &-----      &-----    &-----                  &-----    &-----     &-----     &-----     &-----   &-----*/
-              &trans        &trans   &trans          &trans            &trans      &trans    &mkp MB1                &trans    &trans     &mo 3      &trans     &trans
+            /*&1            &2            &3            &4           &5           &6     &STICK           &7        &8         &9        &10       &11          &12*/
+              &trans        &trans        &trans        &trans       &trans       &trans &mmv MOVE_UP     &trans    &trans     &trans    &trans    &trans       &trans
+              &kp CAPSLOCK  &swapper      &tabber       &trans       &trans       &trans &mmv MOVE_DOWN   &kp HOME  &kp PG_DN  &kp PG_UP &kp END   &trans       &trans
+              &trans        &kp TAB       &mkp RCLK     &mkp MCLK    &mkp LCLK    &trans &mmv MOVE_LEFT   &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT &kp C_MENU   &trans
+              &trans        &tog EDT      &tog GAM      &kp PSCRN    &trans       &trans &mmv MOVE_RIGHT  &mkp MB4  &trans     &trans    &mkp MB5  &trans       &trans
+            /*&-----        &-----        &-----        &-----       &-----       &----- &-----           &-----    &-----     &-----    &-----    &-----       &-----*/
+              &trans        &trans        &trans        &trans       &trans       &trans &mkp MB1         &trans    &kp DEL    &mo 3     &trans    &trans
             >;
         };
 
@@ -370,12 +371,12 @@
             display-name = "SYM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1                &2            &3         &4           &5            &6           &STICK   &7          &8          &9            &10       &11           &12*/
-              &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans        &trans
-              &trans            &kp EQUAL     &kp LBRC   &kp LBKT     &kp LPAR      &kp UNDER    &trans   &kp MINUS   &kp RBRC    &kp RBKT      &kp RPAR  &kp PLUS      &kp QMARK
-              &sym_single_arrow &kp EXCL      &kp AT     &kp HASH     &kp DLLR      &kp PRCNT    &trans   &kp CARET   &kp AMPS    &kp STAR      &kp       &kp           &sym_double_arrow
-              &kp PIPE          &kp BACKSLASH &kp LT     &kp SEMI     &kp COMMA     &kp SQT      &trans   &kp DQT     &kp DOT     &kp COLON     &kp GT    &kp SLASH     &trans
-            /*&-----            &-----        &-----     &-----       &-----        &-----       &-----   &-----      &-----      &-----        &-----    &-----        &-----*/
+            /*&1                &2            &3         &4           &5            &6           &STICK   &7          &8          &9            &10       &11       &12*/
+              &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans    &trans
+              &trans            &kp EQUAL     &kp LBRC   &kp LBKT     &kp LPAR      &kp UNDER    &trans   &kp MINUS   &kp RBRC    &kp RBKT      &kp RPAR  &kp PLUS  &kp QMARK
+              &sym_single_arrow &kp EXCL      &kp AT     &kp HASH     &kp DLLR      &kp PRCNT    &trans   &kp CARET   &kp AMPS    &kp STAR      &kp TILDE &kp GRAVE &sym_double_arrow
+              &kp PIPE          &kp BACKSLASH &kp LT     &kp SEMI     &kp COMMA     &kp SQT      &trans   &kp DQT     &kp DOT     &kp COLON     &kp GT    &kp SLASH &trans
+            /*&-----            &-----        &-----     &-----       &-----        &-----       &-----   &-----      &-----      &-----        &-----    &-----    &-----*/
               &trans            &trans        &trans     &trans       &trans        &trans       &trans   &trans      &trans      &trans        &trans    &trans
             >;
         };
