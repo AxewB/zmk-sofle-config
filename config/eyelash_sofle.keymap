@@ -215,7 +215,7 @@
                 <&kp LALT>,
                 <&macro_release>,
                 <&kp LSHIFT>,
-                <&kp LALT>
+                <&kp LALT>;
         };
 
         // Insert =>
@@ -228,7 +228,7 @@
                 <&kp GT>,
                 <&macro_release>,
                 <&kp EQUAL>,
-                <&kp GT>
+                <&kp GT>;
         };
 
         // Insert ->
@@ -241,7 +241,7 @@
                 <&kp GT>, 
                 <&macro_release>,
                 <&kp MINUS>, 
-                <&kp GT>
+                <&kp GT>;
         };
     };
 
