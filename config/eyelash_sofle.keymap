@@ -153,7 +153,6 @@
         };
     };
 
-
     macros {
         SHIFT_MCLK: SHIFT_MCLK {
             compatible = "zmk,behavior-macro";
@@ -181,6 +180,32 @@
                   &macro_release
                   &kp LSHIFT
                   &kp LALT>;
+        };
+
+        // Insert =>
+        sym_double_arrow: sym_double_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press
+                  &kp EQUAL
+                  &kp GT
+                  &macro_release
+                  &kp EQUAL
+                  &kp GT>;
+        };
+
+        // Insert ->
+        sym_single_arrow: sym_single_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press
+                &kp MINUS
+                &kp GT
+                &macro_release
+                &kp MINUS
+                &kp GT>;
         };
     };
 
@@ -360,11 +385,13 @@
             display-name = "CMD"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
             bindings = < 
-              MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS)
-              MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT)
-              &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT)
-              &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans
-              &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans
+            /*&1     &2      &3     &4     &5     &6     &STICK &7     &8     &9     &10    &11    &12*/
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            /*&----- &-----  &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &-----*/
+              &trans &trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >; 
         }; 
 
@@ -373,11 +400,13 @@
             display-name = "SFT";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-              &bootloader  &sys_reset &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &sys_reset  &bootloader
-              &trans            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans   &bt BT_CLR 0 &bt BT_CLR 1 &bt BT_CLR 2 &bt BT_CLR 3  &bt BT_CLR 4 &bt BT_CLR_ALL
-              &trans            &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans   &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD   &rgb_ug RGB_OFF  &trans
-              &trans            &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &rgb_ug RGB_EFR  &trans
-              &trans            &trans          &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &trans
+            /*&1          &2              &3              &4              &5              &6              &STICK   &7               &8               &9               &10               &11              &12*/
+              &bootloader &sys_reset      &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &sys_reset       &bootloader
+              &trans      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans   &bt BT_CLR 0     &bt BT_CLR 1     &bt BT_CLR 2     &bt BT_CLR 3      &bt BT_CLR 4     &bt BT_CLR_ALL
+              &trans      &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans   &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD   &rgb_ug RGB_OFF  &trans
+              &trans      &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &rgb_ug RGB_EFR  &trans
+            /*&-----      &-----          &-----          &-----          &-----          &-----          &-----   &-----           &-----           &-----           &-----            &-----           &-----*/
+              &trans      &trans          &trans          &trans          &trans          &trans          &trans   &trans           &trans           &trans           &trans            &trans
             >;
         };
     };
