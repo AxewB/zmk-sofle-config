@@ -63,7 +63,7 @@
 #define ALT 6 // navigation layer 
 #define NUM 7 // numbers layer 
 #define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
-#define SFT 9 // soft functions layer (underglow, bluetooth, etc.)
+#define CMD 9 // soft functions layer (underglow, bluetooth, etc.)
 
 #define CLR_BT_PROFILE(name, num)          \
     name: name {                           \
@@ -75,10 +75,10 @@
             <&bt BT_CLR>;                  \
     };
 
-#define SIMPLE_COMBO(name, binding, positions) \
-    name {                              \
-        bindings = <binding>;           \
-        key-positions = <positions>;    \
+#define SIMPLE_COMBO(NAME, BINDING, POSITIONS) \
+    NAME {                              \
+        bindings = <BINDING>;           \
+        key-positions = <POSITIONS>;    \
     };
 
 
@@ -139,12 +139,12 @@
     combos {
         compatible = "zmk,combos";
 
-        SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17);
-        SIMPLE_COMBO(undo,        &kp LC(Z),          40 41);
-        SIMPLE_COMBO(redo,        &kp LC(Y),          41 42 40);
-        SIMPLE_COMBO(copy,        &kp LC(C),          42 41);
-        SIMPLE_COMBO(paste,       &kp LC(V),          43 42);
-        SIMPLE_COMBO(softoff,     &soft_off,          14 28 40);
+        SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17)
+        SIMPLE_COMBO(undo,        &kp LC(Z),          40 41)
+        SIMPLE_COMBO(redo,        &kp LC(Y),          41 42 40)
+        SIMPLE_COMBO(copy,        &kp LC(C),          42 41)
+        SIMPLE_COMBO(paste,       &kp LC(V),          43 42)
+        SIMPLE_COMBO(softoff,     &soft_off,          14 28 40)
     };
 
     macros {
