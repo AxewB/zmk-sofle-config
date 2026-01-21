@@ -55,7 +55,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
   - SFT
-  - {t: '$$mdi:transfer$$', type: trans}
+  - CMD
   - {t: NAV, h: toggle}
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-esc$$
@@ -352,7 +352,7 @@ layers:
   - )
   - +
   - '?'
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&sym_single_arrow'
   - '!'
   - '@'
   - '#'
@@ -364,7 +364,7 @@ layers:
   - '*'
   - '~'
   - {t: '`', s: '~'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&sym_double_arrow'
   - '|'
   - {t: \, s: '|'}
   - <
@@ -585,6 +585,71 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held alternate}
+  CMD:
+  - Meh+$$mdi:keyboard-esc$$
+  - Meh+1
+  - Meh+2
+  - Meh+3
+  - Meh+4
+  - Meh+5
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Meh+6
+  - Meh+7
+  - Meh+8
+  - Meh+9
+  - Meh+0
+  - {t: Meh+-, s: Meh+_}
+  - {t: 'Meh+]', s: 'Meh+}'}
+  - Meh+Q
+  - Meh+W
+  - Meh+E
+  - Meh+R
+  - Meh+T
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Meh+Y
+  - Meh+U
+  - Meh+I
+  - Meh+O
+  - Meh+P
+  - {t: 'Meh+[', s: 'Meh+{'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Meh+A
+  - Meh+S
+  - Meh+D
+  - Meh+F
+  - Meh+G
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Meh+H
+  - Meh+J
+  - Meh+K
+  - Meh+L
+  - {t: Meh+;, s: 'Meh+:'}
+  - {t: Meh+', s: Meh+"}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Meh+Z
+  - Meh+X
+  - Meh+C
+  - Meh+V
+  - Meh+B
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Meh+N
+  - Meh+M
+  - {t: 'Meh+,', s: Meh+<}
+  - {t: Meh+., s: Meh+>}
+  - {t: Meh+/, s: 'Meh+?'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [15, 16, 17]
   k: '&macro_lang_switch'
