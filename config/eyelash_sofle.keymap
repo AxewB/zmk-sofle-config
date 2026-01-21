@@ -76,11 +76,17 @@
     };
 
 #define SIMPLE_COMBO(NAME, BINDING, POSITIONS) \
-    NAME {                              \
-        bindings = <BINDING>;           \
-        key-positions = <POSITIONS>;    \
+    NAME {                                     \
+        bindings = <BINDING>;                  \
+        key-positions = <POSITIONS>;           \
     };
 
+#define SYM_MACRO(name, ...)                                              \
+    name: name {                                                          \
+        compatible = "zmk,behavior-macro";                                \
+        #binding-cells = <0>;                                             \
+        bindings = <&macro_press __VA_ARGS__ &macro_release __VA_ARGS__>; \
+    };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -176,31 +182,35 @@
                   &kp LALT>;
         };
 
-        // Insert =>
-        sym_double_arrow: sym_double_arrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press
-                  &kp EQUAL
-                  &kp GT
-                  &macro_release
-                  &kp EQUAL
-                  &kp GT>;
-        };
 
-        // Insert ->
-        sym_single_arrow: sym_single_arrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press
-                &kp MINUS
-                &kp GT
-                &macro_release
-                &kp MINUS
-                &kp GT>;
-        };
+        SYM_MACRO(sym_single_arrow, &kp MINUS &kp GT)
+        SYM_MACRO(sym_single_arrow, &kp EQUAL &kp GT)
+
+        // Insert =>
+        /* sym_double_arrow: sym_double_arrow { */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     bindings = */
+        /*         <&macro_press */
+        /*           &kp EQUAL */
+        /*           &kp GT */
+        /*           &macro_release */
+        /*           &kp EQUAL */
+        /*           &kp GT>; */
+        /* }; */
+        /**/
+        /* // Insert -> */
+        /* sym_single_arrow: sym_single_arrow { */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     bindings = */
+        /*         <&macro_press */
+        /*         &kp MINUS */
+        /*         &kp GT */
+        /*         &macro_release */
+        /*         &kp MINUS */
+        /*         &kp GT>; */
+        /* }; */
 
         CLR_BT_PROFILE(clr_bt_0, 0)
         CLR_BT_PROFILE(clr_bt_1, 1)
