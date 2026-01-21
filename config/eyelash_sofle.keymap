@@ -64,6 +64,16 @@
 #define NUM 7 // numbers layer 
 #define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
 
+#define CLR_BT_PROFILE(name, num)          \
+    name: name {                           \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>;              \
+        bindings =                         \
+            <&bt BT_SEL num>,              \
+            <&macro_pause 50>,             \
+            <&bt BT_CLR>;                  \
+    };
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 &msc {
@@ -206,6 +216,12 @@
                 &kp MINUS
                 &kp GT>;
         };
+
+        CLR_BT_PROFILE(clr_bt_0, 0)
+        CLR_BT_PROFILE(clr_bt_1, 1)
+        CLR_BT_PROFILE(clr_bt_2, 2)
+        CLR_BT_PROFILE(clr_bt_3, 3)
+        CLR_BT_PROFILE(clr_bt_4, 4)
     };
 
     keymap {
@@ -380,20 +396,19 @@
         };
 
         // id: 8
-        /* soft_layer { */
-        /*     display-name = "SFT"; */
-        /*     sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; */
-        /*     bindings = < */
-        /**/
+        soft_layer {
+            display-name = "SFT";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            bindings = <
              /*&1          &2              &3              &4              &5              &6              &STICK &7              &8              &9              &10             &11             &12*/
-        /*       &bootloader &sys_reset      &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &sys_reset      &bootloader */
-        /*       &trans      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans &bt BT_CLR 0    &bt BT_CLR 1    &bt BT_CLR 2    &bt BT_CLR 3    &bt BT_CLR 4    &bt BT_CLR_ALL */
-        /*       &trans      &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_OFF &trans */
-        /*       &trans      &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_EFR */
+               &bootloader &sys_reset      &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &sys_reset      &bootloader
+               &trans      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans &clr_bt_0       &clr_bt_1       &clr_bt_2       &clr_bt_3       &clr_bt_4       &bt BT_CLR_ALL  
+               &trans      &rgb_ug RGB_ON  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_OFF &trans
+               &trans      &rgb_ug RGB_EFF &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &trans          &rgb_ug RGB_EFR
              /*&-----      &-----          &-----          &-----          &-----          &-----          &----- &-----          &-----          &-----          &-----          &-----          &-----*/ 
-        /*       &trans      &trans          &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &trans */
-        /*     >; */
-        /* }; */
+               &trans      &trans          &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &trans
+            >;
+        };
     };
 };
 
