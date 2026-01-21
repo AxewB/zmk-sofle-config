@@ -70,7 +70,7 @@
         #binding-cells = <0>;              \
         bindings =                         \
             <&bt BT_SEL num>,              \
-            <&macro_pause 50>,             \
+            <&macro_wait_time 150>,             \
             <&bt BT_CLR>;                  \
     };
 
