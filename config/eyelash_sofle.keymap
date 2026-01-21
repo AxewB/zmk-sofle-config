@@ -183,8 +183,8 @@
         };
 
 
-        SYM_MACRO(sym_single_arrow, &kp MINUS &kp GT)
-        SYM_MACRO(sym_single_arrow, &kp EQUAL &kp GT)
+        SYM_MACRO(sym_single_arrow, &kp MINUS &kp GT) // ->
+        SYM_MACRO(sym_double_arrow, &kp EQUAL &kp GT) // =>
 
         // Insert =>
         /* sym_double_arrow: sym_double_arrow { */
