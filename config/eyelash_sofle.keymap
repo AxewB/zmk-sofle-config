@@ -328,13 +328,13 @@
             display-name = "SYM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1       &2            &3       &4       &5        &6        &STICK &7        &8       &9        &10       &11       &12*/
-              &trans   &trans        &trans   &trans   &trans    &trans    &trans &trans    &trans   &trans    &trans    &trans    &trans
-              &trans   &kp EQUAL     &kp LBRC &kp LBKT &kp LPAR  &kp UNDER &trans &kp MINUS &kp RBRC &kp RBKT  &kp RPAR  &kp PLUS  &kp QMARK
-              &trans   &kp EXCL      &kp AT   &kp HASH &kp DLLR  &kp PRCNT &trans &kp CARET &kp AMPS &kp STAR  &kp TILDE &kp GRAVE &trans
-              &kp PIPE &kp BACKSLASH &kp LT   &kp SEMI &kp COMMA &kp SQT   &trans &kp DQT   &kp DOT  &kp COLON &kp GT    &kp SLASH &trans
-            /*&-----   &-----        &-----   &-----   &-----    &-----    &----- &-----    &-----   &-----    &-----    &-----    &-----*/
-              &trans   &trans        &trans   &trans   &trans    &trans    &trans &trans    &trans   &trans    &trans    &trans
+            /*&1                  &2            &3       &4       &5        &6        &STICK &7        &8       &9        &10       &11       &12*/
+              &trans              &trans        &trans   &trans   &trans    &trans    &trans &trans    &trans   &trans    &trans    &trans    &trans
+              &trans              &kp EQUAL     &kp LBRC &kp LBKT &kp LPAR  &kp UNDER &trans &kp MINUS &kp RBRC &kp RBKT  &kp RPAR  &kp PLUS  &kp QMARK
+              &sym_single_arrow   &kp EXCL      &kp AT   &kp HASH &kp DLLR  &kp PRCNT &trans &kp CARET &kp AMPS &kp STAR  &kp TILDE &kp GRAVE &sym_double_arrow
+              &kp PIPE            &kp BACKSLASH &kp LT   &kp SEMI &kp COMMA &kp SQT   &trans &kp DQT   &kp DOT  &kp COLON &kp GT    &kp SLASH &trans
+            /*&-----              &-----        &-----   &-----   &-----    &-----    &----- &-----    &-----   &-----    &-----    &-----    &-----*/
+              &trans              &trans        &trans   &trans   &trans    &trans    &trans &trans    &trans   &trans    &trans    &trans
             >;
         };
 
