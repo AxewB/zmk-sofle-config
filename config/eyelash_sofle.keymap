@@ -81,7 +81,7 @@
         key-positions = <POSITIONS>;           \
     };
 
-#define SYM_MACRO(name, ...)                                              \
+#define SIMPLE_MACRO(name, ...)                                              \
     name: name {                                                          \
         compatible = "zmk,behavior-macro";                                \
         #binding-cells = <0>;                                             \
@@ -169,48 +169,9 @@
             label = "SHIFT_MCLK";
         };
 
-        // ALT + SHIFT lang switch
-        macro_lang_switch: macro_lang_switch {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press
-                  &kp LSHIFT
-                  &kp LALT
-                  &macro_release
-                  &kp LSHIFT
-                  &kp LALT>;
-        };
-
-
-        SYM_MACRO(sym_single_arrow, &kp MINUS &kp GT) // ->
-        SYM_MACRO(sym_double_arrow, &kp EQUAL &kp GT) // =>
-
-        // Insert =>
-        /* sym_double_arrow: sym_double_arrow { */
-        /*     compatible = "zmk,behavior-macro"; */
-        /*     #binding-cells = <0>; */
-        /*     bindings = */
-        /*         <&macro_press */
-        /*           &kp EQUAL */
-        /*           &kp GT */
-        /*           &macro_release */
-        /*           &kp EQUAL */
-        /*           &kp GT>; */
-        /* }; */
-        /**/
-        /* // Insert -> */
-        /* sym_single_arrow: sym_single_arrow { */
-        /*     compatible = "zmk,behavior-macro"; */
-        /*     #binding-cells = <0>; */
-        /*     bindings = */
-        /*         <&macro_press */
-        /*         &kp MINUS */
-        /*         &kp GT */
-        /*         &macro_release */
-        /*         &kp MINUS */
-        /*         &kp GT>; */
-        /* }; */
+        SIMPLE_MACRO(macro_lang_switch, &kp LSHIFT &kp LALT) // LSHIFT + LALT lang switch
+        SIMPLE_MACRO(sym_single_arrow, &kp MINUS &kp GT) // ->
+        SIMPLE_MACRO(sym_double_arrow, &kp EQUAL &kp GT) // =>
 
         CLR_BT_PROFILE(clr_bt_0, 0)
         CLR_BT_PROFILE(clr_bt_1, 1)
