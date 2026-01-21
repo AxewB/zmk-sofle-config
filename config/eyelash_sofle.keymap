@@ -180,6 +180,14 @@
         CLR_BT_PROFILE(clr_bt_4, 4)
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers  = <NAV SYM>;
+            then-layer = <NUM>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
