@@ -129,7 +129,7 @@ layers:
   - $$mdi:keyboard-space$$
   - $$mdi:printer-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: DEF, h: toggle}
+  - {t: GAM, h: toggle}
   GFN:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '6', s: ^}
@@ -259,7 +259,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:printer-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: DEF, h: toggle}
+  - {t: EDT, h: toggle}
   NAV:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -301,7 +301,7 @@ layers:
   - MENU
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: SFT, h: toggle}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: EDT, h: toggle}
   - {t: GAM, h: toggle}
   - $$mdi:printer-outline$$
