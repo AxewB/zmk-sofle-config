@@ -63,6 +63,7 @@
 #define ALT 6 // navigation layer 
 #define NUM 7 // numbers layer 
 #define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
+#define SFT 9 // soft functions layer (underglow, bluetooth, etc.)
 
 #define CLR_BT_PROFILE(name, num)          \
     name: name {                           \
@@ -223,7 +224,7 @@
               &caps_word  &hrm_l LSHIFT A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_ALT D  &hrm_l LGUI F  &kp G      &kp C_PREV        &kp H    &hrm_r RIGHT_GUI J  &hrm_r RIGHT_ALT K  &hrm_r RIGHT_CONTROL L  &hrm_r RIGHT_SHIFT SEMICOLON  &kp SQT
               &trans      &kp Z            &kp X                  &kp C              &kp V          &kp B      &kp C_NEXT        &kp N    &kp M               &kp COMMA           &kp DOT                 &kp FSLH                      &trans
             /*&-----      &-----           &-----                 &-----             &-----         &-----     &-----            &-----   &-----              &-----              &-----                  &-----                        &-----*/
-              &kp C_MUTE  &mo SFT          &trans                 &to NAV            &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE  &kp RET  &kp BSPC            &to SYM             &to ALT                 &mo SFT
+              &kp C_MUTE  &mo SFT          &mo CMD                &to NAV            &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE  &kp RET  &kp BSPC            &to SYM             &to ALT                 &mo SFT
             >;
         };
 
@@ -393,6 +394,19 @@
                &trans      &trans          &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &trans
             >;
         };
+
+        // id: 9
+        cmd_layer { 
+            display-name = "CMD"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+              MEH(ESC)  MEH(1) MEH(2) MEH(3) MEH(4) MEH(5) &trans MEH(6) MEH(7) MEH(8)     MEH(9)   MEH(0)     MEH(MINUS)
+              MEH(RBKT) MEH(Q) MEH(W) MEH(E) MEH(R) MEH(T) &trans MEH(Y) MEH(U) MEH(I)     MEH(O)   MEH(P)     MEH(LBKT)
+              &trans    MEH(A) MEH(S) MEH(D) MEH(F) MEH(G) &trans MEH(H) MEH(J) MEH(K)     MEH(L)   MEH(SEMI)  MEH(SQT)
+              &trans    MEH(Z) MEH(X) MEH(C) MEH(V) MEH(B) &trans MEH(N) MEH(M) MEH(COMMA) MEH(DOT) MEH(SLASH) &trans
+              &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans     &trans   &trans
+            >; 
+        }; 
     };
 };
 
