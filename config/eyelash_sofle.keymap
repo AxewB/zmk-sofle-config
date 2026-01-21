@@ -139,12 +139,12 @@
     combos {
         compatible = "zmk,combos";
 
-        SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17)
-        SIMPLE_COMBO(undo,        &kp LC(Z),          40 41)
-        SIMPLE_COMBO(redo,        &kp LC(Y),          41 42 40)
-        SIMPLE_COMBO(copy,        &kp LC(C),          42 41)
-        SIMPLE_COMBO(paste,       &kp LC(V),          43 42)
-        SIMPLE_COMBO(softoff,     &soft_off,          14 28 40)
+        SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17);
+        SIMPLE_COMBO(undo,        &kp LC(Z),          40 41);
+        SIMPLE_COMBO(redo,        &kp LC(Y),          41 42 40);
+        SIMPLE_COMBO(copy,        &kp LC(C),          42 41);
+        SIMPLE_COMBO(paste,       &kp LC(V),          43 42);
+        SIMPLE_COMBO(softoff,     &soft_off,          14 28 40);
     };
 
     macros {
@@ -400,13 +400,13 @@
             display-name = "CMD"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
             bindings = < 
-             /*&1          &2              &3              &4              &5              &6              &STICK &7              &8              &9              &10             &11             &12*/
-              &kp MEH(ESC)  &kp MEH(1) &kp MEH(2) &kp MEH(3) &kp MEH(4) &kp MEH(5) &trans &kp MEH(6) &kp MEH(7) &kp MEH(8)     &kp MEH(9)   &kp MEH(0)     &kp MEH(MINUS)
-              &kp MEH(RBKT) &kp MEH(Q) &kp MEH(W) &kp MEH(E) &kp MEH(R) &kp MEH(T) &trans &kp MEH(Y) &kp MEH(U) &kp MEH(I)     &kp MEH(O)   &kp MEH(P)     &kp MEH(LBKT)
-              &trans        &kp MEH(A) &kp MEH(S) &kp MEH(D) &kp MEH(F) &kp MEH(G) &trans &kp MEH(H) &kp MEH(J) &kp MEH(K)     &kp MEH(L)   &kp MEH(SEMI)  &kp MEH(SQT)
-              &trans        &kp MEH(Z) &kp MEH(X) &kp MEH(C) &kp MEH(V) &kp MEH(B) &trans &kp MEH(N) &kp MEH(M) &kp MEH(COMMA) &kp MEH(DOT) &kp MEH(SLASH) &trans
-             /*&-----      &-----          &-----          &-----          &-----          &-----          &----- &-----          &-----          &-----          &-----          &-----          &-----*/ 
-              &trans        &trans     &trans     &trans     &trans     &trans     &trans &trans     &trans     &trans         &trans       &trans
+             /*&1            &2              &3              &4              &5              &6              &STICK &7              &8              &9              &10             &11             &12*/
+               &kp MEH(ESC)  &kp MEH(1)      &kp MEH(2)      &kp MEH(3)      &kp MEH(4)      &kp MEH(5)      &trans &kp MEH(6)      &kp MEH(7)      &kp MEH(8)      &kp MEH(9)      &kp MEH(0)      &kp MEH(MINUS)
+               &kp MEH(RBKT) &kp MEH(Q)      &kp MEH(W)      &kp MEH(E)      &kp MEH(R)      &kp MEH(T)      &trans &kp MEH(Y)      &kp MEH(U)      &kp MEH(I)      &kp MEH(O)      &kp MEH(P)      &kp MEH(LBKT)
+               &trans        &kp MEH(A)      &kp MEH(S)      &kp MEH(D)      &kp MEH(F)      &kp MEH(G)      &trans &kp MEH(H)      &kp MEH(J)      &kp MEH(K)      &kp MEH(L)      &kp MEH(SEMI)   &kp MEH(SQT)
+               &trans        &kp MEH(Z)      &kp MEH(X)      &kp MEH(C)      &kp MEH(V)      &kp MEH(B)      &trans &kp MEH(N)      &kp MEH(M)      &kp MEH(COMMA)  &kp MEH(DOT)    &kp MEH(SLASH)  &trans
+             /*&-----        &-----          &-----          &-----          &-----          &-----          &----- &-----          &-----          &-----          &-----          &-----          &-----*/ 
+               &trans        &trans          &trans          &trans          &trans          &trans          &trans &trans          &trans          &trans          &trans          &trans
             >; 
         }; 
     };
