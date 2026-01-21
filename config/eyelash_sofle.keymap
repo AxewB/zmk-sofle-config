@@ -70,9 +70,16 @@
         #binding-cells = <0>;              \
         bindings =                         \
             <&bt BT_SEL num>,              \
-            <&macro_wait_time 150>,             \
+            <&macro_wait_time 150>,        \
             <&bt BT_CLR>;                  \
     };
+
+#define SIMPLE_COMBO(name, binding, positions) \
+    name {                              \
+        bindings = <binding>;           \
+        key-positions = <positions>;    \
+    };
+
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -131,35 +138,12 @@
     combos {
         compatible = "zmk,combos";
 
-        lang_switch {
-            bindings = <&macro_lang_switch>;
-            key-positions = <15 16 17>;
-        };
-
-        undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <40 41>;
-        };
-
-        redo {
-            bindings = <&kp LC(Y)>;
-            key-positions = <41 42 40>;
-        };
-
-        copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <42 41>;
-        };
-
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <43 42>;
-        };
-
-        softoff {
-            bindings = <&soft_off>;
-            key-positions = <14 28 40>;
-        };
+        SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17)
+        SIMPLE_COMBO(undo,        &kp LC(Z),          40 41)
+        SIMPLE_COMBO(redo,        &kp LC(Y),          41 42 40)
+        SIMPLE_COMBO(copy,        &kp LC(C),          42 41)
+        SIMPLE_COMBO(paste,       &kp LC(V),          43 42)
+        SIMPLE_COMBO(softoff,     &soft_off,          14 28 40)
     };
 
     macros {
