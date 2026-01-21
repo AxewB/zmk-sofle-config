@@ -341,20 +341,20 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '=', s: +}
-  - '{'
-  - {t: '[', s: '{'}
-  - (
+  - U 007B
+  - U 005B
+  - U 0028
   - _
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '-', s: _}
-  - )
-  - {t: ']', s: '}'}
-  - '}'
+  - U 0029
+  - U 005D
+  - U 007D
   - +
-  - '?'
+  - U 003F
   - '&sym_single_arrow'
   - '!'
-  - '@'
+  - U 0040
   - '#'
   - $
   - '%'
@@ -365,18 +365,18 @@ layers:
   - '~'
   - {t: '`', s: '~'}
   - '&sym_double_arrow'
-  - '|'
+  - U 007C
   - {t: \, s: '|'}
-  - <
-  - {t: ;, s: ':'}
-  - {t: ',', s: <}
-  - {t: '''', s: '"'}
+  - U 003C
+  - U 003B
+  - U 002C
+  - U 0027
   - {t: '$$mdi:transfer$$', type: trans}
-  - '"'
-  - {t: ., s: '>'}
-  - ':'
-  - '>'
-  - {t: /, s: '?'}
+  - U 0022
+  - U 002E
+  - U 003A
+  - U 003E
+  - U 002F
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
