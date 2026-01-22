@@ -275,8 +275,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-caps$$
-  - {t: '&m_hold_mod_press_key LCTRL TAB', s: '$$mdi:keyboard-tab$$'}
-  - {t: '&m_hold_mod_press_key LALT TAB', s: '$$mdi:keyboard-tab$$'}
+  - Ctl+$$mdi:keyboard-tab$$
+  - Alt+$$mdi:keyboard-tab$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
