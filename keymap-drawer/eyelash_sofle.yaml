@@ -197,11 +197,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   EDT:
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
@@ -210,11 +210,11 @@ layers:
   - {t: '0', s: )}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - Q
-  - W
-  - E
-  - R
-  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
   - {t: '$$mdi:transfer$$', type: trans}
   - Y
   - U
@@ -223,11 +223,11 @@ layers:
   - P
   - {t: '[', s: '{'}
   - $$mdi:apple-keyboard-shift$$
-  - A
-  - S
-  - D
-  - F
-  - G
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, s: ':'}
   - {t: '$$mdi:transfer$$', type: trans}
   - H
   - J
@@ -235,12 +235,12 @@ layers:
   - L
   - {t: ;, s: ':'}
   - {t: '''', s: '"'}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - Z
-  - X
-  - C
-  - V
-  - B
+  - EDT
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - N
   - M
@@ -275,8 +275,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-caps$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '&m_hold_mod_press_key LCTRL TAB', s: '$$mdi:keyboard-tab$$'}
+  - {t: '&m_hold_mod_press_key LALT TAB', s: '$$mdi:keyboard-tab$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
