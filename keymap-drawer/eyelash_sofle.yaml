@@ -587,17 +587,17 @@ layers:
   - {type: held alternate}
   CMD:
   - Ctl+Alt+Gui+$$mdi:keyboard-esc$$
-  - Ctl+Alt+Gui+1
-  - Ctl+Alt+Gui+2
-  - Ctl+Alt+Gui+3
-  - Ctl+Alt+Gui+4
-  - Ctl+Alt+Gui+5
+  - {t: Ctl+Alt+Gui+1, s: Ctl+Alt+Gui+!}
+  - {t: Ctl+Alt+Gui+2, s: Ctl+Alt+Gui+@}
+  - {t: Ctl+Alt+Gui+3, s: Ctl+Alt+Gui+#}
+  - {t: Ctl+Alt+Gui+4, s: Ctl+Alt+Gui+$}
+  - {t: Ctl+Alt+Gui+5, s: Ctl+Alt+Gui+%}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Ctl+Alt+Gui+6
-  - Ctl+Alt+Gui+7
-  - Ctl+Alt+Gui+8
-  - Ctl+Alt+Gui+9
-  - Ctl+Alt+Gui+0
+  - {t: Ctl+Alt+Gui+6, s: Ctl+Alt+Gui+^}
+  - {t: Ctl+Alt+Gui+7, s: Ctl+Alt+Gui+&}
+  - {t: Ctl+Alt+Gui+8, s: Ctl+Alt+Gui+*}
+  - {t: Ctl+Alt+Gui+9, s: Ctl+Alt+Gui+(}
+  - {t: Ctl+Alt+Gui+0, s: Ctl+Alt+Gui+)}
   - {t: Ctl+Alt+Gui+-, s: Ctl+Alt+Gui+_}
   - {t: 'Ctl+Alt+Gui+]', s: 'Ctl+Alt+Gui+}'}
   - Ctl+Alt+Gui+Q
