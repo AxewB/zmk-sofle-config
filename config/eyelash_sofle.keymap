@@ -289,13 +289,13 @@
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
-            /*&1           &2           &3        &4        &5            &6     &STICK          &7        &8              &9        &10       &11        &12*/
-              &trans       &trans       &trans    &trans    &trans        &trans &mmv MOVE_UP    &trans    &trans          &trans    &trans    &trans     &trans
-              &kp CAPSLOCK &trans       &trans    &trans    &trans        &trans &mmv MOVE_DOWN  &kp HOME  &kp PG_DN       &kp PG_UP &kp END   &trans     &trans
-              &trans       &kp TAB      &mkp RCLK &mkp MCLK &mkp LCLK     &trans &mmv MOVE_LEFT  &kp LEFT  &kp DOWN        &kp UP    &kp RIGHT &kp C_MENU &trans
-              &trans       &trans       &tog EDT  &tog GAM  &kp PSCRN     &trans &mmv MOVE_RIGHT &mkp MB4  &trans          &trans    &mkp MB5  &trans     &trans
-            /*&-----       &-----       &-----    &-----    &-----        &----- &-----          &-----    &-----          &-----    &-----    &-----     &-----*/
-              &trans       &trans       &trans    &trans    &trans        &trans &mkp MB1        &trans    &kp BACKSPACE   &trans    &trans    &trans
+            /*&1            &2                 &3        &4        &5            &6     &STICK          &7        &8              &9        &10       &11        &12*/
+              &trans        &trans             &trans    &trans    &trans        &trans &mmv MOVE_UP    &trans    &trans          &trans    &trans    &trans     &trans
+              &kp CAPSLOCK  &trans             &trans    &trans    &trans        &trans &mmv MOVE_DOWN  &kp HOME  &kp PG_DN       &kp PG_UP &kp END   &trans     &trans
+              &kp TAB       &kp BACKSPACE      &mkp RCLK &mkp MCLK &mkp LCLK     &trans &mmv MOVE_LEFT  &kp LEFT  &kp DOWN        &kp UP    &kp RIGHT &kp C_MENU &trans
+              &trans        &trans             &tog EDT  &tog GAM  &kp PSCRN     &trans &mmv MOVE_RIGHT &mkp MB4  &trans          &trans    &mkp MB5  &trans     &trans
+            /*&-----        &-----             &-----    &-----    &-----        &----- &-----          &-----    &-----          &-----    &-----    &-----     &-----*/
+              &trans        &trans             &trans    &trans    &trans        &trans &mkp MB1        &trans    &trans          &trans    &trans    &trans
             >;
         };
 
