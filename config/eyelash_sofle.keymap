@@ -193,6 +193,7 @@
 
 
         // id: 0
+        // name: default
         def_layer {
             display-name = "DEF";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -208,6 +209,7 @@
         };
 
         // id: 1
+        // name: gaming
         // +--------------------short---template-----------------+
         // | __  1  2  3  4   5   **  | **  __  __  __ __  __ __ |
         // | TAB Q  W  E  R   T   **  | **  __  __  /\ __  __ TAB |
@@ -230,6 +232,7 @@
         }; 
 
         // id: 2
+        // name: gaming function
         // +----------------short---template-------------+
         // | __ 6  7  8  9  0  ** | ** __ __ __ __ __ __ |
         // | __ y  u  i  o  p  ** | ** __ __ __ __ __ __ |
@@ -252,6 +255,7 @@
         }; 
 
         // id: 3
+        // name: editing layer
         // +----------------short---template-------------+
         // | __  1  2  3  4  5   **  | **  __  __  __ __ __ __ |
         // | TAB Q  W  E  R  T   **  | **  __  __  __ __ __ __ |
@@ -274,6 +278,7 @@
         }; 
 
         // id: 4
+        // name: navigation
         // +-------------------short---template-----------------+
         // | __   __  __  __  __  __ ** | ** __  __  __  __  __ __ |
         // | CAPS SW  TB  __  __  __ ** | ** HOM PGD PGU END __ __ |
@@ -296,6 +301,7 @@
         };
 
         // id: 5
+        // name: symbols
         // +---------------------------------------------+
         // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
         // | __ =  {  [  (  _  ** | ** -  )  ]  }  +  ?  |
@@ -318,6 +324,7 @@
         };
 
         // id: 6
+        // name: alternative symbols
         // +----------------short---template-------------+
         // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
         // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
@@ -340,6 +347,7 @@
         }; 
 
         // id: 7
+        // name: numbers layer (+ function keys)
         // +---------------------short---template--------------------+
         // | F13 F14 F15 F16 F17 F18 ** | ** F19 F20 F21 F22 F23 F24 |
         // | F1  F2  F3  F4  F5  F6  ** | ** F7  F8  F9  F10 F11 F12 |
@@ -360,6 +368,7 @@
         };
 
         // id: 8
+        // name: software (bluetooth, reset, bootloader, rgb etc.)
         soft_layer {
             display-name = "SFT";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -375,6 +384,7 @@
         };
 
         // id: 9
+        // name: command (MEH combiations layer)
         cmd_layer { 
             display-name = "CMD"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
@@ -389,6 +399,8 @@
             >; 
         }; 
 
+          // id: _id
+          // name: _name
 //        template_layer { 
 //            display-name = "TMP"; 
 //            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
