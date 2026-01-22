@@ -57,12 +57,13 @@
 #define GAM 1 // game layer
 #define GFN 2 // game function layer
 #define EDT 3 // editing (Krita, video editors)
-#define NAV 4 // navigation layer 
-#define SYM 5 // symbols layer
-#define ALT 6 // navigation layer 
-#define NUM 7 // numbers layer 
-#define SFT 8 // soft functions layer (underglow, bluetooth, etc.)
-#define CMD 9 // soft functions layer (underglow, bluetooth, etc.)
+#define EFN 4 // editing function (keys from other half of the symbols)
+#define NAV 5 // navigation layer 
+#define SYM 6 // symbols layer
+#define ALT 7 // navigation layer 
+#define NUM 8 // numbers layer 
+#define SFT 9 // soft functions layer (underglow, bluetooth, etc.)
+#define CMD 10 // soft functions layer (underglow, bluetooth, etc.)
 
 #define CLR_BT_PROFILE(name, num)          \
     name: name {                           \
@@ -86,6 +87,37 @@
         #binding-cells = <0>;                                             \
         bindings = <&macro_press __VA_ARGS__ &macro_release __VA_ARGS__>; \
     };
+
+#define PARAM_1 0
+#define PARAM_2 0
+
+#define MACRO(NAME, COMPATIBLE, BINDING_CELLS, BINDINGS) \
+    NAME: NAME { \
+        compatible = COMPATIBLE; \
+        #binding-cells = <BINDING_CELLS>; \
+        wait-ms = <0>; \
+        tap-ms = <0>; \
+        bindings = \
+            <BINDINGS>; \
+    };
+
+#define MACRO_TWO_PARAM(NAME, BINDINGS) MACRO(NAME, "zmk,behavior-macro-two-param", 2, BINDINGS)
+
+#define MAX_TIMER __UINT32_MAX__ // around 50 days
+
+#define MODMORPH(NAME, NORMAL, MORPHED, MODS, KEEP_MODS) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>; \
+        bindings = <NORMAL>, <MORPHED>; \
+        mods = <(MODS)>; \
+        keep-mods = <(KEEP_MODS)>; \
+    };
+
+&sk {
+        release-after-ms = <60000>;
+};
+
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -138,6 +170,30 @@
           /* hold-trigger-key-positions = <KC_RIGHT_HAND KC_LEFT_THUMBS KC_RIGHT_THUMBS KC_STICK KC_ENCODER>;  */
           hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63>;
       };
+
+      MACRO_TWO_PARAM(
+          m_hold_mod_press_key,
+          &macro_press
+              &macro_param_1to1 &kp PARAM_1
+          &macro_tap
+              &macro_param_2to1 &kp PARAM_2
+      )
+
+      MODMORPH(
+          tabber,
+          &m_hold_mod_press_key LCTRL TAB,
+          &kp TAB,
+          MOD_LCTL,
+          MOD_LCTL
+      )
+
+      MODMORPH(
+          swapper,
+          &m_hold_mod_press_key LALT TAB,
+          &kp TAB,
+          MOD_LALT,
+          MOD_LALT
+      )
     };
 
 
@@ -272,7 +328,21 @@
               &kp LSHIFT &kp A  &kp S  &kp D     &kp F     &kp G   &trans &kp H    &kp J    &kp K     &kp L   &kp SEMICOLON  &kp SQT
               &trans     &kp Z  &kp X  &kp C     &kp V     &kp B   &trans &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH       &trans
             /*&-----     &----- &----- &-----    &-----    &-----  &----- &-----   &-----   &-----    &-----  &-----                        &-----*/
-              &trans     &trans &trans &kp LCTRL &kp SPACE &kp ESC &trans &kp RET  &kp BSPC &kp PSCRN &trans  &tog EDT
+              &trans     &trans &kp RET &kp LCTRL &kp SPACE &kp ESC &trans &kp RET  &kp BSPC &kp PSCRN &trans  &tog EDT
+            >; 
+        }; 
+
+        efn_layer { 
+            display-name = "EDT"; 
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
+            bindings = < 
+            /*&1         &2     &3     &4        &5        &6        &STICK &7       &8       &9        &10     &11                           &12*/
+              &trans     &kp N6 &kp N7 &kp N8    &kp N9    &kp N0    &trans &kp N6   &kp N7   &kp N8    &kp N9  &kp N0                        &kp BACKSPACE
+              &kp TAB    &kp Y  &kp U  &kp I     &kp O     &kp P     &trans &kp Y    &kp U    &kp I     &kp O   &kp P                         &kp LBKT
+              &kp LSHIFT &kp H  &kp J  &kp K     &kp L     &kp SEMI  &trans &kp H    &kp J    &kp K     &kp L   &kp SEMICOLON                 &kp SQT
+              &mo EFN    &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH  &trans &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH                      &trans
+            /*&-----     &----- &----- &-----    &-----    &-----    &----- &-----   &-----   &-----    &-----  &-----                        &-----*/
+              &trans     &trans &trans &kp LCTRL &kp SPACE &kp ESC   &trans &kp RET  &kp BSPC &kp PSCRN &trans  &tog EDT
             >; 
         }; 
 
@@ -291,7 +361,7 @@
             bindings = <
             /*&1            &2                 &3        &4        &5            &6     &STICK          &7        &8              &9        &10       &11        &12*/
               &trans        &trans             &trans    &trans    &trans        &trans &mmv MOVE_UP    &trans    &trans          &trans    &trans    &trans     &trans
-              &kp CAPSLOCK  &trans             &trans    &trans    &trans        &trans &mmv MOVE_DOWN  &kp HOME  &kp PG_DN       &kp PG_UP &kp END   &trans     &trans
+              &kp CAPSLOCK  &tabber            &swapper  &trans    &trans        &trans &mmv MOVE_DOWN  &kp HOME  &kp PG_DN       &kp PG_UP &kp END   &trans     &trans
               &trans        &kp TAB      &mkp RCLK &mkp MCLK &mkp LCLK     &trans &mmv MOVE_LEFT  &kp LEFT  &kp DOWN        &kp UP    &kp RIGHT &kp C_MENU &trans
               &trans        &trans             &tog EDT  &tog GAM  &kp PSCRN     &trans &mmv MOVE_RIGHT &mkp MB4  &trans          &trans    &mkp MB5  &trans     &trans
             /*&-----        &-----             &-----    &-----    &-----        &----- &-----          &-----    &-----          &-----    &-----    &-----     &-----*/
