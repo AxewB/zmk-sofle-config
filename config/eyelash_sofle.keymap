@@ -396,13 +396,13 @@
             display-name = "CMD"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
             bindings = < 
-             /*&1             &2          &3          &4          &5          &6          &STICK &7          &8          &9              &10           &11              &12*/
-               &kp TRPL(ESC)  &kp TRPL(1) &kp TRPL(2) &kp TRPL(3) &kp TRPL(4) &kp TRPL(5) &trans &kp TRPL(6) &kp TRPL(7) &kp TRPL(8)     &kp TRPL(9)   &kp TRPL(0)      &kp TRPL(MINUS)
-               &kp TRPL(RBKT) &kp TRPL(Q) &kp TRPL(W) &kp TRPL(E) &kp TRPL(R) &kp TRPL(T) &trans &kp TRPL(Y) &kp TRPL(U) &kp TRPL(I)     &kp TRPL(O)   &kp TRPL(P)      &kp TRPL(LBKT)
-               &trans         &kp TRPL(A) &kp TRPL(S) &kp TRPL(D) &kp TRPL(F) &kp TRPL(G) &trans &kp TRPL(H) &kp TRPL(J) &kp TRPL(K)     &kp TRPL(L)   &kp TRPL(SEMI)   &kp TRPL(SQT)
-               &trans         &kp TRPL(Z) &kp TRPL(X) &kp TRPL(C) &kp TRPL(V) &kp TRPL(B) &trans &kp TRPL(N) &kp TRPL(M) &kp TRPL(COMMA) &kp TRPL(DOT) &kp TRPL(SLASH)  &trans
-             /*&-----         &-----      &-----      &-----      &-----      &-----      &----- &-----      &-----      &-----          &-----        &-----           &-----*/ 
-               &trans         &trans      &trans      &trans      &trans      &trans      &trans &trans      &trans      &trans          &trans        &trans
+             /*&1             &2           &3           &4           &5           &6           &STICK &7           &8           &9               &10            &11               &12*/
+               &kp TRPL(ESC)  &kp TRPL(N1) &kp TRPL(N2) &kp TRPL(N3) &kp TRPL(N4) &kp TRPL(N5) &trans &kp TRPL(N6) &kp TRPL(N7) &kp TRPL(N8)     &kp TRPL(N9)   &kp TRPL(N0)      &kp TRPL(MINUS)
+               &kp TRPL(RBKT) &kp TRPL(Q)  &kp TRPL(W)  &kp TRPL(E)  &kp TRPL(R)  &kp TRPL(T)  &trans &kp TRPL(Y)  &kp TRPL(U)  &kp TRPL(I)      &kp TRPL(O)    &kp TRPL(P)       &kp TRPL(LBKT)
+               &trans         &kp TRPL(A)  &kp TRPL(S)  &kp TRPL(D)  &kp TRPL(F)  &kp TRPL(G)  &trans &kp TRPL(H)  &kp TRPL(J)  &kp TRPL(K)      &kp TRPL(L)    &kp TRPL(SEMI)    &kp TRPL(SQT)
+               &trans         &kp TRPL(Z)  &kp TRPL(X)  &kp TRPL(C)  &kp TRPL(V)  &kp TRPL(B)  &trans &kp TRPL(N)  &kp TRPL(M)  &kp TRPL(COMMA)  &kp TRPL(DOT)  &kp TRPL(SLASH)   &trans
+             /*&-----         &-----       &-----       &-----       &-----       &-----       &----- &-----       &-----       &-----           &-----         &-----            &-----*/ 
+               &trans         &trans       &trans       &trans       &trans       &trans       &trans &trans       &trans       &trans           &trans         &trans
             >; 
         }; 
 
