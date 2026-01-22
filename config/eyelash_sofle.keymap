@@ -314,7 +314,7 @@
             bindings = <
             /*&1                  &2            &3         &4       &5        &6            &STICK &7        &8       &9        &10          &11        &12*/
               &trans              &trans        &trans     &trans   &trans    &trans        &trans &trans    &trans   &trans    &trans       &trans     &trans
-              &sym_single_arrow   &kp EXCL      &kp LBRC   &kp LBKT &kp LPAR  &kp BACKSLASH &trans &trans    &kp RPAR &kp RBKT  &kp RBRC     &kp GRAVE  &kp sym_double_arrow
+              &sym_single_arrow   &kp EXCL      &kp LBRC   &kp LBKT &kp LPAR  &kp BACKSLASH &trans &trans    &kp RPAR &kp RBKT  &kp RBRC     &kp GRAVE  &sym_double_arrow
               &kp PIPE            &kp UNDER     &kp PLUS   &kp HASH &kp DLLR  &kp PRCNT     &trans &kp CARET &kp AMPS &kp STAR  &kp MINUS    &kp EQUAL  &trans
               &trans              &kp LT        &kp AT     &kp SEMI &kp COMMA &kp SQT       &trans &kp DQT   &kp DOT  &kp COLON &kp TILDE    &kp GT     &trans
             /*&-----              &-----        &-----     &-----   &-----    &-----        &----- &-----    &-----   &-----    &-----       &-----     &-----*/
