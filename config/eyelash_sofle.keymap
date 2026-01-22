@@ -198,12 +198,12 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
             /*&1          &2               &3                     &4                 &5             &6         &STICK            &7       &8                  &9                  &10                     &11                           &12*/
-              &trans      &kp N1           &kp N2                 &kp N3             &kp N4         &kp N5     &kp LA(UP)        &kp N6   &kp N7              &kp N8              &kp N9                  &kp N0                        &kp BACKSPACE
-              &trans      &kp Q            &kp W                  &kp E              &kp R          &kp T      &kp LA(DOWN)      &kp Y    &kp U               &kp I               &kp O                   &kp P                         &kp LBKT
+              &trans      &kp N1           &kp N2                 &kp N3             &kp N4         &kp N5     &kp C_FF          &kp N6   &kp N7              &kp N8              &kp N9                  &kp N0                        &kp BACKSPACE
+              &trans      &kp Q            &kp W                  &kp E              &kp R          &kp T      &kp C_RW          &kp Y    &kp U               &kp I               &kp O                   &kp P                         &kp LBKT
               &caps_word  &hrm_l LSHIFT A  &hrm_l LEFT_CONTROL S  &hrm_l LEFT_ALT D  &hrm_l LGUI F  &kp G      &kp C_PREV        &kp H    &hrm_r RIGHT_GUI J  &hrm_r RIGHT_ALT K  &hrm_r RIGHT_CONTROL L  &hrm_r RIGHT_SHIFT SEMICOLON  &kp SQT
               &trans      &kp Z            &kp X                  &kp C              &kp V          &kp B      &kp C_NEXT        &kp N    &kp M               &kp COMMA           &kp DOT                 &kp FSLH                      &trans
             /*&-----      &-----           &-----                 &-----             &-----         &-----     &-----            &-----   &-----              &-----              &-----                  &-----                        &-----*/
-              &kp C_MUTE  &mo SFT          &mo CMD                &mo NAV            &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE  &kp RET  &kp BSPC            &mo SYM             &mo ALT                 &mo SFT
+              &kp C_MUTE  &mo SFT          &mo CMD                &mo NAV            &kp SPACE      &kp ESC    &kp C_PLAY_PAUSE  &kp RET  &kp LSHIFT          &mo SYM             &mo ALT                 &mo SFT
             >;
         };
 
@@ -213,19 +213,19 @@
         // | TAB Q  W  E  R   T   **  | **  __  __  /\ __  __ TAB |
         // | LS  A  S  D  F   G   **  | **  __  <-  \/ ->  __ LS |
         // | LC  Z  X  C  V   B   **  | **  __  __  __ __  __ LC |
-        // | **  ** __ __ SPC GFN ESC | RET SPC PSC __ DEF ** ** |
+        // | **  ** __ __ GFN SPC ESC | RET SPC PSC __ DEF ** ** |
         // +-----------------------------------------------------+
         gam_layer { 
             display-name = "GAM"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
             bindings = < 
-            /*&1               &2     &3     &4        &5      &6     &STICK &7     &8        &9        &10       &11    &12*/
-              &trans           &kp N1 &kp N2 &kp N3    &kp N4  &kp N5 &trans &trans &trans    &trans    &trans    &trans &trans
-              &kp TAB          &kp Q  &kp W  &kp E     &kp R   &kp  T &trans &trans &trans    &kp UP    &trans    &trans &kp TAB
-              &kp LSHIFT       &kp A  &kp S  &kp D     &kp F   &kp  G &trans &trans &kp LEFT  &kp DOWN  &kp RIGHT &trans &kp LSHIFT
-              &kp LEFT_CONTROL &kp Z  &kp X  &kp C     &kp V   &kp  B &trans &trans &trans    &trans    &trans    &trans &kp LEFT_CONTROL
-            /*&-----           &----- &----- &-----    &-----  &----- &----- &----- &-----    &-----    &-----    &----- &-----*/
-              &trans           &trans &trans &kp SPACE &mo GFN &kp ESC&trans &kp RET&kp SPACE &kp PSCRN &trans    &tog GAM
+            /*&1               &2     &3     &4      &5        &6      &STICK &7     &8        &9        &10       &11    &12*/
+              &trans           &kp N1 &kp N2 &kp N3  &kp N4    &kp N5  &trans &trans &trans    &trans    &trans    &trans &trans
+              &kp TAB          &kp Q  &kp W  &kp E   &kp R     &kp  T  &trans &trans &trans    &kp UP    &trans    &trans &kp TAB
+              &kp LSHIFT       &kp A  &kp S  &kp D   &kp F     &kp  G  &trans &trans &kp LEFT  &kp DOWN  &kp RIGHT &trans &kp LSHIFT
+              &kp LEFT_CONTROL &kp Z  &kp X  &kp C   &kp V     &kp  B  &trans &trans &trans    &trans    &trans    &trans &kp LEFT_CONTROL
+            /*&-----           &----- &----- &-----  &-----    &-----  &----- &----- &-----    &-----    &-----    &----- &-----*/
+              &trans           &trans &trans &mo GFN &kp SPACE &kp ESC &trans &kp RET&kp SPACE &kp PSCRN &trans    &tog GAM
             >; 
         }; 
 
