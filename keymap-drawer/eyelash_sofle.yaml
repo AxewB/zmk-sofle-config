@@ -7,7 +7,7 @@ layers:
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
-  - Alt+$$mdi:arrow-up-bold$$
+  - FF
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
@@ -20,7 +20,7 @@ layers:
   - E
   - R
   - T
-  - Alt+$$mdi:arrow-down-bold$$
+  - RW
   - Y
   - U
   - I
@@ -61,9 +61,9 @@ layers:
   - $$mdi:keyboard-esc$$
   - PLAY PAUSE
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:apple-keyboard-shift$$
   - SYM
-  - ALT
+  - CMD
   - SFT
   GAM:
   - {t: '$$mdi:transfer$$', type: trans}
@@ -121,8 +121,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-space$$
   - GFN
+  - $$mdi:keyboard-space$$
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -186,8 +186,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -203,12 +203,12 @@ layers:
   - {t: '4', s: $}
   - {t: '5', s: '%'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - Q
   - W
@@ -216,12 +216,12 @@ layers:
   - R
   - T
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: '[', s: '{'}
   - $$mdi:apple-keyboard-shift$$
   - A
   - S
@@ -229,12 +229,12 @@ layers:
   - F
   - G
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, s: ':'}
+  - {t: '''', s: '"'}
   - {t: '$$mdi:transfer$$', type: trans}
   - Z
   - X
@@ -242,11 +242,11 @@ layers:
   - V
   - B
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -321,7 +321,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - '&mkp MB1'
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -339,22 +339,22 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '=', s: +}
+  - '&sym_single_arrow'
+  - '!'
   - '{'
   - {t: '[', s: '{'}
   - (
-  - _
+  - {t: \, s: '|'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '-', s: _}
+  - {t: '$$mdi:transfer$$', type: trans}
   - )
   - {t: ']', s: '}'}
   - '}'
+  - {t: '`', s: '~'}
+  - sym double arrow
+  - '|'
+  - _
   - +
-  - '?'
-  - '&sym_single_arrow'
-  - '!'
-  - '@'
   - '#'
   - $
   - '%'
@@ -362,12 +362,12 @@ layers:
   - ^
   - '&'
   - '*'
-  - '~'
-  - {t: '`', s: '~'}
-  - '&sym_double_arrow'
-  - '|'
-  - {t: \, s: '|'}
+  - {t: '-', s: _}
+  - {t: '=', s: +}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - <
+  - '@'
   - {t: ;, s: ':'}
   - {t: ',', s: <}
   - {t: '''', s: '"'}
@@ -375,8 +375,8 @@ layers:
   - '"'
   - {t: ., s: '>'}
   - ':'
+  - '~'
   - '>'
-  - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -453,7 +453,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   NUM:
   - F13
@@ -496,17 +496,17 @@ layers:
   - {t: '0', s: )}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
+  - {t: '=', s: +}
   - {t: '-', s: _}
   - +
-  - {t: '=', s: +}
+  - '*'
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '=', s: +}
-  - +
-  - {t: '-', s: _}
-  - {t: ., s: '>'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -586,57 +586,57 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held alternate}
   CMD:
-  - Meh+$$mdi:keyboard-esc$$
-  - Meh+1
-  - Meh+2
-  - Meh+3
-  - Meh+4
-  - Meh+5
+  - Ctl+Alt+Gui+$$mdi:keyboard-esc$$
+  - Ctl+Alt+Gui+1
+  - Ctl+Alt+Gui+2
+  - Ctl+Alt+Gui+3
+  - Ctl+Alt+Gui+4
+  - Ctl+Alt+Gui+5
   - {t: '$$mdi:transfer$$', type: trans}
-  - Meh+6
-  - Meh+7
-  - Meh+8
-  - Meh+9
-  - Meh+0
-  - {t: Meh+-, s: Meh+_}
-  - {t: 'Meh+]', s: 'Meh+}'}
-  - Meh+Q
-  - Meh+W
-  - Meh+E
-  - Meh+R
-  - Meh+T
+  - Ctl+Alt+Gui+6
+  - Ctl+Alt+Gui+7
+  - Ctl+Alt+Gui+8
+  - Ctl+Alt+Gui+9
+  - Ctl+Alt+Gui+0
+  - {t: Ctl+Alt+Gui+-, s: Ctl+Alt+Gui+_}
+  - {t: 'Ctl+Alt+Gui+]', s: 'Ctl+Alt+Gui+}'}
+  - Ctl+Alt+Gui+Q
+  - Ctl+Alt+Gui+W
+  - Ctl+Alt+Gui+E
+  - Ctl+Alt+Gui+R
+  - Ctl+Alt+Gui+T
   - {t: '$$mdi:transfer$$', type: trans}
-  - Meh+Y
-  - Meh+U
-  - Meh+I
-  - Meh+O
-  - Meh+P
-  - {t: 'Meh+[', s: 'Meh+{'}
+  - Ctl+Alt+Gui+Y
+  - Ctl+Alt+Gui+U
+  - Ctl+Alt+Gui+I
+  - Ctl+Alt+Gui+O
+  - Ctl+Alt+Gui+P
+  - {t: 'Ctl+Alt+Gui+[', s: 'Ctl+Alt+Gui+{'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Meh+A
-  - Meh+S
-  - Meh+D
-  - Meh+F
-  - Meh+G
+  - Ctl+Alt+Gui+A
+  - Ctl+Alt+Gui+S
+  - Ctl+Alt+Gui+D
+  - Ctl+Alt+Gui+F
+  - Ctl+Alt+Gui+G
   - {t: '$$mdi:transfer$$', type: trans}
-  - Meh+H
-  - Meh+J
-  - Meh+K
-  - Meh+L
-  - {t: Meh+;, s: 'Meh+:'}
-  - {t: Meh+', s: Meh+"}
+  - Ctl+Alt+Gui+H
+  - Ctl+Alt+Gui+J
+  - Ctl+Alt+Gui+K
+  - Ctl+Alt+Gui+L
+  - {t: Ctl+Alt+Gui+;, s: 'Ctl+Alt+Gui+:'}
+  - {t: Ctl+Alt+Gui+', s: Ctl+Alt+Gui+"}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Meh+Z
-  - Meh+X
-  - Meh+C
-  - Meh+V
-  - Meh+B
+  - Ctl+Alt+Gui+Z
+  - Ctl+Alt+Gui+X
+  - Ctl+Alt+Gui+C
+  - Ctl+Alt+Gui+V
+  - Ctl+Alt+Gui+B
   - {t: '$$mdi:transfer$$', type: trans}
-  - Meh+N
-  - Meh+M
-  - {t: 'Meh+,', s: Meh+<}
-  - {t: Meh+., s: Meh+>}
-  - {t: Meh+/, s: 'Meh+?'}
+  - Ctl+Alt+Gui+N
+  - Ctl+Alt+Gui+M
+  - {t: 'Ctl+Alt+Gui+,', s: Ctl+Alt+Gui+<}
+  - {t: Ctl+Alt+Gui+., s: Ctl+Alt+Gui+>}
+  - {t: Ctl+Alt+Gui+/, s: 'Ctl+Alt+Gui+?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -648,7 +648,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [15, 16, 17]
