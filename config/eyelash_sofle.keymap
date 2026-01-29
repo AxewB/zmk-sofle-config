@@ -268,13 +268,13 @@
             display-name = "EDT"; 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; 
             bindings = < 
-            /*&1         &2       &3       &4        &5                 &6      &STICK &7      &8       &9        &10     &11           &12*/
-              &kp ESC    &kp N1   &kp N2   &kp N3    &kp N4             &kp N5  &trans &kp N6  &kp N7   &kp N8    &kp N9  &kp N0        &kp BACKSPACE
-              &kp TAB    &kp Q    &kp W    &kp E     &kp R              &kp T   &trans &kp Y   &kp U    &kp I     &kp O   &kp P         &kp LBKT
-              &kp LSHIFT &kp A    &kp S    &kp D     &kp F              &kp G   &trans &kp H   &kp J    &kp K     &kp L   &kp SEMICOLON &kp SQT
-              &kp LALT   &kp Z    &kp X    &kp C     &kp V              &kp B   &trans &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH      &trans
-            /*&-----     &-----   &-----   &-----    &-----             &-----  &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans     &kp LGUI &kp LALT &mo EFN   &hrm_l LCTRL SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
+            /*&1         &2       &3       &4        &5        &6      &STICK &7      &8       &9        &10     &11           &12*/
+              &kp ESC    &kp N1   &kp N2   &kp N3    &kp N4    &kp N5  &trans &kp N6  &kp N7   &kp N8    &kp N9  &kp N0        &kp BACKSPACE
+              &kp TAB    &kp Q    &kp W    &kp E     &kp R     &kp T   &trans &kp Y   &kp U    &kp I     &kp O   &kp P         &kp LBKT
+              &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G   &trans &kp H   &kp J    &kp K     &kp L   &kp SEMICOLON &kp SQT
+              &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B   &trans &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH      &trans
+            /*&-----     &-----   &-----   &-----    &-----    &-----  &----- &-----  &-----   &-----    &-----  &-----        &-----*/
+              &trans     &kp LGUI &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
             >; 
         }; 
 
