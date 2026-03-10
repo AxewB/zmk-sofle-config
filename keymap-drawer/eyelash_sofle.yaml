@@ -28,17 +28,17 @@ layers:
   - P
   - {t: '[', s: '{'}
   - $$mdi:alpha-w-box$$
-  - A
-  - '&hrm_nav_a'
-  - '&hrm_sym_s'
+  - {t: A, h: NAV}
+  - {t: S, h: SYM}
+  - {t: D, h: '$$mdi:apple-keyboard-option$$'}
   - {t: F, h: LGUI}
   - G
   - $$mdi:skip-previous$$
   - H
   - {t: J, h: RIGHT GUI}
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
-  - '&hrm_sym_l'
-  - '&hrm_nav_semi'
+  - {t: L, h: SYM}
+  - {t: ;, h: NAV, s: ':'}
   - {t: '''', s: '"'}
   - {t: '$$mdi:transfer$$', type: trans}
   - Z
@@ -353,7 +353,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:keyboard-tab$$', type: held}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -363,7 +363,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-caps$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -419,7 +419,7 @@ layers:
   - '&sym_double_arrow'
   - '|'
   - _
-  - +
+  - {t: +, type: held}
   - '#'
   - $
   - '%'
@@ -427,7 +427,7 @@ layers:
   - ^
   - '&'
   - '*'
-  - {t: '-', s: _}
+  - {t: '-', s: _, type: held alternate}
   - {t: '=', s: +}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -548,8 +548,8 @@ layers:
   - F11
   - F12
   - $$mdi:keyboard-space$$
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
+  - {t: '1', s: '!', type: held}
+  - {t: '2', s: '@', type: held}
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
@@ -557,8 +557,8 @@ layers:
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: '0', s: )}
+  - {t: '9', s: (, type: held}
+  - {t: '0', s: ), type: held}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '=', s: +}
