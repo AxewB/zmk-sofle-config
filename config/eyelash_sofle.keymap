@@ -202,10 +202,10 @@
             /*&1         &2      &3                    &4                &5            &6      &STICK           &7      &8                 &9                 &10                    &11                     &12*/
               &trans     &kp N1  &kp N2                &kp N3            &kp N4        &kp N5  &kp C_FF         &kp N6  &kp N7             &kp N8             &kp N9                 &kp N0                  &trans
               &kp RBKT   &kp Q   &kp W                 &kp E             &kp R         &kp T   &kp C_RW         &kp Y   &kp U              &kp I              &kp O                  &kp P                   &kp LBKT
-              &caps_word &kp A   &hrm_l LEFT_CONTROL S &hrm_l LEFT_ALT D &hrm_l LGUI F &kp G   &kp C_PREV       &kp H   &hrm_r RIGHT_GUI J &hrm_r RIGHT_ALT K &hrm_r RIGHT_CONTROL L &kp RSHIFT              &kp SQT
+              &caps_word &kp A   &hrm_l LEFT_CONTROL S &hrm_l LEFT_ALT D &hrm_l LGUI F &kp G   &kp C_PREV       &kp H   &hrm_r RIGHT_GUI J &hrm_r RIGHT_ALT K &hrm_r RIGHT_CONTROL L &kp SEMICOLON              &kp SQT
               &trans     &kp Z   &kp X                 &kp C             &kp V         &kp B   &kp C_NEXT       &kp N   &kp M              &kp COMMA          &kp DOT                &kp FSLH                &trans
             /*&-----     &-----  &-----                &-----            &-----        &-----  &-----           &-----  &-----             &-----             &-----                 &-----                  &-----*/
-              &kp C_MUTE &mo SFT &mo CMD               &mo NAV           &kp SPACE     &kp ESC &kp C_PLAY_PAUSE &kp RET &kp LSHIFT         &mo SYM            &mo CMD                &mo SFT
+              &kp C_MUTE &mo SFT &mo CMD               &mo NAV           &kp LSHIFT     &kp ESC &kp C_PLAY_PAUSE &kp RET &kp SPACE         &mo SYM            &mo CMD                &mo SFT
             >;
         };
 
@@ -305,13 +305,13 @@
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
-            /*&1           &2            &3          &4          &5        &6     &STICK          &7       &8        &9        &10       &11        &12*/
-              &trans       &trans        &trans      &trans      &trans    &trans &mmv MOVE_UP    &trans   &trans    &trans    &trans    &trans     &trans
-              &trans       &kp DELETE    &kp LC(TAB) &kp LA(TAB) &kp RET   &trans &mmv MOVE_DOWN  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans     &trans
-              &trans       &kp TAB       &mkp RCLK   &mkp MCLK   &mkp LCLK &trans &mmv MOVE_LEFT  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp BACKSPACE &trans
-              &kp CAPSLOCK &trans        &tog EDT    &tog GAM    &kp PSCRN &trans &mmv MOVE_RIGHT &mkp MB4 &trans    &trans    &mkp MB5  &trans     &trans
-            /*&-----       &-----        &-----      &-----      &-----    &----- &-----          &-----   &-----    &-----    &-----    &-----     &-----*/
-              &trans       &trans        &trans      &trans      &trans    &trans &mkp MB1        &trans   &trans    &trans    &trans    &trans
+            /*&1           &2            &3              &4          &5        &6     &STICK          &7       &8        &9        &10       &11           &12*/
+              &trans       &trans        &trans          &trans      &trans    &trans &mmv MOVE_UP    &trans   &trans    &trans    &trans    &trans        &trans
+              &trans       &kp DELETE    &kp LC(TAB)     &kp LA(TAB) &kp RET   &trans &mmv MOVE_DOWN  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans        &trans
+              &trans       &kp TAB       &kp BACKSPACE   &trans      &trans    &trans &mmv MOVE_LEFT  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans        &trans
+              &kp CAPSLOCK &trans        &tog EDT        &tog GAM    &kp PSCRN &trans &mmv MOVE_RIGHT &mkp MB4 &trans    &trans    &mkp MB5  &trans        &trans
+            /*&-----       &-----        &-----          &-----      &-----    &----- &-----          &-----   &-----    &-----    &-----    &-----        &-----*/
+              &trans       &trans        &trans          &trans      &trans    &trans &mkp MB1        &trans   &trans    &trans    &trans    &trans
             >;
         };
 
