@@ -141,53 +141,35 @@
           hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63>;
       };
 
-      hrm_nav_a: hrm_nav_a {
+
+      hrl_r: home_row_layer_right {
           compatible = "zmk,behavior-hold-tap";
+          bindings = <&mo &kp>;
+
           #binding-cells = <2>;
           flavor = "balanced";
-          tapping-term-ms = <220>;
+          require-prior-idle-ms = <90>;
           quick-tap-ms = <135>;
+          tapping-term-ms = <220>;
+          hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 26 27 28 29 30 31 41 42 43 44 39 40 53 54 55 56 57 59 60 61 62 63 42 54>;
+          /* hold-trigger-key-positions = <KC_LEFT_HAND KC_LEFT_THUMBS KC_RIGHT_THUMBS KC_STICK KC_ENCODER>;  */
           hold-trigger-on-release;
+      };
 
-          bindings = <&mo NAV &kp A>;  // hold = NAV, tap = S
+      hrl_l: home_row_layer_left {
+          compatible = "zmk,behavior-hold-tap";
+          bindings = <&mo &kp>;
+
+          #binding-cells = <2>;
+          flavor = "balanced";
+          require-prior-idle-ms = <90>;
+          quick-tap-ms = <135>;
+          tapping-term-ms = <220>;
+          hold-trigger-on-release;
+          /* hold-trigger-key-positions = <KC_RIGHT_HAND KC_LEFT_THUMBS KC_RIGHT_THUMBS KC_STICK KC_ENCODER>;  */
           hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63>;
       };
 
-      hrm_nav_semi: hrm_nav_semi {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <220>;
-          quick-tap-ms = <135>;
-          hold-trigger-on-release;
-
-          bindings = <&mo NAV &kp SEMICOLON>;  // hold = NAV, tap = S
-          hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 26 27 28 29 30 31 41 42 43 44 39 40 53 54 55 56 57 59 60 61 62 63 42 54>;
-      };
-
-      hrm_sym_s: hrm_sym_s {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <220>;
-          quick-tap-ms = <135>;
-          hold-trigger-on-release;
-
-          bindings = <&mo SYM &kp S>;  // hold = NAV, tap = S
-          hold-trigger-key-positions = <7 8 9 10 11 12 20 21 22 23 24 25 33 34 35 36 37 38 46 47 48 49 50 51 53 54 55 56 57 59 60 61 62 63>;
-      };
-
-      hrm_sym_l: hrm_sym_l {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <220>;
-          quick-tap-ms = <135>;
-          hold-trigger-on-release;
-
-          bindings = <&mo SYM &kp SEMICOLON>;  // hold = NAV, tap = S
-          hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 26 27 28 29 30 31 41 42 43 44 39 40 53 54 55 56 57 59 60 61 62 63 42 54>;
-      };
     };
 
 
@@ -247,13 +229,13 @@
             display-name = "DEF";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1         &2      &3                    &4                &5            &6      &STICK           &7      &8                 &9                 &10                    &11                     &12*/
-              &trans     &kp N1  &kp N2                &kp N3            &kp N4        &kp N5  &kp C_FF         &kp N6  &kp N7             &kp N8             &kp N9                 &kp N0                  &trans
-              &kp RBKT   &kp Q   &kp W                 &kp E             &kp R         &kp T   &kp C_RW         &kp Y   &kp U              &kp I              &kp O                  &kp P                   &kp LBKT
-              &caps_word &kp A   &hrm_nav_a &hrm_sym_s &hrm_l LGUI F &kp G   &kp C_PREV       &kp H   &hrm_r RIGHT_GUI J &hrm_r RIGHT_ALT K &hrm_sym_l &hrm_nav_semi              &kp SQT
-              &trans     &kp Z   &kp X                 &kp C             &kp V         &kp B   &kp C_NEXT       &kp N   &kp M              &kp COMMA          &kp DOT                &kp FSLH                &trans
-            /*&-----     &-----  &-----                &-----            &-----        &-----  &-----           &-----  &-----             &-----             &-----                 &-----                  &-----*/
-              &kp C_MUTE &mo SFT &trans               &kp LCTRL           &kp SPACE     &kp ESC &kp C_PLAY_PAUSE &kp RET &kp BACKSPACE &kp LSHIFT            &trans                &mo SFT
+            /*&1         &2              &3                    &4                  &5            &6      &STICK           &7      &8                 &9                    &10                    &11                                 &12*/
+              &trans     &kp N1          &kp N2                &kp N3              &kp N4        &kp N5  &kp C_FF         &kp N6  &kp N7             &kp N8                &kp N9                 &kp N0                              &trans
+              &kp RBKT   &kp Q           &kp W                 &kp E               &kp R         &kp T   &kp C_RW         &kp Y   &kp U              &kp I                 &kp O                  &kp P                               &kp LBKT
+              &caps_word &hrl_l NAV A    &hrl_l SYM S          &hrm_l LALT D       &hrm_l LGUI F &kp G   &kp C_PREV       &kp H   &hrm_r RIGHT_GUI J &hrm_r LEFT_ALT K     &hrl_r SYM L           &hrl_r NAV SEMICOLON                &kp SQT
+              &trans     &kp Z           &kp X                 &kp C               &kp V         &kp B   &kp C_NEXT       &kp N   &kp M              &kp COMMA             &kp DOT                &kp FSLH                            &trans
+            /*&-----     &-----          &-----                &-----              &-----        &-----  &-----           &-----  &-----             &-----                &-----                 &-----                              &-----*/
+              &kp C_MUTE &mo SFT         &trans                &kp LCTRL           &kp SPACE     &kp ESC &kp C_PLAY_PAUSE &kp RET &kp BACKSPACE      &kp LSHIFT            &trans                 &mo SFT
             >;
         };
 
