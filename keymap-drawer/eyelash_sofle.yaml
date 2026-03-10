@@ -13,7 +13,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: ']', s: '}'}
   - Q
   - W
@@ -28,7 +28,7 @@ layers:
   - P
   - {t: '[', s: '{'}
   - $$mdi:alpha-w-box$$
-  - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
+  - A
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
   - {t: D, h: '$$mdi:apple-keyboard-option$$'}
   - {t: F, h: LGUI}
@@ -38,7 +38,7 @@ layers:
   - {t: J, h: RIGHT GUI}
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
+  - $$mdi:apple-keyboard-shift$$
   - {t: '''', s: '"'}
   - {t: '$$mdi:transfer$$', type: trans}
   - Z
@@ -61,7 +61,7 @@ layers:
   - $$mdi:keyboard-esc$$
   - PLAY PAUSE
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:apple-keyboard-shift$$
   - SYM
   - CMD
   - SFT
@@ -363,7 +363,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - MENU
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-caps$$
   - {t: '$$mdi:transfer$$', type: trans}
