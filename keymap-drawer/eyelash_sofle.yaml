@@ -29,16 +29,16 @@ layers:
   - {t: '[', s: '{'}
   - $$mdi:alpha-w-box$$
   - A
-  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: D, h: '$$mdi:apple-keyboard-option$$'}
+  - '&hrm_nav_a'
+  - '&hrm_sym_s'
   - {t: F, h: LGUI}
   - G
   - $$mdi:skip-previous$$
   - H
   - {t: J, h: RIGHT GUI}
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: L, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: ;, s: ':'}
+  - '&hrm_sym_l'
+  - '&hrm_nav_semi'
   - {t: '''', s: '"'}
   - {t: '$$mdi:transfer$$', type: trans}
   - Z
@@ -55,15 +55,15 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
   - SFT
-  - CMD
-  - NAV
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-control$$
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-esc$$
   - PLAY PAUSE
   - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
-  - SYM
-  - CMD
+  - {t: '$$mdi:transfer$$', type: trans}
   - SFT
   GAM:
   - GFN
@@ -381,7 +381,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '&mkp MB1'
@@ -452,7 +452,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   ALT:
@@ -576,13 +576,13 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   SFT:
@@ -705,7 +705,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -713,7 +712,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [15, 16, 17]
