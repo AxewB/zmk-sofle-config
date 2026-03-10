@@ -57,11 +57,11 @@ layers:
   - SFT
   - CMD
   - NAV
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:keyboard-space$$
   - $$mdi:keyboard-esc$$
   - PLAY PAUSE
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-shift$$
   - SYM
   - CMD
   - SFT
@@ -352,11 +352,11 @@ layers:
   - END
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '&m_press_key_twice LSHIFT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LSHIFT'}
+  - {t: '&m_press_key_twice LCTRL', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LCTRL'}
+  - {t: '&m_press_key_twice LALT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LALT'}
+  - {t: '&m_press_key_twice LGUI', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LGUI'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:arrow-left-bold$$
@@ -386,7 +386,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - '&mkp MB1'
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -425,10 +425,10 @@ layers:
   - '%'
   - {t: '$$mdi:transfer$$', type: trans}
   - ^
-  - '&'
-  - '*'
-  - {t: '-', s: _}
-  - {t: '=', s: +}
+  - {t: '&m_press_key_twice LGUI', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LGUI'}
+  - {t: '&m_press_key_twice LALT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LALT'}
+  - {t: '&m_press_key_twice LCTRL', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LCTRL'}
+  - {t: '&m_press_key_twice LSHIFT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LSHIFT'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - <
@@ -534,6 +534,32 @@ layers:
   - F22
   - F23
   - F24
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '&m_press_key_twice LSHIFT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LSHIFT'}
+  - {t: '&m_press_key_twice LCTRL', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LCTRL'}
+  - {t: '&m_press_key_twice LALT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LALT'}
+  - {t: '&m_press_key_twice LGUI', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LGUI'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '&m_press_key_twice LGUI', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LGUI'}
+  - {t: '&m_press_key_twice LALT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LALT'}
+  - {t: '&m_press_key_twice LCTRL', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LCTRL'}
+  - {t: '&m_press_key_twice LSHIFT', h: '$$mdi:gesture-tap-hold$$', s: '&m_release_key_twice LSHIFT'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - F1
   - F2
   - F3
@@ -547,32 +573,6 @@ layers:
   - F10
   - F11
   - F12
-  - $$mdi:keyboard-space$$
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '6', s: ^}
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: '0', s: )}
-  - $$mdi:keyboard-space$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '=', s: +}
-  - {t: '-', s: _}
-  - +
-  - '*'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
-  - {t: /, s: '?'}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
