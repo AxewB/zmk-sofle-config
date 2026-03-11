@@ -114,7 +114,7 @@
 
     behaviors {
 
-      hrm_r_short: home_row_mod_right {
+      hrm_r_short: home_row_mod_right_short {
           compatible = "zmk,behavior-hold-tap";
           bindings = <&kp &kp>;
 
@@ -128,7 +128,7 @@
           hold-trigger-on-release;
       };
 
-      hrm_l_short: home_row_mod_left {
+      hrm_l_short: home_row_mod_left_short {
           compatible = "zmk,behavior-hold-tap";
           bindings = <&kp &kp>;
 
