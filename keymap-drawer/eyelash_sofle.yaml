@@ -655,7 +655,7 @@ combos:
   k: '&macro_lang_switch'
 - p: [14, 28, 40]
   k: '&soft_off'
-- p: [27, 28]
+- p: [26, 27]
   k: $$mdi:alpha-w-box$$
-- p: [22, 23, 24]
+- p: [21, 22, 23]
   k: $$mdi:alpha-w-box$$
