@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: '[', s: '{'}
-  - _
+  - $$mdi:alpha-w-box$$
   - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
   - {t: D, h: '$$mdi:apple-keyboard-option$$'}
@@ -655,7 +655,3 @@ combos:
   k: '&macro_lang_switch'
 - p: [14, 28, 40]
   k: '&soft_off'
-- p: [26, 27]
-  k: $$mdi:alpha-w-box$$
-- p: [21, 22, 23]
-  k: $$mdi:alpha-w-box$$
