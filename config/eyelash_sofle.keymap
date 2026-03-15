@@ -177,8 +177,8 @@
         SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17)
 
         SIMPLE_COMBO(softoff, &soft_off, 14 28 40)
-        SIMPLE_COMBO(caps_word_combo1, &caps_word, 27 28)
-        SIMPLE_COMBO(caps_word_combo2, &caps_word, 22 23 24)
+        SIMPLE_COMBO(caps_word_combo1, &caps_word, 26 27)
+        SIMPLE_COMBO(caps_word_combo2, &caps_word, 21 22 23)
 
         /* SIMPLE_COMBO(undo, &kp LC(Z), 40 41) */
         /* SIMPLE_COMBO(redo, &kp LC(Y), 41 42 40) */
