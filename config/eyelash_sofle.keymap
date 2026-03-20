@@ -76,6 +76,7 @@
 
 #define SIMPLE_COMBO(NAME, BINDING, POSITIONS) \
     NAME {                                     \
+        timeout-ms = <30>;                     \
         bindings = <BINDING>;                  \
         key-positions = <POSITIONS>;           \
     };
