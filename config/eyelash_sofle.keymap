@@ -78,7 +78,6 @@
     NAME {                                     \
         bindings = <BINDING>;                  \
         key-positions = <POSITIONS>;           \
-        timeout-ms = 30;                       \
     };
 
 #define SIMPLE_MACRO(name, ...)                                              \
