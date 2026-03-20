@@ -655,3 +655,17 @@ combos:
   k: '&macro_lang_switch'
 - p: [14, 28, 40]
   k: '&soft_off'
+- p: [40, 41]
+  k: Ctl+Z
+- p: [40, 41, 42]
+  k: Ctl+Sft+Z
+- p: [41, 42]
+  k: Ctl+C
+- p: [41, 43]
+  k: Ctl+X
+- p: [42, 43]
+  k: Ctl+V
+- p: [28, 43]
+  k: Ctl+A
+- p: [51, 52]
+  k: {h: \, s: '|'}
