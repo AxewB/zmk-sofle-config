@@ -78,6 +78,7 @@
     NAME {                                     \
         bindings = <BINDING>;                  \
         key-positions = <POSITIONS>;           \
+        timeout-ms = 30;                       \
     };
 
 #define SIMPLE_MACRO(name, ...)                                              \
@@ -174,14 +175,18 @@
     combos {
         compatible = "zmk,combos";
 
-        SIMPLE_COMBO(lang_switch, &macro_lang_switch, 15 16 17)
+        SIMPLE_COMBO(combo_lang_switch, &macro_lang_switch, 15 16 17)
 
-        SIMPLE_COMBO(softoff, &soft_off, 14 28 40)
+        SIMPLE_COMBO(combo_softoff, &soft_off, 14 28 40)
 
-        /* SIMPLE_COMBO(undo, &kp LC(Z), 40 41) */
-        /* SIMPLE_COMBO(redo, &kp LC(Y), 41 42 40) */
-        /* SIMPLE_COMBO(copy, &kp LC(C), 42 41) */
-        /* SIMPLE_COMBO(paste, &kp LC(V), 43 42) */
+        SIMPLE_COMBO(combo_undo,       &kp LC(Z),     40 41)
+        SIMPLE_COMBO(combo_redo,       &kp LC(LS(Z)), 40 41 42)
+        SIMPLE_COMBO(combo_copy,       &kp LC(C),     41 42)
+        SIMPLE_COMBO(combo_cut,        &kp LC(X),     41 43)
+        SIMPLE_COMBO(combo_paste,      &kp LC(V),     42 43)
+        SIMPLE_COMBO(combo_select_all, &kp LC(A),     28 43)
+
+        SIMPLE_COMBO(combo_backslash, &kp BACKSLASH, 51 52)
     };
 
     macros {
@@ -350,7 +355,7 @@
         // +---------------------------------------------+
         // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
         // | -> !  {  [  (  \  ** | ** __ )  ]  }  `  => |
-        // | |  _  +  #  $  %  ** | ** ^  &  *  -  =  __ | 
+        // | |  _  +  #  $  %  ** | ** ^  &  *  -  =  __ |
         // | __ <  @  ;  ,  '  ** | ** "  .  :  ~  >  __ |
         // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
         // +---------------------------------------------+
