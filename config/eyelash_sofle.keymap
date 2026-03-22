@@ -347,7 +347,7 @@
               &trans       &kp TAB       &trans          &trans      &trans    &trans &mmv MOVE_LEFT  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans        &trans
               &kp LC(Y)    &kp LC(Z)     &kp LC(X)       &kp LC(C)   &kp LC(V) &kp PSCRN &mmv MOVE_RIGHT &trans   &trans    &trans    &trans    &trans        &trans
             /*&-----       &-----        &-----          &-----      &-----    &----- &-----          &-----   &-----    &-----    &-----    &-----        &-----*/
-              &trans       &mo SFT       &trans          &trans      &trans    &trans &mkp MB1        &trans   &trans    &trans    &trans    &trans
+              &trans       &mo SFT       &trans          &trans      &trans    &trans &mkp MB1        &trans   &kp LS(RET)    &trans    &trans    &trans
             >;
         };
 
