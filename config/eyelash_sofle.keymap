@@ -341,13 +341,13 @@
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
-            /*&1           &2            &3              &4          &5        &6     &STICK          &7       &8        &9        &10       &11           &12*/
-              &tog EDT     &tog GAM      &trans          &trans      &trans    &trans &mmv MOVE_UP    &trans   &trans    &trans    &trans    &trans        &trans
-              &trans       &kp DELETE    &kp LC(TAB)     &kp LA(TAB) &kp RET   &trans &mmv MOVE_DOWN  &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans        &trans
-              &trans       &kp TAB       &trans          &trans      &trans    &trans &mmv MOVE_LEFT  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans        &trans
-              &kp LC(Y)    &kp LC(Z)     &kp LC(X)       &kp LC(C)   &kp LC(V) &kp PSCRN &mmv MOVE_RIGHT &trans   &trans    &trans    &trans    &trans        &trans
-            /*&-----       &-----        &-----          &-----      &-----    &----- &-----          &-----   &-----    &-----    &-----    &-----        &-----*/
-              &trans       &mo SFT       &trans          &trans      &trans    &trans &mkp MB1        &trans   &kp LS(RET)    &trans    &trans    &trans
+            /*&1           &2            &3              &4          &5        &6        &STICK          &7          &8           &9        &10       &11           &12*/
+              &tog EDT     &tog GAM      &trans          &trans      &trans    &trans    &mmv MOVE_UP    &trans      &trans       &trans    &trans    &trans        &trans
+              &trans       &kp DELETE    &kp LC(TAB)     &kp LA(TAB) &kp RET   &trans    &mmv MOVE_DOWN  &kp HOME    &kp PG_DN    &kp PG_UP &kp END   &trans        &trans
+              &trans       &kp TAB       &trans          &trans      &trans    &trans    &mmv MOVE_LEFT  &kp LEFT    &kp DOWN     &kp UP    &kp RIGHT &trans        &trans
+              &kp LC(Y)    &kp LC(Z)     &kp LC(X)       &kp LC(C)   &kp LC(V) &kp PSCRN &mmv MOVE_RIGHT &trans      &trans       &trans    &trans    &trans        &trans
+            /*&-----       &-----        &-----          &-----      &-----    &-----    &-----          &-----      &-----       &-----    &-----    &-----        &-----*/
+              &trans       &mo SFT       &trans          &trans      &trans    &trans    &mkp MB1        &kp LS(RET) &trans       &trans    &trans    &trans
             >;
         };
 
