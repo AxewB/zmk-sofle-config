@@ -653,8 +653,6 @@ layers:
 combos:
 - p: [15, 16, 17]
   k: '&macro_lang_switch'
-- p: [14, 28, 40]
-  k: '&soft_off'
 - p: [40, 41]
   k: Ctl+Z
 - p: [40, 41, 42]
@@ -667,5 +665,7 @@ combos:
   k: Ctl+V
 - p: [27, 43]
   k: Ctl+A
-- p: [51, 52]
-  k: {h: \, s: '|'}
+- p: [27, 28, 29]
+  k: $$mdi:keyboard-esc$$
+- p: [21, 22, 23]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
