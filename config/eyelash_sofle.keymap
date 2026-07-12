@@ -275,8 +275,7 @@
 
 
         // id: 0
-        // name: default
-        default_layer {
+        default_layer { 
             display-name = "DEF";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
@@ -291,15 +290,7 @@
         };
 
         // id: 1
-        // name: gaming
-        // +--------------------short---template-----------------+
-        // | __  1  2  3  4   5   **  | **  __  __  __ __  __ __ |
-        // | TAB Q  W  E  R   T   **  | **  __  __  /\ __  __ TAB |
-        // | LS  A  S  D  F   G   **  | **  __  <-  \/ ->  __ LS |
-        // | LC  Z  X  C  V   B   **  | **  __  __  __ __  __ LC |
-        // | **  ** __ __ GFN SPC ESC | RET SPC PSC __ DEF ** ** |
-        // +-----------------------------------------------------+
-        gaming_layer {
+        gaming_layer { 
             display-name = "GAM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
@@ -314,38 +305,22 @@
         };
 
         // id: 2
-        // name: gaming function
-        // +----------------short---template-------------+
-        // | __ 6  7  8  9  0  ** | ** __ __ __ __ __ __ |
-        // | __ y  u  i  o  p  ** | ** __ __ __ __ __ __ |
-        // | __ h  j  k  l  ;  ** | ** __ __ __ __ __ __ |
-        // | __ n  m  ,  .  /  ** | ** __ __ __ __ __ __ |
-        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-        // +---------------------------------------------+
-        gaming_fn_layer {
-            display-name = "GFN";
+        gaming_fn_layer { 
+            display-name = "GAMFN";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-                /*&1     &2     &3     &4     &5     &6     &STICK &7     &8     &9     &10    &11    &12*/
-                  &trans &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans &trans &trans &trans &trans &trans &trans
-                  &trans &kp Y  &kp U  &kp I  &kp O  &kp P  &trans &trans &trans &trans &trans &trans &trans
-                  &trans &trans &kp H  &kp J  &kp K  &kp L  &trans &trans &trans &trans &trans &trans &trans
-                  &trans &trans &trans &trans &kp N  &kp M  &trans &trans &trans &trans &trans &trans &trans
-                /*&----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &-----*/
-                  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                /*&1     &2     &3     &4        &5        &6       &STICK &7     &8     &9     &10    &11    &12*/
+                  &trans &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &trans &trans &trans &trans &trans &trans
+                  &trans &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &trans &trans &trans &trans &trans &trans
+                  &trans &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &trans &trans &trans &trans &trans &trans
+                  &trans &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &trans &trans &trans &trans &trans &trans
+                /*&----- &----- &----- &-----    &-----    &-----   &----- &----- &----- &----- &----- &----- &-----*/
+                  &trans &trans &trans &trans    &trans    &trans   &trans &trans &trans &trans &trans &trans
             >;
         };
 
         // id: 3
-        // name: editing layer
-        // +----------------short---template-------------+
-        // | __  1  2  3  4  5   **  | **  __  __  __ __ __ __ |
-        // | TAB Q  W  E  R  T   **  | **  __  __  __ __ __ __ |
-        // | LS  A  S  D  F  G   **  | **  __  __  __ __ __ __ |
-        // | __  Z  X  C  V  B   **  | **  __  __  __ __ __ __ |
-        // | **  ** __ __ LC SPC ESC | RET BSP PSC __ __ ** ** |
-        // +---------------------------------------------+
-        edit_layer {
+        edit_layer { 
             display-name = "EDT";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
@@ -355,12 +330,13 @@
               &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G   &trans &kp H   &kp J    &kp K     &kp L   &kp SEMICOLON &kp SQT
               &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B   &trans &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH      &trans
             /*&-----     &-----   &-----   &-----    &-----    &-----  &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans     &kp LGUI &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
+              &trans     &kp RET &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
             >;
         };
 
-        edit_fn_layer {
-            display-name = "EFN";
+        // id: 4
+        edit_fn_layer { 
+            display-name = "EDTFN";
             sensor-bindings = <&scroll_shift_encoder>;
             bindings = <
             /*&1     &2     &3     &4        &5        &6       &STICK &7      &8       &9        &10     &11           &12*/
@@ -373,16 +349,8 @@
             >;
         };
 
-        // id: 4
-        // name: navigation
-        // +-------------------short---template-----------------+
-        // | EDT  GAM __  __  __  __  ** | ** __  __  __  __  __ __ |
-        // | __   DEL SW  TB  __  __  ** | ** HOM PGD PGU END __ __ |
-        // | __   TAB __  __  __  __  ** | ** <-  \/  /\  ->  __ __ |
-        // | REDO UND CUT CPY PST SCR ** | ** M4  __  __  M5  __ __ |
-        // | **  **  __  __  __  __  __ | __ DEL __  __  __  ** ** |
-        // +----------------------------------------------------+
-        navigation_layer {
+        // id: 5
+        navigation_layer { 
             display-name = "NAV";
             sensor-bindings = <&scroll_encoder>;
             bindings = <
@@ -396,16 +364,8 @@
             >;
         };
 
-        // id: 5
-        // name: symbols
-        // +---------------------------------------------+
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | -> !  {  [  (  \  ** | ** __ )  ]  }  `  => |
-        // | |  _  +  #  $  %  ** | ** ^  &  *  -  =  __ |
-        // | __ <  @  ;  ,  '  ** | ** "  .  :  ~  >  __ |
-        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-        // +---------------------------------------------+
-        symbols_layer {
+        // id: 6
+        symbols_layer { 
             display-name = "SYM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
@@ -419,16 +379,8 @@
             >;
         };
 
-        // id: 6
-        // name: alternative symbols
-        // +----------------short---template-------------+
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | __ __ __ __ __ __ ** | ** __ __ __ __ __ __ |
-        // | ** ** __ __ __ __ __ | __ __ __ __ __ ** ** |
-        // +---------------------------------------------+
-        alt_layer {
+        // id: 7
+        alt_layer { 
             display-name = "ALT";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
@@ -442,17 +394,8 @@
             >;
         };
 
-        // id: 7
-        // name: numbers layer (+ function keys) and some symbols to not jump between layers
-        // important keys: = - + * / , . SPACE
-        // +---------------------short---template--------------------+
-        // | F13 F14 F15 F16 F17 F18 ** | ** F19 F20 F21 F22 F23 F24 |
-        // | F1  F2  F3  F4  F5  F6  ** | ** F7  F8  F9  F10 F11 F12 |
-        // | SPC 1   2   3   4   5   ** | ** 6   7   8   9   0   SPC |
-        // | __  =   -   +   *   __  ** | ** __  __  ,   .   /   __  |
-        // | **  **  __  __  __  __  __ | __ __  __  __  __  **  **  |
-        // +---------------------------------------------------------+
-        num_layer {
+        // id: 8
+        num_layer { 
             display-name = "NUM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
@@ -464,16 +407,7 @@
               &trans    &trans    &trans    &trans   &trans    &trans    &trans &trans    &trans   &trans    &trans    &trans
             >;
         };
-
-        // id: 8
-        // name: software (bluetooth, reset, bootloader, rgb etc.)
-        // +---------------------short---template------------------+
-        // | BL SR  __  __  __  __  ** | ** __  __  __  __  SR  BL |
-        // | __ BT0 BT1 BT2 BT3 BT4 ** | ** BC0 BC1 BC2 BC3 BC4 __ |
-        // | __ RON RSU RBI RHI RSI ** | ** RSD RHD RBD RSD ROF __ |
-        // | __ REF __  __  __  __  ** | ** __  __  __  __  REF __ |
-        // | ** **  __  __  __  __  __ | __ __  __  __  __  **  ** |
-        // +-------------------------------------------------------+
+        // id: 9
         soft_layer {
             display-name = "SFT";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
