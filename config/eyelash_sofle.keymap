@@ -200,7 +200,6 @@
 
         SIMPLE_COMBO(combo_send_enter, &kp RET, 21 22 23)
 
-
         // | 26 | 27 | 28 | 29 | 30 | 31 |  32L   | 33 | 34 | 35 | 36 | 37 | 38 |
         // | CW |  A |  S |  D |  F |  G |C_PREV  |  H |  J |  K |  L |  ; |  ' |
     };
@@ -284,13 +283,13 @@
             display-name = "GAM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1               &2     &3     &4      &5        &6      &STICK &7      &8        &9        &10       &11    &12*/
-              &mo GFN          &kp N1 &kp N2 &kp N3  &kp N4    &kp N5  &trans &trans  &trans    &trans    &trans    &trans &trans
-              &kp TAB          &kp Q  &kp W  &kp E   &kp R     &kp T   &trans &trans  &trans    &kp UP    &trans    &trans &kp TAB
-              &kp LSHIFT       &kp A  &kp S  &kp D   &kp F     &kp G   &trans &trans  &kp LEFT  &kp DOWN  &kp RIGHT &trans &kp LSHIFT
-              &kp LEFT_CONTROL &kp Z  &kp X  &kp C   &kp V     &kp B   &trans &trans  &trans    &trans    &trans    &trans &kp LEFT_CONTROL
-            /*&-----           &----- &----- &-----  &-----    &-----  &----- &-----  &-----    &-----    &-----    &----- &-----*/
-              &trans           &trans &trans &mo GFN &kp SPACE &kp ESC &trans &kp RET &kp SPACE &kp PSCRN &trans    &tog GAM
+            /*&1               &2     &3     &4        &5        &6      &STICK &7      &8        &9        &10       &11    &12*/
+              &trans           &kp N1 &kp N2 &kp N3    &kp N4    &kp N5  &trans &kp N6  &kp N7    &kp N8    &kp N9    &kp N0
+              &kp TAB          &kp Q  &kp W  &kp E     &kp R     &kp T   &trans &kp Y   &kp U     &kp I     &kp O     &kp P
+              &kp LSHIFT       &kp A  &kp S  &kp D     &kp F     &kp G   &trans &kp H   &kp J     &kp K     &kp L     &kp SEMI
+              &kp LEFT_CONTROL &kp Z  &kp X  &kp C     &kp V     &kp B   &trans &kp N   &kp M     &kp COMMA &kp DOT   &kp FSLH
+            /*&-----           &----- &----- &-----    &-----    &-----  &----- &-----  &-----    &-----    &-----    &----- &-----*/
+              &trans           &kp LS(PSCRN) &kp PSCRN &mo GFN &kp SPACE &kp ESC &trans &kp RET &kp SPACE    &trans    &trans &to DEF
             >;
         };
 
@@ -299,13 +298,13 @@
             display-name = "GAMFN";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-                /*&1     &2     &3     &4        &5        &6       &STICK &7     &8     &9     &10    &11    &12*/
-                  &trans &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &trans &trans &trans &trans &trans &trans
-                  &trans &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &trans &trans &trans &trans &trans &trans
-                  &trans &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &trans &trans &trans &trans &trans &trans
-                  &trans &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &trans &trans &trans &trans &trans &trans
-                /*&----- &----- &----- &-----    &-----    &-----   &----- &----- &----- &----- &----- &----- &-----*/
-                  &trans &trans &trans &trans    &trans    &trans   &trans &trans &trans &trans &trans &trans
+                /*&1      &2     &3     &4        &5        &6       &STICK &7     &8     &9     &10    &11    &12*/
+                  &to DEF &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &trans &trans &trans &trans &trans &trans
+                  &trans  &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &trans &trans &trans &trans &trans &trans
+                  &trans  &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &trans &trans &trans &trans &trans &trans
+                  &trans  &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &trans &trans &trans &trans &trans &trans
+                /*&-----  &----- &----- &-----    &-----    &-----   &----- &----- &----- &----- &----- &----- &-----*/
+                  &trans  &trans &trans &trans    &trans    &trans   &trans &trans &trans &trans &trans &trans
             >;
         };
 
@@ -320,7 +319,7 @@
               &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G   &trans &kp H   &kp J    &kp K     &kp L   &kp SEMICOLON &kp SQT
               &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B   &trans &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH      &trans
             /*&-----     &-----   &-----   &-----    &-----    &-----  &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans     &kp RET &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
+              &trans     &kp RET &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &to DEF
             >;
         };
 
@@ -329,13 +328,13 @@
             display-name = "EDTFN";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1     &2     &3     &4        &5        &6       &STICK &7      &8       &9        &10     &11           &12*/
-              &trans &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &kp ESC    &kp N1   &kp N2   &kp N3    &kp N4    &kp N5
-              &trans &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &kp TAB    &kp Q    &kp W    &kp E     &kp R     &kp T
-              &trans &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G
-              &trans &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B
-            /*&----- &----- &----- &-----    &-----    &-----   &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans &trans &trans &trans    &trans    &trans  &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
+            /*&1      &2     &3     &4        &5        &6       &STICK &7      &8       &9        &10     &11           &12*/
+              &to DEF &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &kp ESC    &kp N1   &kp N2   &kp N3    &kp N4    &kp N5
+              &trans  &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &kp TAB    &kp Q    &kp W    &kp E     &kp R     &kp T
+              &trans  &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G
+              &trans  &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B
+            /*&-----  &----- &----- &-----    &-----    &-----   &----- &-----  &-----   &-----    &-----  &-----        &-----*/
+              &trans  &trans &trans &trans    &trans    &kp PSCRN  &trans &kp RET &kp BSPC &kp PSCRN &trans  &trans
             >;
         };
 
@@ -345,12 +344,12 @@
             sensor-bindings = <&scroll_encoder>;
             bindings = <
             /*&1           &2            &3              &4          &5        &6        &STICK          &7          &8           &9        &10       &11           &12*/
-              &tog EDT     &tog GAM      &trans          &trans      &trans    &trans    &mmv MOVE_UP    &trans      &trans       &trans    &trans    &trans        &trans
+              &trans       &tog EDT      &tog GAM        &trans      &trans    &trans    &mmv MOVE_UP    &trans      &trans       &trans    &trans    &trans        &trans
               &trans       &kp DELETE    &kp LC(TAB)     &kp LA(TAB) &kp RET   &trans    &mmv MOVE_DOWN  &kp HOME    &kp PG_DN    &kp PG_UP &kp END   &trans        &trans
               &trans       &kp TAB       &trans          &trans      &trans    &trans    &mmv MOVE_LEFT  &kp LEFT    &kp DOWN     &kp UP    &kp RIGHT &trans        &trans
-              &kp LC(Y)    &kp LC(Z)     &kp LC(X)       &kp LC(C)   &kp LC(V) &kp PSCRN &mmv MOVE_RIGHT &trans      &trans       &trans    &trans    &trans        &trans
+              &trans       &trans        &trans          &trans      &trans    &kp PSCRN &mmv MOVE_RIGHT &trans      &trans       &trans    &trans    &trans        &trans
             /*&-----       &-----        &-----          &-----      &-----    &-----    &-----          &-----      &-----       &-----    &-----    &-----        &-----*/
-              &trans       &trans       &trans          &trans      &trans    &trans    &mkp MB1        &kp LS(RET) &trans       &trans    &trans    &trans
+              &trans       &trans        &trans          &trans      &trans    &trans    &mkp MB1        &kp LS(RET) &trans       &trans    &trans    &trans
             >;
         };
 
@@ -392,8 +391,8 @@
               &kp F13   &kp F14   &kp F15   &kp F16  &kp F17   &kp F18   &trans &kp F19   &kp F20  &kp F21   &kp F22   &kp F23   &kp F24
               &kp F1    &kp F2    &kp F3    &kp F4   &kp F5    &kp F6    &trans &kp F7    &kp F8   &kp F9    &kp F10   &kp F11   &kp F12
               &kp SPACE &kp N1    &kp N2    &kp N3   &kp N4    &kp N5    &trans &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp SPACE
-              &kp PIPE  &kp UNDER &kp PLUS  &kp HASH &kp DLLR  &kp PRCNT &trans &kp CARET &kp AMPS &kp STAR  &kp MINUS &kp EQUAL &trans
-              &trans    &kp EQUAL &kp MINUS &kp PLUS &kp STAR  &trans    &trans &trans    &trans   &kp COMMA &kp DOT   &kp SLASH &trans
+              &trans    &kp UNDER &trans    &kp STAR &kp MINUS &kp PRCNT &trans &trans    &kp PLUS &kp COMMA &kp DOT   &kp EQUAL &trans
+              /*&----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &----- &-----*/
               &trans    &trans    &trans    &trans   &trans    &trans    &trans &trans    &trans   &trans    &trans    &trans
             >;
         };
