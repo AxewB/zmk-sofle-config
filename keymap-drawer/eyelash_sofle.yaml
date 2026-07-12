@@ -54,8 +54,8 @@ layers:
   - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
   - NAV
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-esc$$
