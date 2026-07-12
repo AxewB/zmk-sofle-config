@@ -283,13 +283,13 @@
             display-name = "GAM";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1               &2     &3     &4        &5        &6      &STICK &7      &8        &9        &10       &11    &12*/
-              &trans           &kp N1 &kp N2 &kp N3    &kp N4    &kp N5  &trans &kp N6  &kp N7    &kp N8    &kp N9    &kp N0
-              &kp TAB          &kp Q  &kp W  &kp E     &kp R     &kp T   &trans &kp Y   &kp U     &kp I     &kp O     &kp P
-              &kp LSHIFT       &kp A  &kp S  &kp D     &kp F     &kp G   &trans &kp H   &kp J     &kp K     &kp L     &kp SEMI
-              &kp LEFT_CONTROL &kp Z  &kp X  &kp C     &kp V     &kp B   &trans &kp N   &kp M     &kp COMMA &kp DOT   &kp FSLH
-            /*&-----           &----- &----- &-----    &-----    &-----  &----- &-----  &-----    &-----    &-----    &----- &-----*/
-              &trans           &kp LS(PSCRN) &kp PSCRN &mo GFN &kp SPACE &kp ESC &trans &kp RET &kp SPACE    &trans    &trans &tog GAM
+            /*&1               &2            &3        &4      &5        &6      &STICK &7      &8        &9        &10       &11      &12*/
+              &trans           &kp N1        &kp N2    &kp N3  &kp N4    &kp N5  &trans &kp N6  &kp N7    &kp N8    &kp N9    &kp N0   &kp BACKSPACE
+              &kp TAB          &kp Q         &kp W     &kp E   &kp R     &kp T   &trans &kp Y   &kp U     &kp I     &kp O     &kp P    &kp LBKT
+              &kp LSHIFT       &kp A         &kp S     &kp D   &kp F     &kp G   &trans &kp H   &kp J     &kp K     &kp L     &kp SEMI &kp SQT
+              &kp LEFT_CONTROL &kp Z         &kp X     &kp C   &kp V     &kp B   &trans &kp N   &kp M     &kp COMMA &kp DOT   &kp FSLH &trans
+            /*&-----           &-----        &-----    &-----  &-----    &-----  &----- &-----  &-----    &-----    &-----    &----- &-----*/
+              &trans           &kp LS(PSCRN) &kp PSCRN &mo GFN &kp SPACE &kp ESC &trans &kp RET &kp SPACE &trans    &trans    &tog GAM
             >;
         };
 
@@ -298,11 +298,11 @@
             display-name = "GAMFN";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-                /*&1      &2     &3     &4        &5        &6       &STICK &7     &8     &9     &10    &11    &12*/
+                /*&1      &2     &3     &4        &5        &6       &STICK &7     &8     &9     &10    &11     &12*/
                   &tog GAM &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &trans &trans &trans &trans &trans &trans
-                  &trans  &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &trans &trans &trans &trans &trans &trans
-                  &trans  &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &trans &trans &trans &trans &trans &trans
-                  &trans  &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &trans &trans &trans &trans &trans &trans
+                  &trans  &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &trans &trans &trans &trans &trans  &trans
+                  &trans  &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &trans &trans &trans &trans &trans  &trans
+                  &trans  &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &trans &trans &trans &trans &trans  &trans
                 /*&-----  &----- &----- &-----    &-----    &-----   &----- &----- &----- &----- &----- &----- &-----*/
                   &trans  &trans &trans &trans    &trans    &trans   &trans &trans &trans &trans &trans &trans
             >;
@@ -319,7 +319,7 @@
               &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G   &trans &kp H   &kp J    &kp K     &kp L   &kp SEMICOLON &kp SQT
               &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B   &trans &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH      &trans
             /*&-----     &-----   &-----   &-----    &-----    &-----  &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans     &kp RET &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
+              &trans     &kp RET &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDTFG
             >;
         };
 
