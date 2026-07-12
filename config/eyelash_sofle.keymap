@@ -122,16 +122,7 @@
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-        tap-ms = <100>;
-    };
-
-
-    scroll_shift_encoder: scroll_shift_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&scroll_down_with_lshift>, <&scroll_up_with_lshift>;
-
-        tap-ms = <100>;
+        tap-ms = <1>;
     };
 
     behaviors {
@@ -337,7 +328,7 @@
         // id: 4
         edit_fn_layer {
             display-name = "EDTFN";
-            sensor-bindings = <&scroll_shift_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
             /*&1     &2     &3     &4        &5        &6       &STICK &7      &8       &9        &10     &11           &12*/
               &trans &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &kp ESC    &kp N1   &kp N2   &kp N3    &kp N4    &kp N5
