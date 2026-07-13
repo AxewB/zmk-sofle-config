@@ -57,7 +57,7 @@ layers:
   - SFT
   - {t: '$$mdi:transfer$$', type: trans}
   - NUM
-  - '&hrm_l SPACE'
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-esc$$', h: LGUI}
   - PLAY PAUSE
   - {t: '$$mdi:keyboard-return$$', h: LGUI}
