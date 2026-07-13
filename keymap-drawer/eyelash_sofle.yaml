@@ -682,16 +682,16 @@ combos:
   k: $$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [27, 28, 29]
-  k: $$mdi:apple-keyboard-control$$
+  k: Ctl+$$mdi:apple-keyboard-shift$$
   l: [DEF, NAV, SYM, NUM]
 - p: [28, 30]
-  k: $$mdi:apple-keyboard-control$$
+  k: Ctl+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [27, 30]
-  k: $$mdi:apple-keyboard-shift$$
+  k: Sft+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [27, 28, 29, 30]
-  k: $$mdi:apple-keyboard-control$$
+  k: Ctl+Sft+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [37, 36]
   k: $$mdi:apple-keyboard-shift$$
@@ -703,14 +703,14 @@ combos:
   k: $$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [37, 36, 35]
-  k: $$mdi:apple-keyboard-control$$
+  k: Ctl+$$mdi:apple-keyboard-shift$$
   l: [DEF, NAV, SYM, NUM]
 - p: [36, 34]
-  k: $$mdi:apple-keyboard-control$$
+  k: Ctl+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [37, 34]
-  k: $$mdi:apple-keyboard-shift$$
+  k: Sft+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
 - p: [37, 36, 35, 34]
-  k: $$mdi:apple-keyboard-control$$
+  k: Ctl+Sft+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
