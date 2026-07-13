@@ -185,64 +185,143 @@
 
 
     combos {
-        compatible = "zmk,combos";
+      compatible = "zmk,combos";
 
-        SIMPLE_COMBO(combo_lang_switch, &macro_lang_switch, 15 16 17)
+      SIMPLE_COMBO(combo_lang_switch, &macro_lang_switch, 15 16 17)
 
-        SIMPLE_COMBO(combo_softoff, &soft_off, 0 12 53 63)
+      SIMPLE_COMBO(combo_softoff, &soft_off, 0 12 53 63) // top left, top right, bottom left, bottom right keys
 
-        SIMPLE_COMBO(combo_undo,       &kp LC(Z),     40 41)
-        SIMPLE_COMBO(combo_redo,       &kp LC(LS(Z)), 40 41 42)
-        SIMPLE_COMBO(combo_copy,       &kp LC(C),     41 42)
-        SIMPLE_COMBO(combo_cut,        &kp LC(X),     41 43)
-        SIMPLE_COMBO(combo_paste,      &kp LC(V),     42 43)
-        SIMPLE_COMBO(combo_select_all, &kp LC(A),     27 43)
+      SIMPLE_COMBO(combo_undo,       &kp LC(Z),     40 41)
+      SIMPLE_COMBO(combo_redo,       &kp LC(LS(Z)), 40 41 42)
+      SIMPLE_COMBO(combo_copy,       &kp LC(C),     41 42)
+      SIMPLE_COMBO(combo_cut,        &kp LC(X),     41 43)
+      SIMPLE_COMBO(combo_paste,      &kp LC(V),     42 43)
+      SIMPLE_COMBO(combo_select_all, &kp LC(A),     27 43)
 
-        SIMPLE_COMBO(combo_send_enter, &kp RET, 21 22 23)
+      SIMPLE_COMBO(combo_send_enter, &kp RET, 21 22 23)
 
-        // | 26 | 27 | 28 | 29 | 30 | 31 |  32L   | 33 | 34 | 35 | 36 | 37 | 38 |
-        // | CW |  A |  S |  D |  F |  G |C_PREV  |  H |  J |  K |  L |  ; |  ' |
+
+      combo_all_caps {
+        timeout-ms = <30>;
+        bindings = <&caps_word>;
+        key-positions = <28 36>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      // -- left (27 28 29 30 keycodes / [A S D F])
+      // singular mods
+
+      combo_mod_shift_left {
+        timeout-ms = <30>;
+        bindings = <&kp LSHIFT>;
+        key-positions = <27 28>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      combo_mod_ctrl_left {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL>;
+        key-positions = <28 29>;
+        layers = <DEF NAV SYM NUM>;
+    };
+
+      combo_mod_alt_left {
+        timeout-ms = <30>;
+        bindings = <&kp LALT>;
+        key-positions = <29 30>;
+        layers = <DEF NAV SYM NUM>;
+    };
+
+      // doubles
+
+      combo_mod_ctrl_shift_left {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL &kp LSHIFT>;
+        key-positions = <27 28 29>;
+        layers = <DEF NAV SYM NUM>;
+    };
+      combo_mod_ctrl_alt_left {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL &kp LALT>;
+        key-positions = <28 30>;
+        layers = <DEF NAV SYM NUM>;
+    };
+      combo_mod_shift_alt_left {
+        timeout-ms = <30>;
+        bindings = <&kp LSHIFT &kp LALT>;
+        key-positions = <27 30>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      // triple
+
+      combo_mod_ctrl_shift_alt_left {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL &kp LSHIFT &kp LALT>;
+        key-positions = <27 28 29 30>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      // -- right (34 35 36 37 keycodes / [J K L ;])
+
+      // singular mods
+
+      combo_mod_shift_right {
+        timeout-ms = <30>;
+        bindings = <&kp LSHIFT>;
+        key-positions = <37 36>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      combo_mod_ctrl_right {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL>;
+        key-positions = <36 35>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      combo_mod_alt_right {
+        timeout-ms = <30>;
+        bindings = <&kp LALT>;
+        key-positions = <35 34>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      // doubles
+
+      combo_mod_ctrl_shift_right {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL &kp LSHIFT>;
+        key-positions = <37 36 35>;
+        layers = <DEF NAV SYM NUM>;
+      };
+      combo_mod_ctrl_alt_right {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL &kp LALT>;
+        key-positions = <36 34>;
+        layers = <DEF NAV SYM NUM>;
+      };
+      combo_mod_shift_alt_right {
+        timeout-ms = <30>;
+        bindings = <&kp LSHIFT &kp LALT>;
+        key-positions = <37 34>;
+        layers = <DEF NAV SYM NUM>;
+      };
+
+      // triple
+
+      combo_mod_ctrl_shift_alt_right {
+        timeout-ms = <30>;
+        bindings = <&kp LCTRL &kp LSHIFT &kp LALT>;
+        key-positions = <37 36 35 34>;
+        layers = <DEF NAV SYM NUM>;
+      };
     };
 
     macros {
-        SHIFT_MCLK: SHIFT_MCLK {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_press>,
-                <&mkp MB3>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT &mkp MB3>;
-
-            label = "SHIFT_MCLK";
-        };
-
         SIMPLE_MACRO(macro_lang_switch, &kp LSHIFT &kp LALT) // LSHIFT + LALT lang switch
         SIMPLE_MACRO(sym_single_arrow, &kp MINUS &kp GT) // send "->"
         SIMPLE_MACRO(sym_double_arrow, &kp EQUAL &kp GT) // send "=>"
-
-        scroll_down_with_lshift: scroll_down_with_lshift {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp LSHIFT
-                &macro_tap     &msc SCRL_DOWN
-                &macro_release &kp LSHIFT
-            >;
-        };
-
-        scroll_up_with_lshift: scroll_up_with_lshift {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp LSHIFT
-                &macro_tap     &msc SCRL_UP
-                &macro_release &kp LSHIFT
-            >;
-        };
 
         CLR_BT_PROFILE(clr_bt_0, 0)
         CLR_BT_PROFILE(clr_bt_1, 1)
@@ -251,13 +330,13 @@
         CLR_BT_PROFILE(clr_bt_4, 4)
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers  = <NAV SYM>;
-            then-layer = <NUM>;
-        };
-    };
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
+    //     tri_layer {
+    //         if-layers  = <NAV SYM>;
+    //         then-layer = <NUM>;
+    //     };
+    // };
 
     keymap {
         compatible = "zmk,keymap";
@@ -268,13 +347,13 @@
             display-name = "DEF";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1         &2                    &3                             &4                &5            &6      &STICK           &7      &8                 &9                &10                   &11                           &12*/
-              &kp DELETE &kp N1                &kp N2                         &kp N3            &kp N4        &kp N5  &kp C_FF         &kp N6  &kp N7             &kp N8            &kp N9                &kp N0                        &trans
-              &kp RBKT   &kp Q                 &kp W                          &kp E             &kp R         &kp T   &kp C_RW         &kp Y   &kp U              &kp I             &kp O                 &kp P                         &kp LBKT
-              &caps_word &hrm_l_short LSHIFT A &hrm_l LEFT_CONTROL S          &hrm_l LEFT_ALT D &hrm_l LGUI F &kp G   &kp C_PREV       &kp H   &hrm_r RIGHT_GUI J &hrm_r LEFT_ALT K &hrm_r LEFT_CONTROL L &hrm_r_short LSHIFT SEMICOLON &kp SQT
-              &trans     &kp Z                 &kp X                          &kp C             &kp V         &kp B   &kp C_NEXT       &kp N   &kp M              &kp COMMA         &kp DOT               &kp FSLH                      &trans
-            /*&-----     &-----                &-----                         &-----            &-----        &-----  &-----           &-----  &-----             &-----            &-----                &-----                        &-----*/
-              &kp C_MUTE &mo SFT               &trans                         &mo NAV           &kp SPACE     &kp ESC &kp C_PLAY_PAUSE &kp RET &kp BACKSPACE      &mo SYM           &trans                &mo SFT
+            /*&1         &2      &3     &4      &5        &6      &STICK           &7      &8            &9        &10     &11      &12*/
+              &kp DELETE &kp N1  &kp N2 &kp N3  &kp N4    &kp N5  &kp C_FF         &kp N6  &kp N7        &kp N8    &kp N9  &kp N0   &trans
+              &kp RBKT   &kp Q   &kp W  &kp E   &kp R     &kp T   &kp C_RW         &kp Y   &kp U         &kp I     &kp O   &kp P    &kp LBKT
+              &mo NAV    &kp A   &kp S  &kp D   &kp F     &kp G   &kp C_PREV       &kp H   &kp J         &kp K     &kp L   &kp SEMI &kp SQT
+              &trans     &kp Z   &kp X  &kp C   &kp V     &kp B   &kp C_NEXT       &kp N   &kp M         &kp COMMA &kp DOT &kp FSLH &trans
+            /*&-----     &-----  &----- &-----  &-----    &-----  &-----           &-----  &-----        &-----    &-----  &-----   &-----*/
+              &kp C_MUTE &mo SFT &trans &mo NUM &hrm_l SPACE &hrm_l LGUI ESC &kp C_PLAY_PAUSE &hrm_r LGUI RET &kp BACKSPACE &mo SYM   &trans  &mo SFT
             >;
         };
 
@@ -319,7 +398,7 @@
               &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G   &trans &kp H   &kp J    &kp K     &kp L   &kp SEMICOLON &kp SQT
               &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B   &trans &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH      &trans
             /*&-----     &-----   &-----   &-----    &-----    &-----  &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans     &kp RET &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
+              &trans     &mo NAV &kp LALT &mo EFN   &kp SPACE &kp ESC &trans &kp RET &kp BSPC &kp PSCRN &trans  &tog EDT
             >;
         };
 
@@ -328,13 +407,13 @@
             display-name = "EDTFN";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             bindings = <
-            /*&1      &2     &3     &4        &5        &6       &STICK &7      &8       &9        &10     &11           &12*/
-              &tog EDT &kp N6 &kp N7 &kp N8    &kp N9    &kp N0   &trans &kp ESC    &kp N1   &kp N2   &kp N3    &kp N4    &kp N5
-              &trans  &kp Y  &kp U  &kp I     &kp O     &kp P    &trans &kp TAB    &kp Q    &kp W    &kp E     &kp R     &kp T
-              &trans  &kp H  &kp J  &kp K     &kp L     &kp SEMI &trans &kp LSHIFT &kp A    &kp S    &kp D     &kp F     &kp G
-              &trans  &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH &trans &kp LCTRL  &kp Z    &kp X    &kp C     &kp V     &kp B
-            /*&-----  &----- &----- &-----    &-----    &-----   &----- &-----  &-----   &-----    &-----  &-----        &-----*/
-              &trans  &trans &trans &trans    &trans    &kp PSCRN  &trans &kp RET &kp BSPC &kp PSCRN &trans  &trans
+            /*&1      &2     &3     &4        &5      &6        &STICK &7      &8       &9        &10     &11    &12*/
+              &tog EDT &kp N6 &kp N7 &kp N8    &kp N9 &kp N0    &trans &kp N1  &kp N2   &kp N3    &kp N4  &kp N5 &kp ESC
+              &trans  &kp Y  &kp U  &kp I     &kp O   &kp P     &trans &kp Q   &kp W    &kp E     &kp R   &kp T  &kp TAB
+              &trans  &kp H  &kp J  &kp K     &kp L   &kp SEMI  &trans &kp A   &kp S    &kp D     &kp F   &kp G  &kp LSHIFT
+              &trans  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  &trans &kp Z   &kp X    &kp C     &kp V   &kp B  &kp LCTRL
+            /*&-----  &----- &----- &-----    &-----  &-----    &----- &-----  &-----   &-----    &-----  &----- &-----*/
+              &trans  &trans &trans &trans    &trans  &kp PSCRN &trans &kp RET &kp BSPC &kp PSCRN &trans  &trans
             >;
         };
 
