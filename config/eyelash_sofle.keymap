@@ -222,42 +222,19 @@
         bindings = <&kp LCTRL>;
         key-positions = <28 29>;
         layers = <DEF NAV SYM NUM>;
-    };
+      };
 
       combo_mod_alt_left {
         timeout-ms = <60>;
         bindings = <&kp LALT>;
         key-positions = <29 30>;
         layers = <DEF NAV SYM NUM>;
-    };
-
-      // doubles
+      };
 
       combo_mod_ctrl_shift_left {
         timeout-ms = <60>;
         bindings = <&kp LC(LSHIFT)>;
         key-positions = <27 28 29>;
-        layers = <DEF NAV SYM NUM>;
-    };
-      combo_mod_ctrl_alt_left {
-        timeout-ms = <60>;
-        bindings = <&kp LC(LALT)>;
-        key-positions = <28 30>;
-        layers = <DEF NAV SYM NUM>;
-    };
-      combo_mod_shift_alt_left {
-        timeout-ms = <60>;
-        bindings = <&kp LS(LALT)>;
-        key-positions = <27 30>;
-        layers = <DEF NAV SYM NUM>;
-      };
-
-      // triple
-
-      combo_mod_ctrl_shift_alt_left {
-        timeout-ms = <60>;
-        bindings = <&kp LC(LS(LALT))>;
-        key-positions = <27 28 29 30>;
         layers = <DEF NAV SYM NUM>;
       };
 
@@ -286,33 +263,10 @@
         layers = <DEF NAV SYM NUM>;
       };
 
-      // doubles
-
       combo_mod_ctrl_shift_right {
         timeout-ms = <60>;
         bindings = <&kp LC(LSHIFT)>;
         key-positions = <37 36 35>;
-        layers = <DEF NAV SYM NUM>;
-      };
-      combo_mod_ctrl_alt_right {
-        timeout-ms = <60>;
-        bindings = <&kp LC(LALT)>;
-        key-positions = <36 34>;
-        layers = <DEF NAV SYM NUM>;
-      };
-      combo_mod_shift_alt_right {
-        timeout-ms = <60>;
-        bindings = <&kp LS(LALT)>;
-        key-positions = <37 34>;
-        layers = <DEF NAV SYM NUM>;
-      };
-
-      // triple
-
-      combo_mod_ctrl_shift_alt_right {
-        timeout-ms = <60>;
-          bindings = <&kp LC(LS(LALT))>;
-        key-positions = <37 36 35 34>;
         layers = <DEF NAV SYM NUM>;
       };
     };
@@ -352,7 +306,7 @@
               &mo NAV    &kp A   &kp S  &kp D   &kp F     &kp G   &kp C_PREV       &kp H   &kp J         &kp K     &kp L   &kp SEMI &kp SQT
               &trans     &kp Z   &kp X  &kp C   &kp V     &kp B   &kp C_NEXT       &kp N   &kp M         &kp COMMA &kp DOT &kp FSLH &trans
             /*&-----     &-----  &----- &-----  &-----    &-----  &-----           &-----  &-----        &-----    &-----  &-----   &-----*/
-              &kp C_MUTE &mo SFT &trans &mo NUM &kp SPACE &hrm_l LGUI ESC &kp C_PLAY_PAUSE &hrm_r LGUI RET &kp BACKSPACE &mo SYM   &trans  &mo SFT
+              &kp C_MUTE &mo SFT &trans &mo NUM &hrm_l LALT SPACE &hrm_l LGUI ESC &kp C_PLAY_PAUSE &hrm_r LGUI RET &hrm_r LALT BACKSPACE &mo SYM   &trans  &mo SFT
             >;
         };
 
