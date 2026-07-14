@@ -57,11 +57,11 @@ layers:
   - SFT
   - {t: '$$mdi:transfer$$', type: trans}
   - NUM
-  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:keyboard-esc$$', h: LGUI}
   - PLAY PAUSE
   - {t: '$$mdi:keyboard-return$$', h: LGUI}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
   - SYM
   - {t: '$$mdi:transfer$$', type: trans}
   - SFT
@@ -684,15 +684,6 @@ combos:
 - p: [27, 28, 29]
   k: Ctl+$$mdi:apple-keyboard-shift$$
   l: [DEF, NAV, SYM, NUM]
-- p: [28, 30]
-  k: Ctl+$$mdi:apple-keyboard-option$$
-  l: [DEF, NAV, SYM, NUM]
-- p: [27, 30]
-  k: Sft+$$mdi:apple-keyboard-option$$
-  l: [DEF, NAV, SYM, NUM]
-- p: [27, 28, 29, 30]
-  k: Ctl+Sft+$$mdi:apple-keyboard-option$$
-  l: [DEF, NAV, SYM, NUM]
 - p: [37, 36]
   k: $$mdi:apple-keyboard-shift$$
   l: [DEF, NAV, SYM, NUM]
@@ -704,13 +695,4 @@ combos:
   l: [DEF, NAV, SYM, NUM]
 - p: [37, 36, 35]
   k: Ctl+$$mdi:apple-keyboard-shift$$
-  l: [DEF, NAV, SYM, NUM]
-- p: [36, 34]
-  k: Ctl+$$mdi:apple-keyboard-option$$
-  l: [DEF, NAV, SYM, NUM]
-- p: [37, 34]
-  k: Sft+$$mdi:apple-keyboard-option$$
-  l: [DEF, NAV, SYM, NUM]
-- p: [37, 36, 35, 34]
-  k: Ctl+Sft+$$mdi:apple-keyboard-option$$
   l: [DEF, NAV, SYM, NUM]
