@@ -653,7 +653,7 @@ layers:
 combos:
 - p: [15, 16, 17]
   k: '&macro_lang_switch'
-- p: [0, 12, 53, 63]
+- p: [0, 5, 7, 12]
   k: '&soft_off'
 - p: [40, 41]
   k: Ctl+Z
