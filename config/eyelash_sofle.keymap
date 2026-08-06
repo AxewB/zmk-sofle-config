@@ -197,11 +197,6 @@
         SIMPLE_COMBO(combo_cut,        &kp LC(X),     41 43)
         SIMPLE_COMBO(combo_paste,      &kp LC(V),     42 43)
         SIMPLE_COMBO(combo_select_all, &kp LC(A),     27 43)
-
-        SIMPLE_COMBO(combo_send_enter, &kp RET, 21 22 23)
-
-        // | 26 | 27 | 28 | 29 | 30 | 31 |  32L   | 33 | 34 | 35 | 36 | 37 | 38 |
-        // | CW |  A |  S |  D |  F |  G |C_PREV  |  H |  J |  K |  L |  ; |  ' |
     };
 
     macros {
@@ -347,7 +342,7 @@
               &trans       &tog EDT      &tog GAM        &trans      &trans    &trans    &mmv MOVE_UP    &trans      &trans       &trans    &trans    &trans        &trans
               &trans       &kp DELETE    &kp LC(TAB)     &kp LA(TAB) &kp RET   &trans    &mmv MOVE_DOWN  &kp HOME    &kp PG_DN    &kp PG_UP &kp END   &trans        &trans
               &trans       &kp TAB       &trans          &trans      &trans    &trans    &mmv MOVE_LEFT  &kp LEFT    &kp DOWN     &kp UP    &kp RIGHT &trans        &trans
-              &trans       &trans        &trans          &trans      &trans    &kp PSCRN &mmv MOVE_RIGHT &trans      &trans       &trans    &trans    &trans        &trans
+              &trans       &trans        &trans          &trans      &trans    &kp PSCRN &mmv MOVE_RIGHT &mkp MB4    &trans       &trans    &mkp MB5  &trans        &trans
             /*&-----       &-----        &-----          &-----      &-----    &-----    &-----          &-----      &-----       &-----    &-----    &-----        &-----*/
               &trans       &trans        &trans          &trans      &trans    &trans    &mkp MB1        &kp LS(RET) &trans       &trans    &trans    &trans
             >;
